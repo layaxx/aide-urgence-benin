@@ -1,6 +1,6 @@
 import fs from "fs"
 import path from "path"
-import Layout from "../../../components/layout"
+import Layout from "../../../components/DefaultLayout"
 
 export interface IPost {
   slug: string
@@ -20,14 +20,6 @@ const Post = ({ blogpost }: { blogpost: IPost }) => {
         <img src={attributes.thumbnail} />
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </article>
-      <style jsx>{`
-        article {
-          margin: 0 auto;
-        }
-        h1 {
-          text-align: center;
-        }
-      `}</style>
     </Layout>
   )
 }

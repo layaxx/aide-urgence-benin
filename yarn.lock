@@ -390,6 +390,11 @@
   resolved "https://registry.yarnpkg.com/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-12.0.7.tgz#8d75d3b6a872ab97ab73e3b4173d56dbb2991917"
   integrity sha512-frEWtbf+q8Oz4e2UqKJrNssk6DZ6/NLCQXn5/ORWE9dPAfe9XS6aK5FRZ6DuEPmmKd5gOoRkKJFFz5nYd+TeyQ==
 
+"@picocss/pico@^1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@picocss/pico/-/pico-1.4.2.tgz#6677d0ec854e2adf12086be5857ae45fc89f04f9"
+  integrity sha512-bHYgmia0nQRCLHn9GLVDHfw5ViqSbFN1cXvOXlMCuoqsuJamxgbpw5HGFC0qyhqD05WfJjNXH5rL9vN6cMjH3w==
+
 "@types/node@*":
   version "17.0.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.0.tgz#62797cee3b8b497f6547503b2312254d4fe3c2bb"

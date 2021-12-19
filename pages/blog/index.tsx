@@ -1,5 +1,5 @@
 import Link from "next/link"
-import Layout from "../../components/layout"
+import Layout from "../../components/DefaultLayout"
 import { IPost } from "./post/[slug]"
 
 const importBlogPosts = async () => {
