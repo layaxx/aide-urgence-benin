@@ -1,0 +1,22 @@
+{
+  "footer": {
+    "tagline": "",
+    "links": {
+      "imprint": ""
+    }
+  },
+  "config": {
+    "name": ""
+  },
+  "hero": {
+    "tagline": "",
+    "cta": ""
+  },
+  "menu": {
+    "theme": {
+      "auto": "",
+      "light": "",
+      "dark": ""
+    }
+  }
+}

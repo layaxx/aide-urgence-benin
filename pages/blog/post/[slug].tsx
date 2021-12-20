@@ -1,6 +1,10 @@
 import fs from "fs"
+import { GetStaticProps } from "next"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { NextParsedUrlQuery } from "next/dist/server/request-meta"
 import path from "path"
 import Layout from "../../../components/DefaultLayout"
+import { i18n } from "../../../next-i18next.config"
 
 export interface IPost {
   slug: string
@@ -8,7 +12,15 @@ export interface IPost {
   attributes: { title: string; thumbnail: string }
 }
 
-const Post = ({ blogpost }: { blogpost: IPost }) => {
+interface IParams extends NextParsedUrlQuery {
+  slug: string
+}
+
+interface IProps {
+  blogpost: IPost
+}
+
+const Post = ({ blogpost }: IProps) => {
   if (!blogpost) return <div>not found</div>
 
   const { html, attributes } = blogpost
@@ -40,8 +52,11 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }: { params: { slug: string } }) {
-  const { slug } = params
+export const getStaticProps: GetStaticProps<IProps, IParams> = async ({
+  params,
+  locale,
+}) => {
+  const { slug } = params ?? {}
 
   const post = await import(`../../../content/blogPosts/${slug}.md`).catch(
     () => null
@@ -49,6 +64,10 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 
   return {
     props: {
+      ...(await serverSideTranslations(locale ?? i18n.defaultLocale, [
+        "common",
+        "blog",
+      ])),
       blogpost: post.default,
     },
   }

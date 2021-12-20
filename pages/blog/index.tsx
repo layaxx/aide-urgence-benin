@@ -1,6 +1,9 @@
 import Link from "next/link"
 import Layout from "../../components/DefaultLayout"
 import { IPost } from "./post/[slug]"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { GetStaticProps } from "next"
+import config from "../../next-i18next.config"
 
 const importBlogPosts = async () => {
   // https://webpack.js.org/guides/dependency-management/#requirecontext
@@ -41,11 +44,15 @@ const Blog = ({ postsList }: { postsList: IPost[] }) => (
   </Layout>
 )
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const postsList = await importBlogPosts()
 
   return {
     props: {
+      ...(await serverSideTranslations(locale ?? config.i18n.defaultLocale, [
+        "common",
+        "blog",
+      ])),
       postsList,
     },
   }

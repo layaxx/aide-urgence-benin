@@ -1,7 +1,8 @@
+import { NextPage } from "next"
 import Footer from "./Footer"
 import Hero from "./Hero"
 
-const Layout = ({ children }: { children: any }) => (
+const Layout: NextPage = ({ children }) => (
   <>
     <Hero />
 

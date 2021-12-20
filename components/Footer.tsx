@@ -1,9 +1,13 @@
+import { useTranslation } from "next-i18next"
+
 export default function Footer() {
+  const { t } = useTranslation()
+
   return (
     <footer className="container flex-between">
-      <small>no Ads - no Tracking - no Cookies</small>
+      <small>{t("footer.tagline")}</small>
       <small>
-        <a>Impressum</a>
+        <a>{t("footer.links.imprint")}</a>
       </small>
     </footer>
   )

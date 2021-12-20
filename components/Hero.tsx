@@ -1,42 +1,19 @@
+import { useTranslation } from "next-i18next"
 import Link from "next/link"
 import Script from "next/script"
+import Navbar from "./Navbar"
 
 export default function Hero() {
+  const { t } = useTranslation()
+
   return (
     <div className="hero" data-theme="dark">
-      <Script type="text/javascript" src="/js/themeSwitcher.js" />
-      <nav className="container-fluid">
-        <ul>
-          <li>
-            <Link href="/">
-              <a className="contrast">
-                <strong>Aide Urgence Bénin</strong>
-              </a>
-            </Link>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="#" className="contrast" data-theme-switcher="auto">
-              Auto
-            </a>
-          </li>
-          <li>
-            <a href="#" className="contrast" data-theme-switcher="light">
-              Light
-            </a>
-          </li>
-          <li>
-            <a href="#" className="contrast" data-theme-switcher="dark">
-              Dark
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <Navbar />
+
       <header className="container">
         <hgroup>
-          <h1>Aide Urgence Bénin</h1>
-          <h2>Non-Governmental Organization (NGO)</h2>
+          <h1>{t("config.name")}</h1>
+          <h2>{t("hero.tagline")}</h2>
         </hgroup>
         <p>
           <Link href="#">
@@ -44,7 +21,7 @@ export default function Hero() {
               role="button"
               onClick={/* TODO: */ () => alert("TODO: Kommt noch")}
             >
-              Jetzt spenden!
+              {t("hero.cta")}
             </a>
           </Link>
         </p>

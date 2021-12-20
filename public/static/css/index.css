@@ -39,6 +39,7 @@ header hgroup {
     margin-bottom: var(--spacing-company);
 }
 
+
 /* Main */
 @media (min-width: 992px) {
     main .grid {
