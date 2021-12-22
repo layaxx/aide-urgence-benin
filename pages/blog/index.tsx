@@ -1,46 +1,33 @@
 import Link from "next/link"
-import Layout from "components/DefaultLayout"
+import Layout from "components/layouts/DefaultLayout"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-import { GetStaticProps } from "next"
+import { GetStaticProps, NextPage } from "next"
 import config, { i18n } from "next-i18next.config"
 import { useRouter } from "next/router"
 import { useTranslation } from "next-i18next"
-import { IBlogPost } from "types/Blog"
+import { IBlogPost, INewBlogPost } from "types/Blog"
+import { fetchAllBlogPosts } from "lib/blog/posts"
 
-const importBlogPosts = async () => {
-  // https://webpack.js.org/guides/dependency-management/#requirecontext
-  const markdownFiles = require
-    .context("../../content/blogPosts", false, /\.md$/)
-    .keys()
-    .map((relativePath: string) => relativePath.substring(2))
-
-  return Promise.all(
-    markdownFiles.map(async (path: string) => {
-      const markdown = await import(`../../content/blogPosts/${path}`)
-      return { ...markdown, slug: path.substring(0, path.length - 3) }
-    })
-  )
+interface IProps {
+  postsList: INewBlogPost[]
 }
 
-const Blog = ({ postsList }: { postsList: IBlogPost[] }) => {
+const Blog: NextPage<IProps> = ({ postsList }) => {
   const router = useRouter()
   const { t } = useTranslation()
+
   return (
     <Layout>
       <h1>{t("blog:headline")}</h1>
-      {postsList.map((post: IBlogPost) => (
-        <div key={post.slug} className="post">
-          <Link href="/blog/post/[slug]" as={`/blog/post/${post.slug}`}>
+      {postsList.map((post: INewBlogPost) => (
+        <div key={post[i18n.defaultLocale].slug} className="post">
+          <Link
+            href="/blog/post/[slug]"
+            as={`/blog/post/${post[i18n.defaultLocale].slug}`}
+          >
             <a>
-              <img
-                src={
-                  post.attributes[router.locale ?? i18n.defaultLocale]
-                    ?.thumbnail
-                }
-              />
-              <h2>
-                {post.attributes[router.locale ?? i18n.defaultLocale]?.title}
-              </h2>
+              <img src={post[i18n.defaultLocale].thumbnail} />
+              <h2>{post[router.locale ?? i18n.defaultLocale].title}</h2>
             </a>
           </Link>
         </div>
@@ -50,7 +37,7 @@ const Blog = ({ postsList }: { postsList: IBlogPost[] }) => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const postsList = await importBlogPosts()
+  const postsList = await fetchAllBlogPosts()
 
   return {
     props: {

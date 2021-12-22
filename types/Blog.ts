@@ -6,3 +6,20 @@ export interface IBlogPost {
     [key: typeof i18n.defaultLocale]: { title: string; thumbnail: string }
   }
 }
+interface IAuthor {
+  /* TODO: */
+}
+
+interface ILocalizedBlogPost {
+  title: string
+  thumbnail: string
+  content: string
+  author?: IAuthor
+  tags: [string]
+  slug: string
+  date: string
+}
+
+export interface INewBlogPost {
+  [key: typeof i18n.defaultLocale]: ILocalizedBlogPost
+}

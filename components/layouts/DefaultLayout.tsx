@@ -1,6 +1,6 @@
 import { NextPage } from "next"
-import Footer from "./Footer"
-import Hero from "./Hero"
+import Footer from "components/Footer"
+import Hero from "components/Hero"
 
 interface IProps {
   grid?: JSX.Element
