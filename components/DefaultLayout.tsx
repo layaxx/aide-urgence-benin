@@ -2,16 +2,23 @@ import { NextPage } from "next"
 import Footer from "./Footer"
 import Hero from "./Hero"
 
-const Layout: NextPage = ({ children }) => (
+interface IProps {
+  grid?: JSX.Element
+}
+
+const Layout: NextPage<IProps> = ({ children, grid }) => (
   <>
     <Hero />
 
     <main className="container">
-      <div className="grid">
+      {grid ? (
+        <div className="grid">
+          <section>{children}</section>
+          <aside>{grid}</aside>
+        </div>
+      ) : (
         <section>{children}</section>
-
-        <aside></aside>
-      </div>
+      )}
     </main>
 
     <Footer />

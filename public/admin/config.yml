@@ -1,6 +1,6 @@
 backend:
-  name: git-gateway
-  branch: master
+  name: test-repo
+  branch: main
 media_folder: static/img
 slug:
   encoding: "ascii"
@@ -9,6 +9,7 @@ slug:
 collections:
   - name: "pages"
     label: "Pages"
+    i18n: true
     files:
       - label: "Home"
         name: "home"
@@ -25,22 +26,53 @@ collections:
           - { label: "Publish Date", name: "date", widget: "datetime" }
           - { label: "Body", name: "body", widget: "markdown" }
   - label: "Blog"
+    i18n: true
     name: "blog"
     folder: "content/blogPosts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string", required: true }
+      - {
+          label: "Title",
+          name: "title",
+          widget: "string",
+          required: true,
+          i18n: true,
+        }
       - {
           label: "Publish Date",
           name: "date",
           widget: "datetime",
           required: true,
+          i18n: duplicate,
         }
       - {
           label: "Featured Image",
           name: "thumbnail",
           widget: "image",
           required: true,
+          i18n: duplicate,
         }
-      - { label: "Body", name: "body", widget: "markdown", required: true }
+      - {
+          label: "Body",
+          name: "body",
+          widget: "markdown",
+          required: true,
+          i18n: true,
+        }
+
+i18n:
+  # Required and can be one of multiple_folders, multiple_files or single_file
+  # multiple_folders - persists files in `<folder>/<locale>/<slug>.<extension>`
+  # multiple_files - persists files in `<folder>/<slug>.<locale>.<extension>`
+  # single_file - persists a single file in `<folder>/<slug>.<extension>`
+  structure: single_file
+
+  # Required - a list of locales to show in the editor UI
+  locales: [en, de, fr]
+
+  # Optional, defaults to the first item in locales.
+  # The locale to be used for fields validation and as a baseline for the entry.
+  default_locale: en
+
+local_backend: true

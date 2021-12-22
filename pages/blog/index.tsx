@@ -1,9 +1,11 @@
 import Link from "next/link"
 import Layout from "../../components/DefaultLayout"
-import { IPost } from "./post/[slug]"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps } from "next"
-import config from "../../next-i18next.config"
+import config, { i18n } from "../../next-i18next.config"
+import { useRouter } from "next/router"
+import { useTranslation } from "next-i18next"
+import { IBlogPost } from "../../types/Blog"
 
 const importBlogPosts = async () => {
   // https://webpack.js.org/guides/dependency-management/#requirecontext
@@ -20,29 +22,32 @@ const importBlogPosts = async () => {
   )
 }
 
-const Blog = ({ postsList }: { postsList: IPost[] }) => (
-  <Layout>
-    {postsList.map((post: IPost) => (
-      <div key={post.slug} className="post">
-        <Link href="/blog/post/[slug]" as={`/blog/post/${post.slug}`}>
-          <a>
-            <img src={post.attributes.thumbnail} />
-            <h2>{post.attributes.title}</h2>
-          </a>
-        </Link>
-      </div>
-    ))}
-    <style jsx>{`
-      .post {
-        text-align: center;
-      }
-      img {
-        max-width: 100%;
-        max-height: 300px;
-      }
-    `}</style>
-  </Layout>
-)
+const Blog = ({ postsList }: { postsList: IBlogPost[] }) => {
+  const router = useRouter()
+  const { t } = useTranslation()
+  return (
+    <Layout>
+      <h1>{t("blog:headline")}</h1>
+      {postsList.map((post: IBlogPost) => (
+        <div key={post.slug} className="post">
+          <Link href="/blog/post/[slug]" as={`/blog/post/${post.slug}`}>
+            <a>
+              <img
+                src={
+                  post.attributes[router.locale ?? i18n.defaultLocale]
+                    ?.thumbnail
+                }
+              />
+              <h2>
+                {post.attributes[router.locale ?? i18n.defaultLocale]?.title}
+              </h2>
+            </a>
+          </Link>
+        </div>
+      ))}
+    </Layout>
+  )
+}
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const postsList = await importBlogPosts()
