@@ -1,6 +1,6 @@
 import { useTranslation } from "next-i18next"
 import Link from "next/link"
-import Script from "next/script"
+import ContrastSelector from "./ContrastSelector"
 import LocaleSelector from "./LocaleSelector"
 
 export default function Navbar() {
@@ -8,7 +8,6 @@ export default function Navbar() {
 
   return (
     <>
-      <Script type="text/javascript" src="/js/themeSwitcher.js" />
       <nav className="container-fluid">
         <ul>
           <li>
@@ -24,36 +23,7 @@ export default function Navbar() {
           <li>
             <LocaleSelector />
           </li>
-          <li>
-            <a
-              href="#"
-              className="contrast"
-              data-theme-switcher="auto"
-              onClick={(event) => event.preventDefault()}
-            >
-              {t("menu.theme.auto")}
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="contrast"
-              data-theme-switcher="light"
-              onClick={(event) => event.preventDefault()}
-            >
-              {t("menu.theme.light")}
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="contrast"
-              data-theme-switcher="dark"
-              onClick={(event) => event.preventDefault()}
-            >
-              {t("menu.theme.dark")}
-            </a>
-          </li>
+          <ContrastSelector />
         </ul>
       </nav>
     </>
