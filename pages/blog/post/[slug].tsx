@@ -4,9 +4,9 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { NextParsedUrlQuery } from "next/dist/server/request-meta"
 import { useRouter } from "next/router"
 import path from "path"
-import Layout from "../../../components/DefaultLayout"
-import { i18n } from "../../../next-i18next.config"
-import { IBlogPost } from "../../../types/Blog"
+import Layout from "components/DefaultLayout"
+import { i18n } from "next-i18next.config"
+import { IBlogPost } from "types/Blog"
 
 interface IParams extends NextParsedUrlQuery {
   slug: string

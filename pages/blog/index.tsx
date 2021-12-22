@@ -1,11 +1,11 @@
 import Link from "next/link"
-import Layout from "../../components/DefaultLayout"
+import Layout from "components/DefaultLayout"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps } from "next"
-import config, { i18n } from "../../next-i18next.config"
+import config, { i18n } from "next-i18next.config"
 import { useRouter } from "next/router"
 import { useTranslation } from "next-i18next"
-import { IBlogPost } from "../../types/Blog"
+import { IBlogPost } from "types/Blog"
 
 const importBlogPosts = async () => {
   // https://webpack.js.org/guides/dependency-management/#requirecontext

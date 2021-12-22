@@ -1,8 +1,8 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps } from "next/types"
-import Layout from "../components/DefaultLayout"
-import { attributes, html } from "../content/about.md"
-import { i18n } from "../next-i18next.config"
+import Layout from "components/DefaultLayout"
+import { attributes, html } from "content/about.md"
+import { i18n } from "next-i18next.config"
 
 const About = () => (
   <Layout>
