@@ -5,8 +5,9 @@ import { GetStaticProps, NextPage } from "next"
 import config, { i18n } from "next-i18next.config"
 import { useRouter } from "next/router"
 import { useTranslation } from "next-i18next"
-import { IBlogPost, INewBlogPost } from "types/Blog"
+import { INewBlogPost } from "types/Blog"
 import { fetchAllBlogPosts } from "lib/blog/posts"
+import BlogPostCard from "components/blog/BlogPostCard"
 
 interface IProps {
   postsList: INewBlogPost[]
@@ -19,19 +20,15 @@ const Blog: NextPage<IProps> = ({ postsList }) => {
   return (
     <Layout>
       <h1>{t("blog:headline")}</h1>
-      {postsList.map((post: INewBlogPost) => (
-        <div key={post[i18n.defaultLocale].slug} className="post">
-          <Link
-            href="/blog/post/[slug]"
-            as={`/blog/post/${post[i18n.defaultLocale].slug}`}
-          >
-            <a>
-              <img src={post[i18n.defaultLocale].thumbnail} />
-              <h2>{post[router.locale ?? i18n.defaultLocale].title}</h2>
-            </a>
-          </Link>
-        </div>
-      ))}
+      {postsList.map((post: INewBlogPost) => {
+        const localizedPost = post[router.locale ?? i18n.defaultLocale]
+        return (
+          <BlogPostCard
+            key={localizedPost.slug}
+            localizedPost={localizedPost}
+          />
+        )
+      })}
     </Layout>
   )
 }

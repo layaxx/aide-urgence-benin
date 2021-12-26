@@ -2,8 +2,9 @@ import { INewBlogPost } from "types/Blog"
 import fs from "fs"
 import path from "path"
 import { i18n } from "next-i18next.config"
+import { getAuthorBySlug } from "./authors"
 
-const directory = "content/blogPosts" as const
+const directory = "content/blog/posts" as const
 
 let postCache: INewBlogPost[]
 
@@ -41,11 +42,29 @@ export async function fetchAllBlogPosts() {
         result.flatMap(async (blogName) => {
           const slug = blogName.substring(0, blogName.length - 3)
 
-          const importedBlogPost = await import(`content/blogPosts/${slug}.md`)
+          const importedBlogPost = await import(`../../${directory}/${slug}.md`)
+
+          const authorSlug =
+            importedBlogPost.attributes[i18n.defaultLocale].author
+
+          const author = (await getAuthorBySlug(authorSlug)) ?? null
+
           return {
-            de: { ...importedBlogPost.attributes.de, slug },
-            en: { ...importedBlogPost.attributes.en, slug },
-            fr: { ...importedBlogPost.attributes.fr, slug },
+            de: {
+              ...importedBlogPost.attributes.de,
+              slug,
+              author: author?.de ?? null,
+            },
+            en: {
+              ...importedBlogPost.attributes.en,
+              slug,
+              author: author?.en ?? null,
+            },
+            fr: {
+              ...importedBlogPost.attributes.fr,
+              slug,
+              author: author?.fr ?? null,
+            },
           }
         })
       )
@@ -59,5 +78,5 @@ export async function fetchAllBlogPosts() {
     }
   })
 
-  return postCache ?? allData
+  return postCache
 }

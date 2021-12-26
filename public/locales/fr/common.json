@@ -1,4 +1,11 @@
 {
+  "menu": {
+    "theme": {
+      "auto": "",
+      "light": "",
+      "dark": ""
+    }
+  },
   "footer": {
     "tagline": "",
     "links": {
@@ -11,12 +18,5 @@
   "hero": {
     "tagline": "",
     "cta": ""
-  },
-  "menu": {
-    "theme": {
-      "auto": "",
-      "light": "",
-      "dark": ""
-    }
   }
 }

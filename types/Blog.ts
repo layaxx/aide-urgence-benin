@@ -6,20 +6,34 @@ export interface IBlogPost {
     [key: typeof i18n.defaultLocale]: { title: string; thumbnail: string }
   }
 }
-interface IAuthor {
-  /* TODO: */
-}
 
-interface ILocalizedBlogPost {
+export interface ILocalizedBlogPost {
   title: string
   thumbnail: string
   content: string
   author?: IAuthor
-  tags: [string]
+  tags: string[]
   slug: string
   date: string
 }
 
 export interface INewBlogPost {
   [key: typeof i18n.defaultLocale]: ILocalizedBlogPost
+}
+
+interface SocialLink {
+  url: string
+  name: string
+}
+
+interface ILocalizedAuthor {
+  name: string
+  portrait: string
+  description: string
+  socials: SocialLink[]
+  slug: string
+}
+
+export interface IAuthor {
+  [key: typeof i18n.defaultLocale]: ILocalizedAuthor
 }

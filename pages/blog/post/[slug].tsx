@@ -2,10 +2,15 @@ import { GetStaticProps } from "next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { NextParsedUrlQuery } from "next/dist/server/request-meta"
 import { useRouter } from "next/router"
-import Layout from "components/layouts/DefaultLayout"
+import Layout from "components/layouts/BlogLayout"
 import { i18n } from "next-i18next.config"
 import { INewBlogPost } from "types/Blog"
 import { getAllBlogPostPaths, getBlogPostBySlug } from "lib/blog/posts"
+import AuthorHighlight from "components/blog/AuthorHighlight"
+import dayjs from "dayjs"
+import { useTranslation } from "next-i18next"
+
+import styles from "./[slug].module.css"
 
 interface IParams extends NextParsedUrlQuery {
   slug: string
@@ -20,14 +25,28 @@ const Post = ({ post }: IProps) => {
 
   const router = useRouter()
 
+  const { t } = useTranslation()
+
   const localizedAttributes = post[router.locale ?? i18n.defaultLocale]
 
   return (
     <Layout>
-      <article>
-        <h1>{localizedAttributes.title}</h1>
-        <img src={localizedAttributes.thumbnail} />
-      </article>
+      {localizedAttributes.thumbnail && (
+        <img src={localizedAttributes.thumbnail} className={styles.thumbnail} />
+      )}
+      <h1>{localizedAttributes.title}</h1>
+      <small>
+        {t("blog:published-by", {
+          name: localizedAttributes.author?.name ?? "anon",
+          date: dayjs(localizedAttributes.date)
+            .toDate()
+            .toLocaleString(router.locale ?? i18n.defaultLocale),
+        })}
+      </small>
+
+      {localizedAttributes.author && (
+        <AuthorHighlight author={localizedAttributes.author} />
+      )}
     </Layout>
   )
 }
@@ -52,7 +71,7 @@ export const getStaticProps: GetStaticProps<IProps, IParams> = async ({
         "common",
         "blog",
       ])),
-      post: post,
+      post,
     },
   }
 }

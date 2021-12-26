@@ -63,6 +63,10 @@ aside p {
 }
 
 /* Footer */
+footer {
+    padding-bottom: 1rem
+}
+
 footer.flex-between {
     display: flex;
     justify-content: space-between;

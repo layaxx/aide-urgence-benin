@@ -28,7 +28,7 @@ collections:
   - label: "Blog"
     i18n: true
     name: "blog"
-    folder: "content/blogPosts"
+    folder: "content/blog/posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
@@ -59,6 +59,56 @@ collections:
           widget: "markdown",
           required: true,
           i18n: true,
+        }
+      - {
+          label: "Author",
+          name: "author",
+          widget: "relation",
+          required: false,
+          i18n: duplicate,
+          collection: "authors",
+          search_fields: ["name"],
+          value_field: "name",
+        }
+  - label: "Authors"
+    i18n: true
+    name: "authors"
+    folder: "content/blog/authors"
+    create: true
+    slug: "{{name}}"
+    fields:
+      - {
+          label: "Name",
+          name: "name",
+          widget: "string",
+          required: true,
+          i18n: duplicate,
+        }
+      - {
+          label: "Portrait",
+          name: "portrait",
+          widget: "image",
+          required: true,
+          i18n: duplicate,
+        }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "markdown",
+          required: true,
+          i18n: true,
+        }
+      - {
+          label: "Socials",
+          name: "socials",
+          widget: "list",
+          required: false,
+          i18n: false,
+          fields:
+            [
+              { label: URL, name: url, widget: string },
+              { label: Name, name: name, widget: string },
+            ],
         }
 
 i18n:

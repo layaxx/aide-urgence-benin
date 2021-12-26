@@ -21,6 +21,13 @@ export default function Navbar() {
 
         <ul>
           <li>
+            <Link href="/blog">
+              <a>
+                <strong>{t("menu.links.blog")}</strong>
+              </a>
+            </Link>
+          </li>
+          <li>
             <LocaleSelector />
           </li>
           <ContrastSelector />

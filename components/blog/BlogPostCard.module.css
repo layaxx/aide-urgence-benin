@@ -1,0 +1,24 @@
+.container {
+    width: 20rem;
+    padding: 0;
+}
+
+.container img {
+    max-height: 10rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.container>div {
+    padding: 1rem;
+}
+
+.container>div>a>h2 {
+    margin: 0;
+    font-weight: 400;
+}
+
+.container .details {
+    display: flex;
+    justify-content: space-between;
+}
