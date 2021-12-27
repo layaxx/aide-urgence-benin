@@ -9,9 +9,9 @@ export interface IBlogPost {
 
 export interface ILocalizedBlogPost {
   title: string
-  thumbnail: string
-  content: string
-  author?: IAuthor
+  thumbnail?: string
+  body: string
+  author?: ILocalizedAuthor
   tags: string[]
   slug: string
   date: string
@@ -26,7 +26,7 @@ interface SocialLink {
   name: string
 }
 
-interface ILocalizedAuthor {
+export interface ILocalizedAuthor {
   name: string
   portrait: string
   description: string

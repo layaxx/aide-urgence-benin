@@ -4,9 +4,12 @@ import { NextParsedUrlQuery } from "next/dist/server/request-meta"
 import { useRouter } from "next/router"
 import Layout from "components/layouts/BlogLayout"
 import { i18n } from "next-i18next.config"
-import { IAuthor } from "types/Blog"
+import { IAuthor, INewBlogPost } from "types/Blog"
 import { getAllAuthorPaths, getAuthorBySlug } from "lib/blog/authors"
 import { useTranslation } from "next-i18next"
+import { fetchAllBlogPosts, getBlogPostByAuthor } from "lib/blog/posts"
+import BlogPostCard from "components/blog/BlogPostCard"
+import Markdown from "markdown-to-jsx"
 
 interface IParams extends NextParsedUrlQuery {
   slug: string
@@ -14,9 +17,10 @@ interface IParams extends NextParsedUrlQuery {
 
 interface IProps {
   author: IAuthor | undefined
+  posts: INewBlogPost[]
 }
 
-const AuthorPage = ({ author }: IProps) => {
+const AuthorPage = ({ author, posts }: IProps) => {
   if (!author) return <div>not found</div>
 
   const router = useRouter()
@@ -28,10 +32,11 @@ const AuthorPage = ({ author }: IProps) => {
     <Layout>
       <h1>{localizedAttributes.name}</h1>
       <img src={localizedAttributes.portrait} />
-      <p>{localizedAttributes.description}</p>
+      <br />
+      <Markdown>{localizedAttributes.description}</Markdown>
       {localizedAttributes.socials?.length && (
         <>
-          <h2>{t("blog:heading:socials")}</h2>
+          <h2>{t("blog:heading.socials")}</h2>
           <ul>
             {localizedAttributes.socials.map((entry, index) => (
               <li key={index}>
@@ -41,6 +46,17 @@ const AuthorPage = ({ author }: IProps) => {
           </ul>
         </>
       )}
+      <h2>{t("blog:posts-by-author", { name: localizedAttributes.name })}</h2>
+      <div>
+        {posts.length
+          ? posts.map((post, index) => (
+              <BlogPostCard
+                key={index}
+                localizedPost={post[router.locale ?? i18n.defaultLocale]}
+              />
+            ))
+          : t("blog:no-posts")}
+      </div>
     </Layout>
   )
 }
@@ -58,6 +74,7 @@ export const getStaticProps: GetStaticProps<IProps, IParams> = async ({
   locale,
 }) => {
   const author = await getAuthorBySlug(params?.slug ?? "", locale)
+  const posts = await getBlogPostByAuthor(params?.slug ?? "")
 
   return {
     props: {
@@ -66,6 +83,7 @@ export const getStaticProps: GetStaticProps<IProps, IParams> = async ({
         "blog",
       ])),
       author,
+      posts,
     },
   }
 }

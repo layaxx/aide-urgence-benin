@@ -23,6 +23,12 @@ export async function getAllBlogPostPaths() {
   )
 }
 
+export async function getBlogPostByAuthor(slug: string) {
+  return (await fetchAllBlogPosts()).filter(
+    (post) => post[i18n.defaultLocale].author?.name === slug
+  )
+}
+
 export async function getBlogPostBySlug(
   slug: string,
   locale?: string | undefined

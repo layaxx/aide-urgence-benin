@@ -13,17 +13,17 @@ collections:
     files:
       - label: "Home"
         name: "home"
+        i18n: true
         file: "content/home.md"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Publish Date", name: "date", widget: "datetime" }
-          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Title", name: "title", widget: "string", i18n: true }
+          - { label: "Body", name: "body", widget: "markdown", i18n: true }
       - label: "About"
         name: "about"
+        i18n: true
         file: "content/about.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Publish Date", name: "date", widget: "datetime" }
           - { label: "Body", name: "body", widget: "markdown" }
   - label: "Blog"
     i18n: true
@@ -50,7 +50,7 @@ collections:
           label: "Featured Image",
           name: "thumbnail",
           widget: "image",
-          required: true,
+          required: false,
           i18n: duplicate,
         }
       - {

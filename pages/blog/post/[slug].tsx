@@ -11,6 +11,7 @@ import dayjs from "dayjs"
 import { useTranslation } from "next-i18next"
 
 import styles from "./[slug].module.css"
+import Markdown from "markdown-to-jsx"
 
 interface IParams extends NextParsedUrlQuery {
   slug: string
@@ -43,6 +44,8 @@ const Post = ({ post }: IProps) => {
             .toLocaleString(router.locale ?? i18n.defaultLocale),
         })}
       </small>
+
+      <Markdown>{localizedAttributes.body}</Markdown>
 
       {localizedAttributes.author && (
         <AuthorHighlight author={localizedAttributes.author} />
