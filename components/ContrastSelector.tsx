@@ -38,43 +38,31 @@ export default function ContrastSelector() {
     } catch (_error) {}
   }, [contrast])
 
+  // t('menu.theme.dark')
+  // t('menu.theme.auto')
+  // t('menu.theme.light')
+
   return (
     <>
-      <li>
-        <a
-          href="#"
-          className="contrast"
-          onClick={(e) => {
-            e.preventDefault()
-            setContrast(Contrast.AUTO)
+      <li aria-label={t("menu.theme.label")}>
+        <select
+          name="locale"
+          id="locale-switcher"
+          onChange={(event) => {
+            if (event.target.value !== contrast) {
+              setContrast(event.target.value as Contrast)
+            }
           }}
         >
-          {t("menu.theme.auto")}
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          className="contrast"
-          onClick={(e) => {
-            e.preventDefault()
-            setContrast(Contrast.LIGHT)
-          }}
-        >
-          {t("menu.theme.light")}
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          className="contrast"
-          onClick={(e) => {
-            e.preventDefault()
-            setContrast(Contrast.DARK)
-          }}
-        >
-          {t("menu.theme.dark")}
-        </a>
+          <option value={contrast}>{t("menu.theme." + contrast)}</option>
+          {Object.values(Contrast)
+            .filter((str) => str !== contrast)
+            .map((contrastOption) => (
+              <option value={contrastOption} key={contrastOption}>
+                {t("menu.theme." + contrastOption)}
+              </option>
+            ))}
+        </select>
       </li>
     </>
   )

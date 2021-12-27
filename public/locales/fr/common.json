@@ -1,9 +1,10 @@
 {
   "menu": {
     "theme": {
+      "dark": "",
       "auto": "",
       "light": "",
-      "dark": ""
+      "label": ""
     },
     "links": {
       "blog": ""

@@ -1,5 +1,15 @@
 {
-  "heading:socials": "",
+  "nav": {
+    "next": "",
+    "all": "",
+    "prev": ""
+  },
+  "heading": {
+    "socials": "",
+    "about-the-author": ""
+  },
+  "posts-by-author": "",
+  "no-posts": "",
   "headline": "",
   "published-by": ""
 }

@@ -1,25 +1,26 @@
 {
   "menu": {
     "theme": {
-      "auto": "",
-      "light": "",
-      "dark": ""
+      "dark": "Darkmode aktivieren",
+      "auto": "Darkmode automatisch einstellen",
+      "light": "Darkmode deaktivieren",
+      "label": "Darkmode Einstellung"
     },
     "links": {
-      "blog": ""
+      "blog": "Blog"
     }
   },
   "footer": {
-    "tagline": "",
+    "tagline": "No Cookies - No Tracking - No Ads",
     "links": {
-      "imprint": ""
+      "imprint": "Impressum"
     }
   },
   "config": {
-    "name": ""
+    "name": "Aide Urgence Bénin"
   },
   "hero": {
-    "tagline": "",
-    "cta": ""
+    "tagline": "Tagline deutsch",
+    "cta": "Jetzt spenden!"
   }
 }

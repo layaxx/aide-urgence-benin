@@ -1,5 +1,15 @@
 {
-  "heading:socials": "",
-  "headline": "",
+  "nav": {
+    "next": "Next Post",
+    "all": "All Posts",
+    "prev": "Previous Post"
+  },
+  "heading": {
+    "socials": "Social Media Links",
+    "about-the-author": "About the Author"
+  },
+  "posts-by-author": "All Posts by Author",
+  "no-posts": "no posts found.",
+  "headline": "The Blog",
   "published-by": "published on {{date}} by {{name}}"
 }
