@@ -18,7 +18,11 @@ const BlogPostCard: React.FC<IProps> = ({ localizedPost }) => {
     <article key={localizedPost.slug} className={styles.container}>
       <Link href="/blog/post/[slug]" as={`/blog/post/${localizedPost.slug}`}>
         <a>
-          <img src={localizedPost.thumbnail} />
+          {localizedPost.thumbnail ? (
+            <img src={localizedPost.thumbnail} />
+          ) : (
+            <div className={styles.imagePlaceholder} data-theme="dark" />
+          )}
         </a>
       </Link>
       <div>

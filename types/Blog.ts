@@ -37,3 +37,8 @@ export interface ILocalizedAuthor {
 export interface IAuthor {
   [key: typeof i18n.defaultLocale]: ILocalizedAuthor
 }
+
+export interface INavigationData {
+  prev: ILocalizedBlogPost | null
+  next: ILocalizedBlogPost | null
+}

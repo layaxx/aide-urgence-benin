@@ -4,14 +4,20 @@ import { NextParsedUrlQuery } from "next/dist/server/request-meta"
 import { useRouter } from "next/router"
 import Layout from "components/layouts/BlogLayout"
 import { i18n } from "next-i18next.config"
-import { INewBlogPost } from "types/Blog"
-import { getAllBlogPostPaths, getBlogPostBySlug } from "lib/blog/posts"
+import { INavigationData, INewBlogPost } from "types/Blog"
+import {
+  getAllBlogPostPaths,
+  getBlogPostBySlug,
+  getNavigationDataForBlog,
+} from "lib/blog/posts"
 import AuthorHighlight from "components/blog/AuthorHighlight"
 import dayjs from "dayjs"
 import { useTranslation } from "next-i18next"
 
 import styles from "./[slug].module.css"
 import Markdown from "markdown-to-jsx"
+import { FC } from "react"
+import BlogNavigation from "components/blog/BlogNavigation"
 
 interface IParams extends NextParsedUrlQuery {
   slug: string
@@ -19,9 +25,10 @@ interface IParams extends NextParsedUrlQuery {
 
 interface IProps {
   post: INewBlogPost | undefined
+  navigationData: INavigationData
 }
 
-const Post = ({ post }: IProps) => {
+const Post: FC<IProps> = ({ post, navigationData }) => {
   if (!post) return <div>not found</div>
 
   const router = useRouter()
@@ -36,6 +43,7 @@ const Post = ({ post }: IProps) => {
         <img src={localizedAttributes.thumbnail} className={styles.thumbnail} />
       )}
       <h1>{localizedAttributes.title}</h1>
+
       <small>
         {t("blog:published-by", {
           name: localizedAttributes.author?.name ?? "anon",
@@ -44,11 +52,17 @@ const Post = ({ post }: IProps) => {
             .toLocaleString(router.locale ?? i18n.defaultLocale),
         })}
       </small>
+      <br />
 
       <Markdown>{localizedAttributes.body}</Markdown>
 
+      <BlogNavigation data={navigationData} />
+
       {localizedAttributes.author && (
-        <AuthorHighlight author={localizedAttributes.author} />
+        <>
+          <h2>{t("blog:heading.about-the-author")}</h2>
+          <AuthorHighlight author={localizedAttributes.author} />
+        </>
       )}
     </Layout>
   )
@@ -67,6 +81,10 @@ export const getStaticProps: GetStaticProps<IProps, IParams> = async ({
   locale,
 }) => {
   const post = await getBlogPostBySlug(params?.slug ?? "", locale)
+  const navigationData = await getNavigationDataForBlog(
+    params?.slug ?? "",
+    locale
+  )
 
   return {
     props: {
@@ -75,6 +93,7 @@ export const getStaticProps: GetStaticProps<IProps, IParams> = async ({
         "blog",
       ])),
       post,
+      navigationData,
     },
   }
 }

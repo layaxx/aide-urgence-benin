@@ -29,6 +29,27 @@ export async function getBlogPostByAuthor(slug: string) {
   )
 }
 
+export async function getNavigationDataForBlog(
+  slug: string,
+  locale: string | undefined
+) {
+  const allPosts = await fetchAllBlogPosts()
+  const postIndex = allPosts.findIndex(
+    (post) => post[i18n.defaultLocale].slug === slug
+  )
+
+  if (postIndex === -1) {
+    throw new Error("Failed to load Navigation Data for " + slug)
+  }
+
+  const prev = allPosts[postIndex + 1]
+  const next = allPosts[postIndex - 1]
+  return {
+    prev: prev ? prev[locale ?? i18n.defaultLocale] : null,
+    next: next ? next[locale ?? i18n.defaultLocale] : null,
+  }
+}
+
 export async function getBlogPostBySlug(
   slug: string,
   locale?: string | undefined

@@ -9,6 +9,8 @@ import { INewBlogPost } from "types/Blog"
 import { fetchAllBlogPosts } from "lib/blog/posts"
 import BlogPostCard from "components/blog/BlogPostCard"
 
+import styles from "./index.module.css"
+
 interface IProps {
   postsList: INewBlogPost[]
 }
@@ -20,15 +22,17 @@ const Blog: NextPage<IProps> = ({ postsList }) => {
   return (
     <Layout>
       <h1>{t("blog:headline")}</h1>
-      {postsList.map((post: INewBlogPost) => {
-        const localizedPost = post[router.locale ?? i18n.defaultLocale]
-        return (
-          <BlogPostCard
-            key={localizedPost.slug}
-            localizedPost={localizedPost}
-          />
-        )
-      })}
+      <div className={styles.container}>
+        {postsList.map((post: INewBlogPost) => {
+          const localizedPost = post[router.locale ?? i18n.defaultLocale]
+          return (
+            <BlogPostCard
+              key={localizedPost.slug}
+              localizedPost={localizedPost}
+            />
+          )
+        })}
+      </div>
     </Layout>
   )
 }

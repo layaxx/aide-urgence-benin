@@ -9,6 +9,11 @@
     object-fit: cover;
 }
 
+.imagePlaceholder {
+    height: 10rem;
+    background: var(--background-color);
+}
+
 .container>div {
     padding: 1rem;
 }
