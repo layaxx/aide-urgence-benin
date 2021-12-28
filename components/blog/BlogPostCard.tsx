@@ -1,6 +1,6 @@
 import dayjs from "dayjs"
-import { useTranslation } from "next-i18next"
 import { i18n } from "next-i18next.config"
+import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { ILocalizedBlogPost } from "types/Blog"
@@ -19,7 +19,10 @@ const BlogPostCard: React.FC<IProps> = ({ localizedPost }) => {
       <Link href="/blog/post/[slug]" as={`/blog/post/${localizedPost.slug}`}>
         <a>
           {localizedPost.thumbnail ? (
-            <img src={localizedPost.thumbnail} />
+            <Image
+              src={localizedPost.thumbnail}
+              alt={"thumbnail " + localizedPost.title}
+            />
           ) : (
             <div className={styles.imagePlaceholder} data-theme="dark" />
           )}

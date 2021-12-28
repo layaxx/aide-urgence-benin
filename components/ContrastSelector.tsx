@@ -1,6 +1,7 @@
 import { useTranslation } from "next-i18next"
 import { useEffect, useState } from "react"
 
+// eslint-disable-next-line no-unused-vars
 enum Contrast {
   AUTO = "auto",
   DARK = "dark",
@@ -41,7 +42,6 @@ export default function ContrastSelector() {
   // t('menu.theme.dark')
   // t('menu.theme.auto')
   // t('menu.theme.light')
-
   return (
     <>
       <li aria-label={t("menu.theme.label")}>

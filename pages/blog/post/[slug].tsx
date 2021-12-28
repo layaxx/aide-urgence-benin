@@ -18,6 +18,7 @@ import styles from "./[slug].module.css"
 import Markdown from "markdown-to-jsx"
 import { FC } from "react"
 import BlogNavigation from "components/blog/BlogNavigation"
+import Image from "next/image"
 
 interface IParams extends NextParsedUrlQuery {
   slug: string
@@ -29,18 +30,21 @@ interface IProps {
 }
 
 const Post: FC<IProps> = ({ post, navigationData }) => {
-  if (!post) return <div>not found</div>
-
   const router = useRouter()
-
   const { t } = useTranslation()
+
+  if (!post) return <div>not found</div>
 
   const localizedAttributes = post[router.locale ?? i18n.defaultLocale]
 
   return (
     <Layout>
       {localizedAttributes.thumbnail && (
-        <img src={localizedAttributes.thumbnail} className={styles.thumbnail} />
+        <Image
+          src={localizedAttributes.thumbnail}
+          className={styles.thumbnail}
+          alt="thumbnail"
+        />
       )}
       <h1>{localizedAttributes.title}</h1>
 

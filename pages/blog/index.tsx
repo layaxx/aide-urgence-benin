@@ -1,4 +1,3 @@
-import Link from "next/link"
 import Layout from "components/layouts/DefaultLayout"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps, NextPage } from "next"

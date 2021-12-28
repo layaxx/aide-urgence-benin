@@ -7,9 +7,10 @@ import { i18n } from "next-i18next.config"
 import { IAuthor, INewBlogPost } from "types/Blog"
 import { getAllAuthorPaths, getAuthorBySlug } from "lib/blog/authors"
 import { useTranslation } from "next-i18next"
-import { fetchAllBlogPosts, getBlogPostByAuthor } from "lib/blog/posts"
+import { getBlogPostByAuthor } from "lib/blog/posts"
 import BlogPostCard from "components/blog/BlogPostCard"
 import Markdown from "markdown-to-jsx"
+import Image from "next/image"
 
 interface IParams extends NextParsedUrlQuery {
   slug: string
@@ -21,17 +22,20 @@ interface IProps {
 }
 
 const AuthorPage = ({ author, posts }: IProps) => {
-  if (!author) return <div>not found</div>
-
   const router = useRouter()
   const { t } = useTranslation()
+
+  if (!author) return <div>not found</div>
 
   const localizedAttributes = author[router.locale ?? i18n.defaultLocale]
 
   return (
     <Layout>
       <h1>{localizedAttributes.name}</h1>
-      <img src={localizedAttributes.portrait} />
+      <Image
+        src={localizedAttributes.portrait}
+        alt={"portrait " + localizedAttributes.name}
+      />
       <br />
       <Markdown>{localizedAttributes.description}</Markdown>
       {localizedAttributes.socials?.length && (
