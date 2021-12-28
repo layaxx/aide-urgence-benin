@@ -1,9 +1,22 @@
 {
+  "contact": {
+    "label": "Contact",
+    "headings": {
+      "first": "Contact",
+      "second": "Send us a message!"
+    },
+    "placeholders": {
+      "name": "name",
+      "email": "email",
+      "message": "message"
+    },
+    "btn": "Send"
+  },
   "menu": {
     "theme": {
-      "dark": "actrivate Darkmode",
-      "auto": "auto Darkmode",
-      "light": "deactivate Darkmode",
+      "dark": "dark",
+      "auto": "auto",
+      "light": "light",
       "label": "Darkmode setting"
     },
     "links": {

@@ -1,9 +1,22 @@
 {
+  "contact": {
+    "label": "Kontaktformular",
+    "headings": {
+      "first": "Kontakformular",
+      "second": "Fragen, Anmerkungen oder Feedback? Gerne hier loswerden."
+    },
+    "placeholders": {
+      "name": "Name",
+      "email": "E-Mail",
+      "message": "Nachricht"
+    },
+    "btn": "Absenden"
+  },
   "menu": {
     "theme": {
-      "dark": "Darkmode aktivieren",
-      "auto": "Darkmode automatisch einstellen",
-      "light": "Darkmode deaktivieren",
+      "dark": "Darkmode",
+      "auto": "Auto",
+      "light": "Lightmode",
       "label": "Darkmode Einstellung"
     },
     "links": {

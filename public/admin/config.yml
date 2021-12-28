@@ -3,126 +3,520 @@ backend:
   branch: main
 media_folder: static/img
 slug:
-  encoding: "ascii"
+  encoding: ascii
   clean_accents: true
-  sanitize_replacement: "_"
+  sanitize_replacement: _
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: Translations
+    label: translations
+    format: json
+    i18n: false
+    files:
+      - label: de - blog.json
+        name: de - blog.json
+        file: ./public/locales/de/blog.json
+        fields:
+          - label: nav
+            name: nav
+            widget: object
+            fields:
+              - label: next
+                name: next
+                widget: string
+              - label: all
+                name: all
+                widget: string
+              - label: prev
+                name: prev
+                widget: string
+          - label: heading
+            name: heading
+            widget: object
+            fields:
+              - label: socials
+                name: socials
+                widget: string
+              - label: about-the-author
+                name: about-the-author
+                widget: string
+          - label: posts-by-author
+            name: posts-by-author
+            widget: string
+          - label: no-posts
+            name: no-posts
+            widget: string
+          - label: headline
+            name: headline
+            widget: string
+          - label: published-by
+            name: published-by
+            widget: string
+      - label: en - blog.json
+        name: en - blog.json
+        file: ./public/locales/en/blog.json
+        fields:
+          - label: nav
+            name: nav
+            widget: object
+            fields:
+              - label: next
+                name: next
+                widget: string
+              - label: all
+                name: all
+                widget: string
+              - label: prev
+                name: prev
+                widget: string
+          - label: heading
+            name: heading
+            widget: object
+            fields:
+              - label: socials
+                name: socials
+                widget: string
+              - label: about-the-author
+                name: about-the-author
+                widget: string
+          - label: posts-by-author
+            name: posts-by-author
+            widget: string
+          - label: no-posts
+            name: no-posts
+            widget: string
+          - label: headline
+            name: headline
+            widget: string
+          - label: published-by
+            name: published-by
+            widget: string
+      - label: fr - blog.json
+        name: fr - blog.json
+        file: ./public/locales/fr/blog.json
+        fields:
+          - label: nav
+            name: nav
+            widget: object
+            fields:
+              - label: next
+                name: next
+                widget: string
+              - label: all
+                name: all
+                widget: string
+              - label: prev
+                name: prev
+                widget: string
+          - label: heading
+            name: heading
+            widget: object
+            fields:
+              - label: socials
+                name: socials
+                widget: string
+              - label: about-the-author
+                name: about-the-author
+                widget: string
+          - label: posts-by-author
+            name: posts-by-author
+            widget: string
+          - label: no-posts
+            name: no-posts
+            widget: string
+          - label: headline
+            name: headline
+            widget: string
+          - label: published-by
+            name: published-by
+            widget: string
+      - label: de - common.json
+        name: de - common.json
+        file: ./public/locales/de/common.json
+        fields:
+          - label: contact
+            name: contact
+            widget: object
+            fields:
+              - label: label
+                name: label
+                widget: string
+              - label: headings
+                name: headings
+                widget: object
+                fields:
+                  - label: first
+                    name: first
+                    widget: string
+                  - label: second
+                    name: second
+                    widget: string
+              - label: placeholders
+                name: placeholders
+                widget: object
+                fields:
+                  - label: name
+                    name: name
+                    widget: string
+                  - label: email
+                    name: email
+                    widget: string
+                  - label: message
+                    name: message
+                    widget: string
+              - label: btn
+                name: btn
+                widget: string
+          - label: menu
+            name: menu
+            widget: object
+            fields:
+              - label: theme
+                name: theme
+                widget: object
+                fields:
+                  - label: dark
+                    name: dark
+                    widget: string
+                  - label: auto
+                    name: auto
+                    widget: string
+                  - label: light
+                    name: light
+                    widget: string
+                  - label: label
+                    name: label
+                    widget: string
+              - label: links
+                name: links
+                widget: object
+                fields:
+                  - label: blog
+                    name: blog
+                    widget: string
+          - label: footer
+            name: footer
+            widget: object
+            fields:
+              - label: tagline
+                name: tagline
+                widget: string
+              - label: links
+                name: links
+                widget: object
+                fields:
+                  - label: imprint
+                    name: imprint
+                    widget: string
+          - label: config
+            name: config
+            widget: object
+            fields:
+              - label: name
+                name: name
+                widget: string
+          - label: hero
+            name: hero
+            widget: object
+            fields:
+              - label: tagline
+                name: tagline
+                widget: string
+              - label: cta
+                name: cta
+                widget: string
+      - label: en - common.json
+        name: en - common.json
+        file: ./public/locales/en/common.json
+        fields:
+          - label: contact
+            name: contact
+            widget: object
+            fields:
+              - label: label
+                name: label
+                widget: string
+              - label: headings
+                name: headings
+                widget: object
+                fields:
+                  - label: first
+                    name: first
+                    widget: string
+                  - label: second
+                    name: second
+                    widget: string
+              - label: placeholders
+                name: placeholders
+                widget: object
+                fields:
+                  - label: name
+                    name: name
+                    widget: string
+                  - label: email
+                    name: email
+                    widget: string
+                  - label: message
+                    name: message
+                    widget: string
+              - label: btn
+                name: btn
+                widget: string
+          - label: menu
+            name: menu
+            widget: object
+            fields:
+              - label: theme
+                name: theme
+                widget: object
+                fields:
+                  - label: dark
+                    name: dark
+                    widget: string
+                  - label: auto
+                    name: auto
+                    widget: string
+                  - label: light
+                    name: light
+                    widget: string
+                  - label: label
+                    name: label
+                    widget: string
+              - label: links
+                name: links
+                widget: object
+                fields:
+                  - label: blog
+                    name: blog
+                    widget: string
+          - label: footer
+            name: footer
+            widget: object
+            fields:
+              - label: tagline
+                name: tagline
+                widget: string
+              - label: links
+                name: links
+                widget: object
+                fields:
+                  - label: imprint
+                    name: imprint
+                    widget: string
+          - label: config
+            name: config
+            widget: object
+            fields:
+              - label: name
+                name: name
+                widget: string
+          - label: hero
+            name: hero
+            widget: object
+            fields:
+              - label: tagline
+                name: tagline
+                widget: string
+              - label: cta
+                name: cta
+                widget: string
+      - label: fr - common.json
+        name: fr - common.json
+        file: ./public/locales/fr/common.json
+        fields:
+          - label: contact
+            name: contact
+            widget: object
+            fields:
+              - label: label
+                name: label
+                widget: string
+              - label: headings
+                name: headings
+                widget: object
+                fields:
+                  - label: first
+                    name: first
+                    widget: string
+                  - label: second
+                    name: second
+                    widget: string
+              - label: placeholders
+                name: placeholders
+                widget: object
+                fields:
+                  - label: name
+                    name: name
+                    widget: string
+                  - label: email
+                    name: email
+                    widget: string
+                  - label: message
+                    name: message
+                    widget: string
+              - label: btn
+                name: btn
+                widget: string
+          - label: menu
+            name: menu
+            widget: object
+            fields:
+              - label: theme
+                name: theme
+                widget: object
+                fields:
+                  - label: dark
+                    name: dark
+                    widget: string
+                  - label: auto
+                    name: auto
+                    widget: string
+                  - label: light
+                    name: light
+                    widget: string
+                  - label: label
+                    name: label
+                    widget: string
+              - label: links
+                name: links
+                widget: object
+                fields:
+                  - label: blog
+                    name: blog
+                    widget: string
+          - label: footer
+            name: footer
+            widget: object
+            fields:
+              - label: tagline
+                name: tagline
+                widget: string
+              - label: links
+                name: links
+                widget: object
+                fields:
+                  - label: imprint
+                    name: imprint
+                    widget: string
+          - label: config
+            name: config
+            widget: object
+            fields:
+              - label: name
+                name: name
+                widget: string
+          - label: hero
+            name: hero
+            widget: object
+            fields:
+              - label: tagline
+                name: tagline
+                widget: string
+              - label: cta
+                name: cta
+                widget: string
+  - name: pages
+    label: Pages
     i18n: true
     files:
-      - label: "Home"
-        name: "home"
+      - label: Home
+        name: home
         i18n: true
-        file: "content/home.md"
+        file: content/home.md
         fields:
-          - { label: "Title", name: "title", widget: "string", i18n: true }
-          - { label: "Body", name: "body", widget: "markdown", i18n: true }
-      - label: "About"
-        name: "about"
+          - label: Title
+            name: title
+            widget: string
+            i18n: true
+          - label: Body
+            name: body
+            widget: markdown
+            i18n: true
+      - label: About
+        name: about
         i18n: true
-        file: "content/about.md"
+        file: content/about.md
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
-  - label: "Blog"
+          - label: Title
+            name: title
+            widget: string
+          - label: Body
+            name: body
+            widget: markdown
+  - label: Blog
     i18n: true
-    name: "blog"
-    folder: "content/blog/posts"
+    name: blog
+    folder: content/blog/posts
     create: true
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
-      - {
-          label: "Title",
-          name: "title",
-          widget: "string",
-          required: true,
-          i18n: true,
-        }
-      - {
-          label: "Publish Date",
-          name: "date",
-          widget: "datetime",
-          required: true,
-          i18n: duplicate,
-        }
-      - {
-          label: "Featured Image",
-          name: "thumbnail",
-          widget: "image",
-          required: false,
-          i18n: duplicate,
-        }
-      - {
-          label: "Body",
-          name: "body",
-          widget: "markdown",
-          required: true,
-          i18n: true,
-        }
-      - {
-          label: "Author",
-          name: "author",
-          widget: "relation",
-          required: false,
-          i18n: duplicate,
-          collection: "authors",
-          search_fields: ["name"],
-          value_field: "name",
-        }
-  - label: "Authors"
+      - label: Title
+        name: title
+        widget: string
+        required: true
+        i18n: true
+      - label: Publish Date
+        name: date
+        widget: datetime
+        required: true
+        i18n: duplicate
+      - label: Featured Image
+        name: thumbnail
+        widget: image
+        required: false
+        i18n: duplicate
+      - label: Body
+        name: body
+        widget: markdown
+        required: true
+        i18n: true
+      - label: Author
+        name: author
+        widget: relation
+        required: false
+        i18n: duplicate
+        collection: authors
+        search_fields:
+          - name
+        value_field: name
+  - label: Authors
     i18n: true
-    name: "authors"
-    folder: "content/blog/authors"
+    name: authors
+    folder: content/blog/authors
     create: true
     slug: "{{name}}"
     fields:
-      - {
-          label: "Name",
-          name: "name",
-          widget: "string",
-          required: true,
-          i18n: duplicate,
-        }
-      - {
-          label: "Portrait",
-          name: "portrait",
-          widget: "image",
-          required: true,
-          i18n: duplicate,
-        }
-      - {
-          label: "Description",
-          name: "description",
-          widget: "markdown",
-          required: true,
-          i18n: true,
-        }
-      - {
-          label: "Socials",
-          name: "socials",
-          widget: "list",
-          required: false,
-          i18n: false,
-          fields:
-            [
-              { label: URL, name: url, widget: string },
-              { label: Name, name: name, widget: string },
-            ],
-        }
-
+      - label: Name
+        name: name
+        widget: string
+        required: true
+        i18n: duplicate
+      - label: Portrait
+        name: portrait
+        widget: image
+        required: true
+        i18n: duplicate
+      - label: Description
+        name: description
+        widget: markdown
+        required: true
+        i18n: true
+      - label: Socials
+        name: socials
+        widget: list
+        required: false
+        i18n: false
+        fields:
+          - label: URL
+            name: url
+            widget: string
+          - label: Name
+            name: name
+            widget: string
 i18n:
-  # Required and can be one of multiple_folders, multiple_files or single_file
-  # multiple_folders - persists files in `<folder>/<locale>/<slug>.<extension>`
-  # multiple_files - persists files in `<folder>/<slug>.<locale>.<extension>`
-  # single_file - persists a single file in `<folder>/<slug>.<extension>`
   structure: single_file
-
-  # Required - a list of locales to show in the editor UI
-  locales: [en, de, fr]
-
-  # Optional, defaults to the first item in locales.
-  # The locale to be used for fields validation and as a baseline for the entry.
+  locales:
+    - de
+    - en
+    - fr
   default_locale: en
-
 local_backend: true

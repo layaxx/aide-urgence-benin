@@ -6,7 +6,7 @@ import { i18n } from "next-i18next.config"
 
 const Home = () => {
   return (
-    <Layout>
+    <Layout contact>
       <h1>{attributes.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>

@@ -1,4 +1,17 @@
 {
+  "contact": {
+    "label": "",
+    "headings": {
+      "first": "",
+      "second": ""
+    },
+    "placeholders": {
+      "name": "",
+      "email": "",
+      "message": ""
+    },
+    "btn": ""
+  },
   "menu": {
     "theme": {
       "dark": "",
