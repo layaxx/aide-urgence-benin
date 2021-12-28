@@ -414,6 +414,19 @@ collections:
               - label: cta
                 name: cta
                 widget: string
+  - name: general Config
+    label: config
+    format: json
+    i18: false
+    files:
+      - label: Config
+        name: config
+        file: lib/config.json
+        fields:
+          - label: Title
+            name: title
+            widget: string
+            i18n: true
   - name: pages
     label: Pages
     i18n: true

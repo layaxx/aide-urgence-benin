@@ -16,7 +16,7 @@
     "generateCMSConfig": "node ./scripts/generateCMSConfig.mjs",
     "lint": "next lint",
     "prepare": "husky install",
-    "pre-commit": "yarn translate && yarn lint"
+    "pre-commit": "yarn translate && yarn lint && git add -A ."
   },
   "dependencies": {
     "@picocss/pico": "^1.4.2",
