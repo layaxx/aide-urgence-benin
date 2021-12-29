@@ -3,15 +3,11 @@
     padding: 0;
 }
 
-.container img {
-    max-height: 10rem;
-    width: 100%;
-    object-fit: cover;
-}
-
 .imagePlaceholder {
     height: 10rem;
+    width: 100%;
     background: var(--background-color);
+    position: relative;
 }
 
 .container>div {

@@ -14,7 +14,6 @@ import AuthorHighlight from "components/blog/AuthorHighlight"
 import dayjs from "dayjs"
 import { useTranslation } from "next-i18next"
 
-import styles from "./[slug].module.css"
 import Markdown from "markdown-to-jsx"
 import { FC } from "react"
 import BlogNavigation from "components/blog/BlogNavigation"
@@ -40,11 +39,14 @@ const Post: FC<IProps> = ({ post, navigationData }) => {
   return (
     <Layout>
       {localizedAttributes.thumbnail && (
-        <Image
-          src={localizedAttributes.thumbnail}
-          className={styles.thumbnail}
-          alt="thumbnail"
-        />
+        <div style={{ position: "relative", width: "100%", height: "20rem" }}>
+          <Image
+            src={localizedAttributes.thumbnail}
+            alt="thumbnail"
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
       )}
       <h1>{localizedAttributes.title}</h1>
 

@@ -1,7 +1,7 @@
 backend:
   name: test-repo
   branch: main
-media_folder: static/img
+media_folder: public/static/img
 slug:
   encoding: "ascii"
   clean_accents: true
@@ -68,6 +68,7 @@ collections:
           label: "Featured Image",
           name: "thumbnail",
           widget: "image",
+          choose_url: false,
           required: false,
           i18n: duplicate,
         }
@@ -106,6 +107,7 @@ collections:
           label: "Portrait",
           name: "portrait",
           widget: "image",
+          choose_url: false,
           required: true,
           i18n: duplicate,
         }

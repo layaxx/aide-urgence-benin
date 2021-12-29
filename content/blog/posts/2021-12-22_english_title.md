@@ -1,4 +1,10 @@
 ---
+de:
+  date: 2021-12-22T14:52:10.855Z
+  title: german title
+  thumbnail: /static/img/jisca-lucia-48rboqrcctm-unsplash.jpg
+  author: Hannah
+  body: deutscher COntent
 en:
   date: 2021-12-22T14:52:10.855Z
   title: english title
@@ -59,17 +65,11 @@ en:
 
 
     Eure Hannah
-  thumbnail: https://upload.wikimedia.org/wikipedia/commons/c/c7/Wenzl_Weis_-_Ludwig_Ganghofer.jpg
+  thumbnail: /static/img/jisca-lucia-48rboqrcctm-unsplash.jpg
   author: Hannah
-de:
-  date: 2021-12-22T14:52:10.855Z
-  title: german title
-  thumbnail: https://upload.wikimedia.org/wikipedia/commons/c/c7/Wenzl_Weis_-_Ludwig_Ganghofer.jpg
-  author: Hannah
-  body: deutscher COntent
 fr:
   date: 2021-12-22T14:52:10.855Z
-  thumbnail: https://upload.wikimedia.org/wikipedia/commons/c/c7/Wenzl_Weis_-_Ludwig_Ganghofer.jpg
+  thumbnail: /static/img/jisca-lucia-48rboqrcctm-unsplash.jpg
   author: Hannah
   body: french content
 ---

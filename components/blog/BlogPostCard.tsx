@@ -18,14 +18,18 @@ const BlogPostCard: React.FC<IProps> = ({ localizedPost }) => {
     <article key={localizedPost.slug} className={styles.container}>
       <Link href="/blog/post/[slug]" as={`/blog/post/${localizedPost.slug}`}>
         <a>
-          {localizedPost.thumbnail ? (
-            <Image
-              src={localizedPost.thumbnail}
-              alt={"thumbnail " + localizedPost.title}
-            />
-          ) : (
-            <div className={styles.imagePlaceholder} data-theme="dark" />
-          )}
+          <div className={styles.imagePlaceholder} data-theme="dark">
+            {localizedPost.thumbnail && (
+              <Image
+                src={localizedPost.thumbnail}
+                alt={"thumbnail " + localizedPost.title}
+                /* width={640}
+                height={960} */
+                layout="fill"
+                objectFit="cover"
+              />
+            )}
+          </div>
         </a>
       </Link>
       <div>

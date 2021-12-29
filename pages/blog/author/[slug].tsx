@@ -32,11 +32,14 @@ const AuthorPage = ({ author, posts }: IProps) => {
   return (
     <Layout>
       <h1>{localizedAttributes.name}</h1>
-      <Image
-        src={localizedAttributes.portrait}
-        alt={"portrait " + localizedAttributes.name}
-      />
-      <br />
+      <div style={{ position: "relative", width: "10rem", height: "10rem" }}>
+        <Image
+          src={localizedAttributes.portrait}
+          alt={"portrait " + localizedAttributes.name}
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
       <Markdown>{localizedAttributes.description}</Markdown>
       {localizedAttributes.socials?.length && (
         <>
