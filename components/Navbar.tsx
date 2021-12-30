@@ -3,16 +3,26 @@ import Link from "next/link"
 import ContrastSelector from "./ContrastSelector"
 import LocaleSelector from "./LocaleSelector"
 
+import styles from "./Navbar.module.css"
+
 export default function Navbar() {
   const { t } = useTranslation()
 
   return (
     <>
-      <nav className="container-fluid">
+      <nav className={"container " + styles.navbarSettings}>
+        <ul>
+          <li>
+            <LocaleSelector />
+          </li>
+          <ContrastSelector />
+        </ul>
+      </nav>
+      <nav className={"container " + styles.navbarLinks}>
         <ul>
           <li>
             <Link href="/">
-              <a className="contrast">
+              <a className={`contrast ${styles.brand}`}>
                 <strong>{t("config.name")}</strong>
               </a>
             </Link>
@@ -27,10 +37,6 @@ export default function Navbar() {
               </a>
             </Link>
           </li>
-          <li>
-            <LocaleSelector />
-          </li>
-          <ContrastSelector />
         </ul>
       </nav>
     </>
