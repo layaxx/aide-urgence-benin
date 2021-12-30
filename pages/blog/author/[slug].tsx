@@ -40,7 +40,7 @@ const AuthorPage = ({ author, posts }: IProps) => {
           objectFit="cover"
         />
       </div>
-      <Markdown>{localizedAttributes.description}</Markdown>
+      <Markdown>{localizedAttributes.description ?? ""}</Markdown>
       {localizedAttributes.socials?.length && (
         <>
           <h2>{t("blog:heading.socials")}</h2>

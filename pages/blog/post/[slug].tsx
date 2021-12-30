@@ -60,7 +60,7 @@ const Post: FC<IProps> = ({ post, navigationData }) => {
       </small>
       <br />
 
-      <Markdown>{localizedAttributes.body}</Markdown>
+      <Markdown>{localizedAttributes.body ?? ""}</Markdown>
 
       <BlogNavigation data={navigationData} />
 

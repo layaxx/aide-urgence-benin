@@ -4,7 +4,9 @@ de:
   title: german title
   thumbnail: /static/img/jisca-lucia-48rboqrcctm-unsplash.jpg
   author: Hannah
-  body: deutscher COntent
+  body: |-
+    deutscher COntent
+    asdfs
 en:
   date: 2021-12-22T14:52:10.855Z
   title: english title
@@ -71,5 +73,8 @@ fr:
   date: 2021-12-22T14:52:10.855Z
   thumbnail: /static/img/jisca-lucia-48rboqrcctm-unsplash.jpg
   author: Hannah
-  body: french content
+  body: |-
+    fdsgssdfgsdf
+    fdsgdfs
+  title: asdfgsdfgd
 ---
