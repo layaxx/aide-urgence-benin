@@ -16,7 +16,7 @@ const BlogNavigation: FC<IProps> = ({ data }) => {
     <nav className={styles.navigation}>
       {data.next ? (
         <Link href="/blog/post/[slug]" as={"/blog/post/" + data.next?.slug}>
-          <a>
+          <a title={data.next.title}>
             {t("blog:nav.next")}: {data.next.title}
           </a>
         </Link>
@@ -30,7 +30,7 @@ const BlogNavigation: FC<IProps> = ({ data }) => {
 
       {data.prev ? (
         <Link href="/blog/post/[slug]" as={"/blog/post/" + data.prev?.slug}>
-          <a>
+          <a title={data.prev.title}>
             {t("blog:nav.prev")}: {data.prev.title}
           </a>
         </Link>

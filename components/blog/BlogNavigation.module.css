@@ -8,6 +8,11 @@
     text-overflow: ellipsis;
 }
 
+
+.navigation>a:hover {
+    text-decoration: underline;
+}
+
 .navigation>span {
     width: 33%;
 }

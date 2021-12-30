@@ -317,6 +317,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/spectral@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/spectral/-/spectral-4.5.0.tgz#7dc846cb7debd17a8400cc4802a96c35fb18ee5e"
+  integrity sha512-YCZy0hn4QGmi9nxQ26kWWlX1ZQy2YEhUUvsHFBUQEVV7YdbcdG1kPWw00SQUfL6lMHaQxrnXlEICCPhMVqQzzw==
+
 "@hapi/accept@5.0.2":
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/@hapi/accept/-/accept-5.0.2.tgz#ab7043b037e68b722f93f376afb05e85c0699523"

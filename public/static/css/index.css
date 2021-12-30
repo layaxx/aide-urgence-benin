@@ -72,3 +72,7 @@ footer.flex-between {
     justify-content: space-between;
     flex-wrap: wrap-reverse;
 }
+
+article p {
+    font-family: "Spectral";
+}
