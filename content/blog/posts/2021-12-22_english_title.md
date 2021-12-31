@@ -7,6 +7,8 @@ de:
   body: |-
     deutscher COntent
     asdfs
+  tags:
+    - project_update
 en:
   date: 2021-12-22T14:52:10.855Z
   title: english title
@@ -69,6 +71,8 @@ en:
     Eure Hannah
   thumbnail: /static/img/jisca-lucia-48rboqrcctm-unsplash.jpg
   author: Hannah
+  tags:
+    - project_update
 fr:
   date: 2021-12-22T14:52:10.855Z
   thumbnail: /static/img/jisca-lucia-48rboqrcctm-unsplash.jpg
@@ -77,4 +81,6 @@ fr:
     fdsgssdfgsdf
     fdsgdfs
   title: asdfgsdfgd
+  tags:
+    - project_update
 ---

@@ -1,8 +1,9 @@
-import { INewBlogPost } from "types/Blog"
+import { INewBlogPost, ITag } from "types/Blog"
 import fs from "fs"
 import path from "path"
 import { i18n } from "next-i18next.config"
 import { getAuthorBySlug } from "./authors"
+import { getTagsbySlugs } from "./tags"
 
 const directory = "content/blog/posts" as const
 
@@ -23,7 +24,14 @@ export async function getAllBlogPostPaths() {
   )
 }
 
-export async function getBlogPostByAuthor(slug: string) {
+export async function getBlogPostsByTag(slug: string) {
+  return (await fetchAllBlogPosts()).filter(
+    (post) =>
+      post[i18n.defaultLocale].tags.filter((tag) => tag.slug === slug).length
+  )
+}
+
+export async function getBlogPostsByAuthor(slug: string) {
   return (await fetchAllBlogPosts()).filter(
     (post) => post[i18n.defaultLocale].author?.name === slug
   )
@@ -73,24 +81,32 @@ export async function fetchAllBlogPosts() {
 
           const authorSlug =
             importedBlogPost.attributes[i18n.defaultLocale].author
-
           const author = (await getAuthorBySlug(authorSlug)) ?? null
+
+          const tagsSlugs =
+            importedBlogPost.attributes[i18n.defaultLocale].tags ?? []
+          const tags = ((await getTagsbySlugs(tagsSlugs)) ?? []).filter(
+            (tag) => tag !== undefined
+          ) as ITag[]
 
           return {
             de: {
               ...importedBlogPost.attributes.de,
               slug,
               author: author?.de ?? null,
+              tags: tags.map((tag) => tag.de),
             },
             en: {
               ...importedBlogPost.attributes.en,
               slug,
               author: author?.en ?? null,
+              tags: tags.map((tag) => tag.en),
             },
             fr: {
               ...importedBlogPost.attributes.fr,
               slug,
               author: author?.fr ?? null,
+              tags: tags.map((tag) => tag.fr),
             },
           }
         })

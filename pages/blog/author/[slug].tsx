@@ -7,10 +7,11 @@ import { i18n } from "next-i18next.config"
 import { IAuthor, INewBlogPost } from "types/Blog"
 import { getAllAuthorPaths, getAuthorBySlug } from "lib/blog/authors"
 import { useTranslation } from "next-i18next"
-import { getBlogPostByAuthor } from "lib/blog/posts"
+import { getBlogPostsByAuthor } from "lib/blog/posts"
 import BlogPostCard from "components/blog/BlogPostCard"
 import Markdown from "markdown-to-jsx"
 import Image from "next/image"
+import BlogPostCardContainer from "components/blog/BlogPostCardContainer"
 
 interface IParams extends NextParsedUrlQuery {
   slug: string
@@ -53,17 +54,13 @@ const AuthorPage = ({ author, posts }: IProps) => {
           </ul>
         </>
       )}
-      <h2>{t("blog:posts-by-author", { name: localizedAttributes.name })}</h2>
-      <div>
-        {posts.length
-          ? posts.map((post, index) => (
-              <BlogPostCard
-                key={index}
-                localizedPost={post[router.locale ?? i18n.defaultLocale]}
-              />
-            ))
-          : t("blog:no-posts")}
-      </div>
+
+      <h2>
+        {t("blog:heading.posts-by-author", { name: localizedAttributes.name })}
+      </h2>
+      <BlogPostCardContainer
+        posts={posts.map((post) => post[router.locale ?? i18n.defaultLocale])}
+      />
     </Layout>
   )
 }
@@ -81,7 +78,7 @@ export const getStaticProps: GetStaticProps<IProps, IParams> = async ({
   locale,
 }) => {
   const author = await getAuthorBySlug(params?.slug ?? "", locale)
-  const posts = await getBlogPostByAuthor(params?.slug ?? "")
+  const posts = await getBlogPostsByAuthor(params?.slug ?? "")
 
   return {
     props: {

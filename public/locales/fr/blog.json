@@ -4,12 +4,13 @@
     "all": "",
     "prev": ""
   },
+  "no-posts": "",
   "heading": {
     "socials": "",
-    "about-the-author": ""
+    "posts-by-author": "",
+    "about-the-author": "",
+    "posts-for-tag": ""
   },
-  "posts-by-author": "",
-  "no-posts": "",
   "headline": "",
   "published-by": ""
 }

@@ -4,12 +4,13 @@
     "all": "Alle Posts",
     "prev": "Letzte Posts"
   },
+  "no-posts": "keine Posts gefunden.",
   "heading": {
     "socials": "Social Media Links",
-    "about-the-author": "Autor:"
+    "posts-by-author": "",
+    "about-the-author": "Autor:",
+    "posts-for-tag": ""
   },
-  "posts-by-author": "Alle Post von {{name}}",
-  "no-posts": "keine Posts gefunden.",
   "headline": "Der Blog",
   "published-by": "am {{date}} von {{name}}"
 }

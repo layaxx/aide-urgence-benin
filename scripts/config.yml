@@ -25,6 +25,20 @@ collections:
           - { label: "Title", name: "title", widget: "string", i18n: true }
           # TODO: do this
 
+  - name: "tags"
+    label: "Tags"
+    i18n: true
+    folder: "content/blog/tags"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Title",
+          name: "title",
+          widget: "string",
+          required: true,
+          i18n: true,
+        }
   - name: "pages"
     label: "Pages"
     i18n: true
@@ -88,6 +102,17 @@ collections:
           collection: "authors",
           search_fields: ["name"],
           value_field: "name",
+        }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "relation",
+          required: false,
+          multiple: true,
+          i18n: duplicate,
+          collection: "tags",
+          value_field: "{{slug}}",
+          search_fields: ["title"],
         }
   - label: "Authors"
     i18n: true

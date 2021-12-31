@@ -12,9 +12,9 @@ export interface ILocalizedBlogPost {
   thumbnail?: string
   body: string
   author?: ILocalizedAuthor
-  tags: string[]
   slug: string
   date: string
+  tags: ILocalizedTag[]
 }
 
 export interface INewBlogPost {
@@ -41,4 +41,13 @@ export interface IAuthor {
 export interface INavigationData {
   prev: ILocalizedBlogPost | null
   next: ILocalizedBlogPost | null
+}
+
+export interface ITag {
+  [key: typeof i18n.defaultLocale]: ILocalizedTag
+}
+
+export interface ILocalizedTag {
+  slug: string
+  title: string
 }

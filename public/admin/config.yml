@@ -29,6 +29,9 @@ collections:
               - label: prev
                 name: prev
                 widget: string
+          - label: no-posts
+            name: no-posts
+            widget: string
           - label: heading
             name: heading
             widget: object
@@ -36,15 +39,15 @@ collections:
               - label: socials
                 name: socials
                 widget: string
+              - label: posts-by-author
+                name: posts-by-author
+                widget: string
               - label: about-the-author
                 name: about-the-author
                 widget: string
-          - label: posts-by-author
-            name: posts-by-author
-            widget: string
-          - label: no-posts
-            name: no-posts
-            widget: string
+              - label: posts-for-tag
+                name: posts-for-tag
+                widget: string
           - label: headline
             name: headline
             widget: string
@@ -68,6 +71,9 @@ collections:
               - label: prev
                 name: prev
                 widget: string
+          - label: no-posts
+            name: no-posts
+            widget: string
           - label: heading
             name: heading
             widget: object
@@ -75,15 +81,15 @@ collections:
               - label: socials
                 name: socials
                 widget: string
+              - label: posts-by-author
+                name: posts-by-author
+                widget: string
               - label: about-the-author
                 name: about-the-author
                 widget: string
-          - label: posts-by-author
-            name: posts-by-author
-            widget: string
-          - label: no-posts
-            name: no-posts
-            widget: string
+              - label: posts-for-tag
+                name: posts-for-tag
+                widget: string
           - label: headline
             name: headline
             widget: string
@@ -107,6 +113,9 @@ collections:
               - label: prev
                 name: prev
                 widget: string
+          - label: no-posts
+            name: no-posts
+            widget: string
           - label: heading
             name: heading
             widget: object
@@ -114,15 +123,15 @@ collections:
               - label: socials
                 name: socials
                 widget: string
+              - label: posts-by-author
+                name: posts-by-author
+                widget: string
               - label: about-the-author
                 name: about-the-author
                 widget: string
-          - label: posts-by-author
-            name: posts-by-author
-            widget: string
-          - label: no-posts
-            name: no-posts
-            widget: string
+              - label: posts-for-tag
+                name: posts-for-tag
+                widget: string
           - label: headline
             name: headline
             widget: string
@@ -427,6 +436,18 @@ collections:
             name: title
             widget: string
             i18n: true
+  - name: tags
+    label: Tags
+    i18n: true
+    folder: content/blog/tags
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        required: true
+        i18n: true
   - name: pages
     label: Pages
     i18n: true
@@ -492,6 +513,16 @@ collections:
         search_fields:
           - name
         value_field: name
+      - label: Tags
+        name: tags
+        widget: relation
+        required: false
+        multiple: true
+        i18n: duplicate
+        collection: tags
+        value_field: "{{slug}}"
+        search_fields:
+          - title
   - label: Authors
     i18n: true
     name: authors

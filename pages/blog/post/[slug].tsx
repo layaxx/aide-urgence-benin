@@ -13,11 +13,12 @@ import {
 import AuthorHighlight from "components/blog/AuthorHighlight"
 import dayjs from "dayjs"
 import { useTranslation } from "next-i18next"
-
 import Markdown from "markdown-to-jsx"
 import { FC } from "react"
 import BlogNavigation from "components/blog/BlogNavigation"
 import Image from "next/image"
+import styles from "./[slug].module.css"
+import TagCard from "components/blog/TagCard"
 
 interface IParams extends NextParsedUrlQuery {
   slug: string
@@ -59,6 +60,14 @@ const Post: FC<IProps> = ({ post, navigationData }) => {
         })}
       </small>
       <br />
+
+      {localizedAttributes.tags.length && (
+        <div className={styles.tags}>
+          {localizedAttributes.tags.map((tag) => (
+            <TagCard tag={tag} key={tag.slug} />
+          ))}
+        </div>
+      )}
 
       <Markdown>{localizedAttributes.body ?? ""}</Markdown>
 
