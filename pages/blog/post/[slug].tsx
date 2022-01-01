@@ -19,6 +19,7 @@ import BlogNavigation from "components/blog/BlogNavigation"
 import Image from "next/image"
 import styles from "./[slug].module.css"
 import TagCard from "components/blog/TagCard"
+import ShareButtons from "components/blog/ShareButtons"
 
 interface IParams extends NextParsedUrlQuery {
   slug: string
@@ -70,6 +71,8 @@ const Post: FC<IProps> = ({ post, navigationData }) => {
       )}
 
       <Markdown>{localizedAttributes.body ?? ""}</Markdown>
+
+      <ShareButtons />
 
       <BlogNavigation data={navigationData} />
 
