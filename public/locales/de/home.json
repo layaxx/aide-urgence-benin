@@ -1,0 +1,20 @@
+{
+  "headings": {
+    "about": "Über uns",
+    "featured-blog-posts": "empfohlene Blog Einträge"
+  },
+  "about": {
+    "who": {
+      "heading": "Wer?",
+      "text": ""
+    },
+    "what": {
+      "heading": "Was?",
+      "text": ""
+    },
+    "where": {
+      "heading": "Wo?",
+      "text": ""
+    }
+  }
+}

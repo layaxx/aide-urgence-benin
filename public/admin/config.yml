@@ -423,6 +423,150 @@ collections:
               - label: cta
                 name: cta
                 widget: string
+      - label: de - home.json
+        name: de - home.json
+        file: ./public/locales/de/home.json
+        fields:
+          - label: headings
+            name: headings
+            widget: object
+            fields:
+              - label: about
+                name: about
+                widget: string
+              - label: featured-blog-posts
+                name: featured-blog-posts
+                widget: string
+          - label: about
+            name: about
+            widget: object
+            fields:
+              - label: who
+                name: who
+                widget: object
+                fields:
+                  - label: heading
+                    name: heading
+                    widget: string
+                  - label: text
+                    name: text
+                    widget: string
+              - label: what
+                name: what
+                widget: object
+                fields:
+                  - label: heading
+                    name: heading
+                    widget: string
+                  - label: text
+                    name: text
+                    widget: string
+              - label: where
+                name: where
+                widget: object
+                fields:
+                  - label: heading
+                    name: heading
+                    widget: string
+                  - label: text
+                    name: text
+                    widget: string
+      - label: en - home.json
+        name: en - home.json
+        file: ./public/locales/en/home.json
+        fields:
+          - label: headings
+            name: headings
+            widget: object
+            fields:
+              - label: about
+                name: about
+                widget: string
+              - label: featured-blog-posts
+                name: featured-blog-posts
+                widget: string
+          - label: about
+            name: about
+            widget: object
+            fields:
+              - label: who
+                name: who
+                widget: object
+                fields:
+                  - label: heading
+                    name: heading
+                    widget: string
+                  - label: text
+                    name: text
+                    widget: string
+              - label: what
+                name: what
+                widget: object
+                fields:
+                  - label: heading
+                    name: heading
+                    widget: string
+                  - label: text
+                    name: text
+                    widget: string
+              - label: where
+                name: where
+                widget: object
+                fields:
+                  - label: heading
+                    name: heading
+                    widget: string
+                  - label: text
+                    name: text
+                    widget: string
+      - label: fr - home.json
+        name: fr - home.json
+        file: ./public/locales/fr/home.json
+        fields:
+          - label: headings
+            name: headings
+            widget: object
+            fields:
+              - label: about
+                name: about
+                widget: string
+              - label: featured-blog-posts
+                name: featured-blog-posts
+                widget: string
+          - label: about
+            name: about
+            widget: object
+            fields:
+              - label: who
+                name: who
+                widget: object
+                fields:
+                  - label: heading
+                    name: heading
+                    widget: string
+                  - label: text
+                    name: text
+                    widget: string
+              - label: what
+                name: what
+                widget: object
+                fields:
+                  - label: heading
+                    name: heading
+                    widget: string
+                  - label: text
+                    name: text
+                    widget: string
+              - label: where
+                name: where
+                widget: object
+                fields:
+                  - label: heading
+                    name: heading
+                    widget: string
+                  - label: text
+                    name: text
+                    widget: string
   - name: general Config
     label: config
     format: json
@@ -465,6 +609,18 @@ collections:
             name: body
             widget: markdown
             i18n: true
+          - label: Featured Blogposts
+            name: featured
+            widget: relation
+            collection: blog
+            value_field: "{{slug}}"
+            search_fields:
+              - "{{slug}}"
+              - title
+            multiple: true
+            min: 0
+            max: 3
+            i18n: duplicate
       - label: About
         name: about
         i18n: true
