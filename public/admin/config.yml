@@ -621,17 +621,6 @@ collections:
             min: 0
             max: 3
             i18n: duplicate
-      - label: About
-        name: about
-        i18n: true
-        file: content/about.md
-        fields:
-          - label: Title
-            name: title
-            widget: string
-          - label: Body
-            name: body
-            widget: markdown
   - label: Blog
     i18n: true
     name: blog
