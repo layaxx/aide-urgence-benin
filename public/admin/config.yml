@@ -142,6 +142,9 @@ collections:
         name: de - common.json
         file: ./public/locales/de/common.json
         fields:
+          - label: share-on
+            name: share-on
+            widget: string
           - label: contact
             name: contact
             widget: object
@@ -237,6 +240,9 @@ collections:
         name: en - common.json
         file: ./public/locales/en/common.json
         fields:
+          - label: share-on
+            name: share-on
+            widget: string
           - label: contact
             name: contact
             widget: object
@@ -332,6 +338,9 @@ collections:
         name: fr - common.json
         file: ./public/locales/fr/common.json
         fields:
+          - label: share-on
+            name: share-on
+            widget: string
           - label: contact
             name: contact
             widget: object

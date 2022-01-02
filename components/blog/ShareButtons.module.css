@@ -7,4 +7,9 @@
 
 .container button {
     width: auto;
+    border-radius: 50%;
+}
+
+.container button:hover {
+    box-shadow: var(--card-box-shadow);
 }

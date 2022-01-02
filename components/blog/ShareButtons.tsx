@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next"
 import { useRouter } from "next/router"
 import {
   EmailIcon,
@@ -18,20 +19,28 @@ const ShareButtons: React.FC = () => {
     round: true,
     iconFillColor: "var(--primary)",
     bgStyle: {
-      fill: "var(--switch-background-color)",
+      fill: "none",
     },
   }
+  const { t } = useTranslation()
+
   return (
     <div className={styles.container}>
-      <EmailShareButton url={url}>
+      <EmailShareButton url={url} title={t("share-on", { name: "Email" })}>
         <EmailIcon {...iconProps} />
       </EmailShareButton>
 
-      <FacebookShareButton url={url}>
+      <FacebookShareButton
+        url={url}
+        title={t("share-on", { name: "Facebook" })}
+      >
         <FacebookIcon {...iconProps} />
       </FacebookShareButton>
 
-      <WhatsappShareButton url={url}>
+      <WhatsappShareButton
+        url={url}
+        title={t("share-on", { name: "Whatsapp" })}
+      >
         <WhatsappIcon {...iconProps} />
       </WhatsappShareButton>
     </div>
