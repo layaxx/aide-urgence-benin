@@ -40,7 +40,8 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     props: {
       ...(await serverSideTranslations(locale ?? i18n.defaultLocale, [
         "common",
-        "index",
+        "blog",
+        "home",
       ])),
       featuredPosts,
     },
