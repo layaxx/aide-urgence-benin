@@ -1,7 +1,7 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps, NextPage } from "next/types"
 import Layout from "components/layouts/DefaultLayout"
-import { attributes, html } from "content/home.md"
+import { attributes } from "content/home.md"
 import { i18n } from "next-i18next.config"
 import FeaturedBlogPosts from "components/home/FeaturedBlogPosts"
 import { ILocalizedBlogPost } from "types/Blog"
@@ -18,7 +18,6 @@ const Home: NextPage<IProps> = ({ featuredPosts }) => {
   return (
     <Layout contact>
       <h1>{attributes[locale ?? i18n.defaultLocale].title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
 
       <AboutComponent />
 

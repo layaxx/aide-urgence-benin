@@ -15,9 +15,11 @@ const FeaturedBlogPosts: React.FC<IProps> = ({ featuredPosts }) => {
         {t("home:headings.featured-blog-posts")}
       </h2>
       <BlogPostCardContainer posts={featuredPosts} />
-      <Link href="/blog">
-        <a>{t("blog:nav.all")}</a>
-      </Link>
+      <div style={{ textAlign: "center" }}>
+        <Link href="/blog">
+          <a>{t("blog:nav.all")}</a>
+        </Link>
+      </div>
     </>
   )
 }
