@@ -1,6 +1,7 @@
 import YAML from "yaml"
 import fs from "fs"
 import config from "../next-i18next.config.js"
+import process from "process"
 
 function generateFields(path) {
   const content = JSON.parse(fs.readFileSync(path, "utf8"))
@@ -57,6 +58,11 @@ translations.files = filePaths
       fields,
     }
   })
+
+const URL = "https://" + (process.env["ORIGIN"] || "aub.yl1.eu")
+
+preset.site_url = URL
+preset.backend.base_url = URL
 
 fs.writeFileSync("./public/admin/config.yml", YAML.stringify(preset), "utf8")
 
