@@ -1,47 +1,38 @@
 import { useTranslation } from "next-i18next"
 import { useRouter } from "next/router"
 import {
-  EmailIcon,
   EmailShareButton,
-  FacebookIcon,
   FacebookShareButton,
-  WhatsappIcon,
   WhatsappShareButton,
 } from "react-share"
+import { SocialIcon } from "react-social-icons"
+import config from "lib/config.json"
 
 import styles from "./ShareButtons.module.css"
 
 const ShareButtons: React.FC = () => {
   const router = useRouter()
-  const url = router.basePath + router.asPath
-
-  const iconProps = {
-    round: true,
-    iconFillColor: "var(--primary)",
-    bgStyle: {
-      fill: "none",
-    },
-  }
+  const url = config.baseurl + router.asPath
   const { t } = useTranslation()
 
   return (
     <div className={styles.container}>
-      <EmailShareButton url={url} title={t("share-on", { name: "Email" })}>
-        <EmailIcon {...iconProps} />
+      <EmailShareButton url={url}>
+        <SocialIcon network="email" title={t("share-on", { name: "Email" })} />
       </EmailShareButton>
 
-      <FacebookShareButton
-        url={url}
-        title={t("share-on", { name: "Facebook" })}
-      >
-        <FacebookIcon {...iconProps} />
+      <FacebookShareButton url={url}>
+        <SocialIcon
+          network="facebook"
+          title={t("share-on", { name: "Facebook" })}
+        />
       </FacebookShareButton>
 
-      <WhatsappShareButton
-        url={url}
-        title={t("share-on", { name: "Whatsapp" })}
-      >
-        <WhatsappIcon {...iconProps} />
+      <WhatsappShareButton url={url}>
+        <SocialIcon
+          network="whatsapp"
+          title={t("share-on", { name: "Whatsapp" })}
+        />
       </WhatsappShareButton>
     </div>
   )

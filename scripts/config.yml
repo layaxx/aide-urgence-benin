@@ -22,7 +22,13 @@ collections:
         name: "config"
         file: "lib/config.json"
         fields:
-          - { label: "Title", name: "title", widget: "string", i18n: true }
+          - { label: "Title", name: "title", widget: "string", i18n: false }
+          - {
+              label: "Base URL",
+              name: "baseurl",
+              widget: "string",
+              i18n: false,
+            }
           # TODO: do this
 
   - name: "tags"

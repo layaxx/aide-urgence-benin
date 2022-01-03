@@ -588,7 +588,11 @@ collections:
           - label: Title
             name: title
             widget: string
-            i18n: true
+            i18n: false
+          - label: Base URL
+            name: baseurl
+            widget: string
+            i18n: false
   - name: tags
     label: Tags
     i18n: true
