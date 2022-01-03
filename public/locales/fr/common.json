@@ -1,6 +1,11 @@
 {
   "share-on": "",
   "contact": {
+    "errors": {
+      "default": "",
+      "message": ""
+    },
+    "success": "",
     "label": "",
     "headings": {
       "first": "",
@@ -11,7 +16,8 @@
       "email": "",
       "message": ""
     },
-    "btn": ""
+    "btn": "",
+    "legal": ""
   },
   "menu": {
     "theme": {

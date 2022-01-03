@@ -154,6 +154,19 @@ collections:
             name: contact
             widget: object
             fields:
+              - label: errors
+                name: errors
+                widget: object
+                fields:
+                  - label: default
+                    name: default
+                    widget: string
+                  - label: message
+                    name: message
+                    widget: string
+              - label: success
+                name: success
+                widget: string
               - label: label
                 name: label
                 widget: string
@@ -182,6 +195,9 @@ collections:
                     widget: string
               - label: btn
                 name: btn
+                widget: string
+              - label: legal
+                name: legal
                 widget: string
           - label: menu
             name: menu
@@ -252,6 +268,19 @@ collections:
             name: contact
             widget: object
             fields:
+              - label: errors
+                name: errors
+                widget: object
+                fields:
+                  - label: default
+                    name: default
+                    widget: string
+                  - label: message
+                    name: message
+                    widget: string
+              - label: success
+                name: success
+                widget: string
               - label: label
                 name: label
                 widget: string
@@ -280,6 +309,9 @@ collections:
                     widget: string
               - label: btn
                 name: btn
+                widget: string
+              - label: legal
+                name: legal
                 widget: string
           - label: menu
             name: menu
@@ -350,6 +382,19 @@ collections:
             name: contact
             widget: object
             fields:
+              - label: errors
+                name: errors
+                widget: object
+                fields:
+                  - label: default
+                    name: default
+                    widget: string
+                  - label: message
+                    name: message
+                    widget: string
+              - label: success
+                name: success
+                widget: string
               - label: label
                 name: label
                 widget: string
@@ -378,6 +423,9 @@ collections:
                     widget: string
               - label: btn
                 name: btn
+                widget: string
+              - label: legal
+                name: legal
                 widget: string
           - label: menu
             name: menu

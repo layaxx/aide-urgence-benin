@@ -1,6 +1,11 @@
 {
   "share-on": "share via {{name}}",
   "contact": {
+    "errors": {
+      "default": "Failed to send message.",
+      "message": "Please provide a message"
+    },
+    "success": "Successfully sent message",
     "label": "Contact",
     "headings": {
       "first": "Contact",
@@ -11,7 +16,8 @@
       "email": "email",
       "message": "message"
     },
-    "btn": "Send"
+    "btn": "Send",
+    "legal": "You may contact us anonymously, i.e. without providing your  or email address. Without your email address we cannot get  touch with you however."
   },
   "menu": {
     "theme": {

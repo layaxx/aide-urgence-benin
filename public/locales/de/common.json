@@ -1,6 +1,11 @@
 {
   "share-on": "via {{name}} teilen",
   "contact": {
+    "errors": {
+      "default": "Nachricht fehlgeschlagen",
+      "message": "Bitte Nachricht angeben."
+    },
+    "success": "Nachricht erfolgreich versendet",
     "label": "Kontaktformular",
     "headings": {
       "first": "Kontakformular",
@@ -11,7 +16,8 @@
       "email": "E-Mail",
       "message": "Nachricht"
     },
-    "btn": "Absenden"
+    "btn": "Absenden",
+    "legal": " You may contact us anonymously, i.e. without providing your name               or email address. Without your email address we cannot get in touch with you however."
   },
   "menu": {
     "theme": {
