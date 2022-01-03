@@ -10,6 +10,7 @@ export default function Hero() {
       className="hero"
       data-theme="dark"
       style={{
+        marginBottom: "1rem",
         backgroundImage: `url(${
           config.hero
             ? config.hero.replace("/public/", "/")
