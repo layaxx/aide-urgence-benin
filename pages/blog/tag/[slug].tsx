@@ -10,6 +10,8 @@ import { getBlogPostsByTag } from "lib/blog/posts"
 import BlogPostCard from "components/blog/BlogPostCard"
 import { getAllTagPaths, getTagBySlug } from "lib/blog/tags"
 import BlogPostCardContainer from "components/blog/BlogPostCardContainer"
+import config from "lib/config"
+import SEO from "components/SEO"
 
 interface IParams extends NextParsedUrlQuery {
   slug: string
@@ -29,13 +31,21 @@ const AuthorPage = ({ tag, posts }: IProps) => {
   const localizedAttributes = tag[router.locale ?? i18n.defaultLocale]
 
   return (
-    <Layout>
-      <h1>{localizedAttributes.title}</h1>
-      <h2>{t("blog:heading.posts-for-tag")}</h2>
-      <BlogPostCardContainer
-        posts={posts.map((post) => post[router.locale ?? i18n.defaultLocale])}
+    <>
+      <SEO
+        url={`${config.baseurl}/blog/tag/${localizedAttributes.slug}`}
+        openGraphType="website"
+        title={localizedAttributes.title}
       />
-    </Layout>
+
+      <Layout>
+        <h1>{localizedAttributes.title}</h1>
+        <h2>{t("blog:heading.posts-for-tag")}</h2>
+        <BlogPostCardContainer
+          posts={posts.map((post) => post[router.locale ?? i18n.defaultLocale])}
+        />
+      </Layout>
+    </>
   )
 }
 

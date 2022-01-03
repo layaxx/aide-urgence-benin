@@ -20,6 +20,8 @@ import Image from "next/image"
 import styles from "./[slug].module.css"
 import TagCard from "components/blog/TagCard"
 import ShareButtons from "components/blog/ShareButtons"
+import SEO from "components/SEO"
+import config from "lib/config"
 
 interface IParams extends NextParsedUrlQuery {
   slug: string
@@ -39,50 +41,65 @@ const Post: FC<IProps> = ({ post, navigationData }) => {
   const localizedAttributes = post[router.locale ?? i18n.defaultLocale]
 
   return (
-    <Layout>
-      {localizedAttributes.thumbnail && (
-        <div style={{ position: "relative", width: "100%", height: "20rem" }}>
-          <Image
-            src={localizedAttributes.thumbnail}
-            alt="thumbnail"
-            layout="fill"
-            objectFit="cover"
-          />
-        </div>
-      )}
-      <h1>{localizedAttributes.title}</h1>
+    <>
+      <SEO
+        url={`${config.baseurl}/blog/post/${localizedAttributes.slug}`}
+        title={localizedAttributes.title}
+        description={
+          localizedAttributes.body && localizedAttributes.body.slice(160)
+        }
+        createdAt={dayjs(localizedAttributes.date).toISOString()}
+        image={
+          localizedAttributes.thumbnail &&
+          config.baseurl + localizedAttributes.thumbnail
+        }
+      />
 
-      <small>
-        {t("blog:published-by", {
-          name: localizedAttributes.author?.name ?? "anon",
-          date: dayjs(localizedAttributes.date)
-            .toDate()
-            .toLocaleString(router.locale ?? i18n.defaultLocale),
-        })}
-      </small>
-      <br />
+      <Layout>
+        {localizedAttributes.thumbnail && (
+          <div style={{ position: "relative", width: "100%", height: "20rem" }}>
+            <Image
+              src={localizedAttributes.thumbnail}
+              alt="thumbnail"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
+        )}
+        <h1>{localizedAttributes.title}</h1>
 
-      {localizedAttributes.tags.length && (
-        <div className={styles.tags}>
-          {localizedAttributes.tags.map((tag) => (
-            <TagCard tag={tag} key={tag.slug} />
-          ))}
-        </div>
-      )}
+        <small>
+          {t("blog:published-by", {
+            name: localizedAttributes.author?.name ?? "anon",
+            date: dayjs(localizedAttributes.date)
+              .toDate()
+              .toLocaleString(router.locale ?? i18n.defaultLocale),
+          })}
+        </small>
+        <br />
 
-      <Markdown>{localizedAttributes.body ?? ""}</Markdown>
+        {localizedAttributes.tags.length && (
+          <div className={styles.tags}>
+            {localizedAttributes.tags.map((tag) => (
+              <TagCard tag={tag} key={tag.slug} />
+            ))}
+          </div>
+        )}
 
-      <ShareButtons />
+        <Markdown>{localizedAttributes.body ?? ""}</Markdown>
 
-      <BlogNavigation data={navigationData} />
+        <ShareButtons />
 
-      {localizedAttributes.author && (
-        <>
-          <h2>{t("blog:heading.about-the-author")}</h2>
-          <AuthorHighlight author={localizedAttributes.author} />
-        </>
-      )}
-    </Layout>
+        <BlogNavigation data={navigationData} />
+
+        {localizedAttributes.author && (
+          <>
+            <h2>{t("blog:heading.about-the-author")}</h2>
+            <AuthorHighlight author={localizedAttributes.author} />
+          </>
+        )}
+      </Layout>
+    </>
   )
 }
 

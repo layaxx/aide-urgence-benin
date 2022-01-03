@@ -1,12 +1,14 @@
 import Layout from "components/layouts/DefaultLayout"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps, NextPage } from "next"
-import config, { i18n } from "next-i18next.config"
+import { i18n } from "next-i18next.config"
 import { useRouter } from "next/router"
 import { useTranslation } from "next-i18next"
 import { INewBlogPost } from "types/Blog"
 import { fetchAllBlogPosts } from "lib/blog/posts"
 import BlogPostCardContainer from "components/blog/BlogPostCardContainer"
+import config from "lib/config"
+import SEO from "components/SEO"
 
 interface IProps {
   postsList: INewBlogPost[]
@@ -17,14 +19,22 @@ const Blog: NextPage<IProps> = ({ postsList }) => {
   const { t } = useTranslation()
 
   return (
-    <Layout>
-      <h1>{t("blog:headline")}</h1>
-      <BlogPostCardContainer
-        posts={postsList.map(
-          (post) => post[router.locale ?? i18n.defaultLocale]
-        )}
+    <>
+      <SEO
+        url={`${config.baseurl}/blog`}
+        openGraphType="website"
+        title={t("blog:headline")}
       />
-    </Layout>
+
+      <Layout>
+        <h1>{t("blog:headline")}</h1>
+        <BlogPostCardContainer
+          posts={postsList.map(
+            (post) => post[router.locale ?? i18n.defaultLocale]
+          )}
+        />
+      </Layout>
+    </>
   )
 }
 
@@ -33,7 +43,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? config.i18n.defaultLocale, [
+      ...(await serverSideTranslations(locale ?? i18n.defaultLocale, [
         "common",
         "blog",
       ])),

@@ -8,6 +8,8 @@ import { ILocalizedBlogPost } from "types/Blog"
 import { getBlogPostBySlug } from "lib/blog/posts"
 import { useRouter } from "next/router"
 import AboutComponent from "components/home/AboutComponent"
+import SEO from "components/SEO"
+import config from "lib/config.json"
 
 interface IProps {
   featuredPosts: ILocalizedBlogPost[]
@@ -16,13 +18,17 @@ interface IProps {
 const Home: NextPage<IProps> = ({ featuredPosts }) => {
   const { locale } = useRouter()
   return (
-    <Layout contact>
-      <h1>{attributes[locale ?? i18n.defaultLocale].title}</h1>
+    <>
+      <SEO url={`${config.baseurl}`} />
 
-      <AboutComponent />
+      <Layout contact>
+        <h1>{attributes[locale ?? i18n.defaultLocale].title}</h1>
 
-      <FeaturedBlogPosts featuredPosts={featuredPosts} />
-    </Layout>
+        <AboutComponent />
+
+        <FeaturedBlogPosts featuredPosts={featuredPosts} />
+      </Layout>
+    </>
   )
 }
 

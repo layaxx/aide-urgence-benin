@@ -29,6 +29,27 @@ collections:
               widget: "string",
               i18n: false,
             }
+          - {
+              label: "Meta",
+              name: "meta",
+              widget: "object",
+              fields:
+                [
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    i18n: false,
+                  },
+                  {
+                    label: "Graphic",
+                    name: "graphic",
+                    widget: "image",
+                    choose_url: false,
+                    i18n: false,
+                  },
+                ],
+            }
           # TODO: do this
 
   - name: "tags"

@@ -5,18 +5,24 @@ import { attributes } from "content/imprint.md"
 import { i18n } from "next-i18next.config"
 import { useRouter } from "next/router"
 import Markdown from "markdown-to-jsx"
+import SEO from "components/SEO"
+import config from "lib/config"
 
 const Imprint: NextPage = () => {
   const { locale } = useRouter()
   return (
-    <Layout>
-      <h1>{attributes[locale ?? i18n.defaultLocale].title}</h1>
-      <div>
-        <Markdown>
-          {attributes[locale ?? i18n.defaultLocale].body ?? ""}
-        </Markdown>
-      </div>
-    </Layout>
+    <>
+      <SEO url={`${config.baseurl}/imprint`} />
+
+      <Layout>
+        <h1>{attributes[locale ?? i18n.defaultLocale].title}</h1>
+        <div>
+          <Markdown>
+            {attributes[locale ?? i18n.defaultLocale].body ?? ""}
+          </Markdown>
+        </div>
+      </Layout>
+    </>
   )
 }
 
