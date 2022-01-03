@@ -8,7 +8,7 @@ import Document, {
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
-    return await Document.getInitialProps(ctx)
+    return Document.getInitialProps(ctx)
   }
 
   render() {

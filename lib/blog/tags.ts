@@ -27,7 +27,7 @@ export async function getTagBySlug(slug: string, locale?: string | undefined) {
 }
 
 export async function getTagsbySlugs(slugs: string[]) {
-  return Promise.all(slugs.map(async (slug) => await getTagBySlug(slug)))
+  return Promise.all(slugs.map((slug) => getTagBySlug(slug)))
 }
 
 export async function fetchAllTags() {
