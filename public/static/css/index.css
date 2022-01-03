@@ -39,7 +39,6 @@ header hgroup {
     margin-bottom: var(--spacing-company);
 }
 
-
 /* Main */
 @media (min-width: 992px) {
     main .grid {
@@ -64,7 +63,7 @@ aside p {
 
 /* Footer */
 footer {
-    padding-bottom: 1rem
+    padding-bottom: 1rem;
 }
 
 footer>* {
@@ -83,5 +82,5 @@ footer.flex-between {
 }
 
 article p {
-    font-family: "Spectral";
+    font-family: "Spectral", "Times New Roman", Times, serif;
 }

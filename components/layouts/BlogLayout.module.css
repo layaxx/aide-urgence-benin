@@ -9,6 +9,7 @@
     margin-top: 0;
 }
 
-.article h1, .article h2 {
+.article h1,
+.article h2 {
     margin-bottom: 0;
 }

@@ -19,6 +19,7 @@ nav.navbarSettings li {
 
 nav.navbarLinks a {
     padding: 0.5rem 0.5rem 1rem 0.5rem;
+    color: var(--contrast);
 }
 
 nav.navbarLinks li:hover {
@@ -26,11 +27,7 @@ nav.navbarLinks li:hover {
     text-decoration: underline;
 }
 
-nav.navbarLinks a {
-    color: var(--contrast);
-}
-
 nav.navbarLinks a.brand {
     text-decoration: none;
-    color: var(--primary)
+    color: var(--primary);
 }

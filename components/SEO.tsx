@@ -21,7 +21,7 @@ const socialTags = ({
   createdAt,
   updatedAt,
 }: IProps) => {
-  const metaTags = [
+  return [
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: title },
     { name: "twitter:description", content: description },
@@ -45,8 +45,6 @@ const socialTags = ({
       content: updatedAt || new Date().toISOString(),
     },
   ]
-
-  return metaTags
 }
 
 const SEO: FC<IProps> = (props) => {

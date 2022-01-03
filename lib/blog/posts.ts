@@ -113,13 +113,14 @@ export async function fetchAllBlogPosts() {
       )
   )
 
-  postCache = allData.sort((a, b) => {
+  allData.sort((a, b) => {
     if (a[i18n.defaultLocale].date < b[i18n.defaultLocale].date) {
       return 1
     } else {
       return -1
     }
   })
+  postCache = allData
 
   return postCache
 }

@@ -4,6 +4,8 @@ backend:
   branch: main
   base_url: https://aub.yl1.eu
   auth_endpoint: api/auth
+publish_mode: editorial_workflow
+site_url: https://aub.yl1.eu
 media_folder: public/static/img
 slug:
   encoding: ascii
