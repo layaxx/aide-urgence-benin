@@ -1,12 +1,22 @@
+import config from "lib/config"
 import { useTranslation } from "next-i18next"
-import Link from "next/link"
 import Navbar from "./Navbar"
 
 export default function Hero() {
   const { t } = useTranslation()
 
   return (
-    <div className="hero" data-theme="dark">
+    <div
+      className="hero"
+      data-theme="dark"
+      style={{
+        backgroundImage: `url(${
+          config.hero
+            ? config.hero.replace("/public/", "/")
+            : "/static/hero.jpg"
+        })`,
+      }}
+    >
       <Navbar />
 
       <header className="container">
@@ -14,16 +24,11 @@ export default function Hero() {
           <h1>{t("config.name")}</h1>
           <h2>{t("hero.tagline")}</h2>
         </hgroup>
-        <p>
-          <Link href="#">
-            <a
-              role="button"
-              onClick={/* TODO: */ () => alert("TODO: Kommt noch")}
-            >
-              {t("hero.cta")}
-            </a>
-          </Link>
-        </p>
+        {config.campaign && (
+          <p>
+            <a href={config.campaign}>{t("hero.cta")}</a>
+          </p>
+        )}
       </header>
     </div>
   )

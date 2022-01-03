@@ -47,7 +47,7 @@ export default function ContrastSelector() {
       <li aria-label={t("menu.theme.label")}>
         <select
           name="locale"
-          id="locale-switcher"
+          id="theme-switcher"
           onChange={(event) => {
             if (event.target.value !== contrast) {
               setContrast(event.target.value as Contrast)

@@ -30,6 +30,21 @@ collections:
               i18n: false,
             }
           - {
+              label: "Campaign URL",
+              name: "campaign",
+              widget: "string",
+              required: false,
+              i18n: false,
+            }
+          - {
+              label: "Hero Image",
+              name: "hero",
+              widget: "image",
+              required: false,
+              choose_url: false,
+              i18n: false,
+            }
+          - {
               label: "Meta",
               name: "meta",
               widget: "object",
