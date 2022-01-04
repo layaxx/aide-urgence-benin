@@ -56,6 +56,12 @@ collections:
           - label: headline
             name: headline
             widget: string
+          - label: locale-not-available
+            name: locale-not-available
+            widget: string
+          - label: other-locales
+            name: other-locales
+            widget: string
           - label: published-by
             name: published-by
             widget: string
@@ -98,6 +104,12 @@ collections:
           - label: headline
             name: headline
             widget: string
+          - label: locale-not-available
+            name: locale-not-available
+            widget: string
+          - label: other-locales
+            name: other-locales
+            widget: string
           - label: published-by
             name: published-by
             widget: string
@@ -139,6 +151,12 @@ collections:
                 widget: string
           - label: headline
             name: headline
+            widget: string
+          - label: locale-not-available
+            name: locale-not-available
+            widget: string
+          - label: other-locales
+            name: other-locales
             widget: string
           - label: published-by
             name: published-by
@@ -240,13 +258,6 @@ collections:
                   - label: imprint
                     name: imprint
                     widget: string
-          - label: config
-            name: config
-            widget: object
-            fields:
-              - label: name
-                name: name
-                widget: string
           - label: hero
             name: hero
             widget: object
@@ -256,6 +267,13 @@ collections:
                 widget: string
               - label: cta
                 name: cta
+                widget: string
+          - label: config
+            name: config
+            widget: object
+            fields:
+              - label: name
+                name: name
                 widget: string
       - label: en - common.json
         name: en - common.json
@@ -354,13 +372,6 @@ collections:
                   - label: imprint
                     name: imprint
                     widget: string
-          - label: config
-            name: config
-            widget: object
-            fields:
-              - label: name
-                name: name
-                widget: string
           - label: hero
             name: hero
             widget: object
@@ -370,6 +381,13 @@ collections:
                 widget: string
               - label: cta
                 name: cta
+                widget: string
+          - label: config
+            name: config
+            widget: object
+            fields:
+              - label: name
+                name: name
                 widget: string
       - label: fr - common.json
         name: fr - common.json
@@ -468,13 +486,6 @@ collections:
                   - label: imprint
                     name: imprint
                     widget: string
-          - label: config
-            name: config
-            widget: object
-            fields:
-              - label: name
-                name: name
-                widget: string
           - label: hero
             name: hero
             widget: object
@@ -484,6 +495,13 @@ collections:
                 widget: string
               - label: cta
                 name: cta
+                widget: string
+          - label: config
+            name: config
+            widget: object
+            fields:
+              - label: name
+                name: name
                 widget: string
       - label: de - home.json
         name: de - home.json

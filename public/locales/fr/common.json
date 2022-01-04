@@ -36,11 +36,11 @@
       "imprint": ""
     }
   },
-  "config": {
-    "name": ""
-  },
   "hero": {
     "tagline": "",
     "cta": ""
+  },
+  "config": {
+    "name": ""
   }
 }

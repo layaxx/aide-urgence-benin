@@ -1,10 +1,10 @@
 import BlogPostCardContainer from "components/blog/BlogPostCardContainer"
 import { useTranslation } from "next-i18next"
 import Link from "next/link"
-import { ILocalizedBlogPost } from "types/Blog"
+import { INewBlogPost } from "types/Blog"
 
 interface IProps {
-  featuredPosts: ILocalizedBlogPost[]
+  featuredPosts: INewBlogPost[]
 }
 
 const FeaturedBlogPosts: React.FC<IProps> = ({ featuredPosts }) => {

@@ -3,7 +3,6 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { NextParsedUrlQuery } from "next/dist/server/request-meta"
 import { useRouter } from "next/router"
 import Layout from "components/layouts/BlogLayout"
-import { i18n } from "next-i18next.config"
 import { IAuthor, INewBlogPost } from "types/Blog"
 import { getAllAuthorPaths, getAuthorBySlug } from "lib/blog/authors"
 import { useTranslation } from "next-i18next"
@@ -13,6 +12,7 @@ import Image from "next/image"
 import BlogPostCardContainer from "components/blog/BlogPostCardContainer"
 import SEO from "components/SEO"
 import config from "lib/config"
+import { getLocale } from "lib/locale"
 
 interface IParams extends NextParsedUrlQuery {
   slug: string
@@ -24,44 +24,41 @@ interface IProps {
 }
 
 const AuthorPage = ({ author, posts }: IProps) => {
-  const router = useRouter()
+  const { locale } = useRouter()
   const { t } = useTranslation()
 
   if (!author) return <div>not found</div>
 
-  const localizedAttributes = author[router.locale ?? i18n.defaultLocale]
+  const localizedAttributes = author.localized[getLocale(locale)]
 
   return (
     <>
       <SEO
-        url={`${config.baseurl}/blog/author/${localizedAttributes.slug}`}
-        title={localizedAttributes.name}
+        url={`${config.baseurl}/blog/author/${author.slug}`}
+        title={author.name}
         description={
           localizedAttributes.description &&
           localizedAttributes.description.slice(160)
         }
-        image={
-          localizedAttributes.portrait &&
-          config.baseurl + localizedAttributes.portrait
-        }
+        image={author.portrait && config.baseurl + author.portrait}
       />
 
       <Layout>
-        <h1>{localizedAttributes.name}</h1>
+        <h1>{author.name}</h1>
         <div style={{ position: "relative", width: "10rem", height: "10rem" }}>
           <Image
-            src={localizedAttributes.portrait}
-            alt={"portrait " + localizedAttributes.name}
+            src={author.portrait}
+            alt={"portrait " + author.name}
             layout="fill"
             objectFit="cover"
           />
         </div>
         <Markdown>{localizedAttributes.description ?? ""}</Markdown>
-        {localizedAttributes.socials?.length && (
+        {author.socials?.length && (
           <>
             <h2>{t("blog:heading.socials")}</h2>
             <ul>
-              {localizedAttributes.socials.map((entry, index) => (
+              {author.socials.map((entry, index) => (
                 <li key={index}>
                   <a href={entry.url}>{entry.name}</a>
                 </li>
@@ -72,12 +69,10 @@ const AuthorPage = ({ author, posts }: IProps) => {
 
         <h2>
           {t("blog:heading.posts-by-author", {
-            name: localizedAttributes.name,
+            name: author.name,
           })}
         </h2>
-        <BlogPostCardContainer
-          posts={posts.map((post) => post[router.locale ?? i18n.defaultLocale])}
-        />
+        <BlogPostCardContainer posts={posts} />
       </Layout>
     </>
   )
@@ -95,15 +90,12 @@ export const getStaticProps: GetStaticProps<IProps, IParams> = async ({
   params,
   locale,
 }) => {
-  const author = await getAuthorBySlug(params?.slug ?? "", locale)
+  const author = await getAuthorBySlug(params?.slug ?? "")
   const posts = await getBlogPostsByAuthor(params?.slug ?? "")
 
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? i18n.defaultLocale, [
-        "common",
-        "blog",
-      ])),
+      ...(await serverSideTranslations(getLocale(locale), ["common", "blog"])),
       author,
       posts,
     },

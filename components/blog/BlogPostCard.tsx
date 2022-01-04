@@ -1,28 +1,30 @@
 import dayjs from "dayjs"
-import { i18n } from "next-i18next.config"
+import { getLocale } from "lib/locale"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { ILocalizedBlogPost } from "types/Blog"
+import { INewBlogPost } from "types/Blog"
 
 import styles from "./BlogPostCard.module.css"
 
 interface IProps {
-  localizedPost: ILocalizedBlogPost
+  post: INewBlogPost
 }
 
-const BlogPostCard: React.FC<IProps> = ({ localizedPost }) => {
-  const router = useRouter()
+const BlogPostCard: React.FC<IProps> = ({ post }) => {
+  const { locale } = useRouter()
+
+  const title = post.localized[getLocale(locale)]?.title
 
   return (
-    <article key={localizedPost.slug} className={styles.container}>
-      <Link href="/blog/post/[slug]" as={`/blog/post/${localizedPost.slug}`}>
+    <article key={post.slug} className={styles.container}>
+      <Link href="/blog/post/[slug]" as={`/blog/post/${post.slug}`}>
         <a>
           <div className={styles.imagePlaceholder} data-theme="dark">
-            {localizedPost.thumbnail && (
+            {post.thumbnail && (
               <Image
-                src={localizedPost.thumbnail}
-                alt={"thumbnail " + localizedPost.title}
+                src={post.thumbnail}
+                alt={"thumbnail " + title}
                 /* width={640}
                 height={960} */
                 layout="fill"
@@ -35,22 +37,20 @@ const BlogPostCard: React.FC<IProps> = ({ localizedPost }) => {
       <div>
         <div className={styles.details}>
           <small>
-            {dayjs(localizedPost.date)
-              .toDate()
-              .toLocaleDateString(router.locale ?? i18n.defaultLocale)}
+            {dayjs(post.date).toDate().toLocaleDateString(getLocale(locale))}
           </small>
-          {localizedPost.author && (
+          {post.author && (
             <Link
               href="/blog/author/[slug]"
-              as={`/blog/author/${localizedPost.author?.name}`}
+              as={`/blog/author/${post.author?.name}`}
             >
-              <a>{localizedPost.author?.name}</a>
+              <a>{post.author?.name}</a>
             </Link>
           )}
         </div>
-        <Link href="/blog/post/[slug]" as={`/blog/post/${localizedPost.slug}`}>
+        <Link href="/blog/post/[slug]" as={`/blog/post/${post.slug}`}>
           <a>
-            <h2>{localizedPost.title}</h2>
+            <h2>{title}</h2>
           </a>
         </Link>
       </div>

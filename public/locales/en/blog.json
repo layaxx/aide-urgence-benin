@@ -7,10 +7,12 @@
   "no-posts": "no posts found.",
   "heading": {
     "socials": "Social Media Links",
-    "posts-by-author": "",
+    "posts-by-author": "Posts by Author",
     "about-the-author": "About the Author",
-    "posts-for-tag": ""
+    "posts-for-tag": "Posts with this tag"
   },
   "headline": "The Blog",
+  "locale-not-available": "post not available for {{locale}} locale",
+  "other-locales": "Available locales",
   "published-by": "published on {{date}} by {{name}}"
 }

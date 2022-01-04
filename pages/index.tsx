@@ -4,15 +4,16 @@ import Layout from "components/layouts/DefaultLayout"
 import { attributes } from "content/home.md"
 import { i18n } from "next-i18next.config"
 import FeaturedBlogPosts from "components/home/FeaturedBlogPosts"
-import { ILocalizedBlogPost } from "types/Blog"
+import { INewBlogPost } from "types/Blog"
 import { getBlogPostBySlug } from "lib/blog/posts"
 import { useRouter } from "next/router"
 import AboutComponent from "components/home/AboutComponent"
 import SEO from "components/SEO"
 import config from "lib/config.json"
+import { getLocale } from "lib/locale"
 
 interface IProps {
-  featuredPosts: ILocalizedBlogPost[]
+  featuredPosts: INewBlogPost[]
 }
 
 const Home: NextPage<IProps> = ({ featuredPosts }) => {
@@ -33,17 +34,15 @@ const Home: NextPage<IProps> = ({ featuredPosts }) => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const featuredPosts = (
-    await Promise.all(
-      attributes[locale ?? i18n.defaultLocale].featured.map((slug: string) =>
-        getBlogPostBySlug(slug, locale)
-      )
+  const featuredPosts = await Promise.all(
+    attributes[getLocale(locale)].featured.map((slug: string) =>
+      getBlogPostBySlug(slug)
     )
-  ).map((post) => post[locale ?? i18n.defaultLocale])
+  )
 
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? i18n.defaultLocale, [
+      ...(await serverSideTranslations(getLocale(locale), [
         "common",
         "blog",
         "home",

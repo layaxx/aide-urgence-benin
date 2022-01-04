@@ -1,24 +1,22 @@
-import { i18n } from "../next-i18next.config"
-export interface IBlogPost {
-  slug: string
-  html: string
-  attributes: {
-    [key: typeof i18n.defaultLocale]: { title: string; thumbnail: string }
-  }
-}
+import { locales } from "lib/config"
+
+export type Locale = typeof locales[number]
 
 export interface ILocalizedBlogPost {
   title: string
-  thumbnail?: string
   body: string
-  author?: ILocalizedAuthor
-  slug: string
-  date: string
-  tags: ILocalizedTag[]
 }
 
-export interface INewBlogPost {
-  [key: typeof i18n.defaultLocale]: ILocalizedBlogPost
+export type INewBlogPost = {
+  slug: string
+  date: string
+  tags: ITag[]
+  thumbnail?: string
+  availableLocales: Set<Locale> | Locale[]
+  author: IAuthor | null
+  localized: {
+    [key in Locale]: ILocalizedBlogPost | null
+  }
 }
 
 interface SocialLink {
@@ -27,27 +25,31 @@ interface SocialLink {
 }
 
 export interface ILocalizedAuthor {
-  name: string
-  portrait: string
   description: string
-  socials: SocialLink[]
-  slug: string
 }
 
-export interface IAuthor {
-  [key: typeof i18n.defaultLocale]: ILocalizedAuthor
+export type IAuthor = {
+  portrait: string
+  socials: SocialLink[]
+  slug: string
+  name: string
+  localized: {
+    [key in Locale]: ILocalizedAuthor
+  }
 }
 
 export interface INavigationData {
-  prev: ILocalizedBlogPost | null
-  next: ILocalizedBlogPost | null
+  prev: INewBlogPost | null
+  next: INewBlogPost | null
 }
 
-export interface ITag {
-  [key: typeof i18n.defaultLocale]: ILocalizedTag
+export type ITag = {
+  slug: string
+  localized: {
+    [key in Locale]: ILocalizedTag
+  }
 }
 
 export interface ILocalizedTag {
-  slug: string
   title: string
 }

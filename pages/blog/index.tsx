@@ -2,7 +2,6 @@ import Layout from "components/layouts/DefaultLayout"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps, NextPage } from "next"
 import { i18n } from "next-i18next.config"
-import { useRouter } from "next/router"
 import { useTranslation } from "next-i18next"
 import { INewBlogPost } from "types/Blog"
 import { fetchAllBlogPosts } from "lib/blog/posts"
@@ -15,7 +14,6 @@ interface IProps {
 }
 
 const Blog: NextPage<IProps> = ({ postsList }) => {
-  const router = useRouter()
   const { t } = useTranslation()
 
   return (
@@ -28,11 +26,7 @@ const Blog: NextPage<IProps> = ({ postsList }) => {
 
       <Layout>
         <h1>{t("blog:headline")}</h1>
-        <BlogPostCardContainer
-          posts={postsList.map(
-            (post) => post[router.locale ?? i18n.defaultLocale]
-          )}
-        />
+        <BlogPostCardContainer posts={postsList} />
       </Layout>
     </>
   )

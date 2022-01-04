@@ -1,11 +1,11 @@
 import { useTranslation } from "next-i18next"
-import { ILocalizedBlogPost } from "types/Blog"
+import { INewBlogPost } from "types/Blog"
 import BlogPostCard from "./BlogPostCard"
 
 import styles from "./BlogPostCardContainer.module.css"
 
 interface IProps {
-  posts: ILocalizedBlogPost[]
+  posts: INewBlogPost[]
 }
 
 const BlogPostCardContainer: React.FC<IProps> = ({ posts }) => {
@@ -15,7 +15,7 @@ const BlogPostCardContainer: React.FC<IProps> = ({ posts }) => {
     <div className={styles.container}>
       {posts.length
         ? posts.map((post) => {
-            return <BlogPostCard key={post.slug} localizedPost={post} />
+            return <BlogPostCard key={post.slug} post={post} />
           })
         : t("blog:no-posts")}
     </div>

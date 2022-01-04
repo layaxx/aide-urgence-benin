@@ -22,6 +22,8 @@ import TagCard from "components/blog/TagCard"
 import ShareButtons from "components/blog/ShareButtons"
 import SEO from "components/SEO"
 import config from "lib/config"
+import { getLocale } from "lib/locale"
+import Link from "next/link"
 
 interface IParams extends NextParsedUrlQuery {
   slug: string
@@ -33,33 +35,63 @@ interface IProps {
 }
 
 const Post: FC<IProps> = ({ post, navigationData }) => {
-  const router = useRouter()
+  const { locale } = useRouter()
   const { t } = useTranslation()
 
   if (!post) return <div>not found</div>
 
-  const localizedAttributes = post[router.locale ?? i18n.defaultLocale]
+  const localizedAttributes = post.localized[getLocale(locale)]
+
+  if (!localizedAttributes) {
+    return (
+      <Layout>
+        <h1>{t("blog:locale-not-available", { locale: getLocale(locale) })}</h1>
+        <p>{t("blog:other-locales")}</p>
+        <ul>
+          {Array.from(post.availableLocales).map((locale) => (
+            <li key="locale">
+              <Link
+                href="/blog/post/[slug]"
+                as={"/blog/post/" + post.slug}
+                locale={locale}
+              >
+                <a>{locale}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <ShareButtons />
+
+        <BlogNavigation data={navigationData} />
+
+        {post.author && (
+          <>
+            <h2>{t("blog:heading.about-the-author")}</h2>
+            <AuthorHighlight author={post.author} />
+          </>
+        )}
+      </Layout>
+    )
+  }
 
   return (
     <>
       <SEO
-        url={`${config.baseurl}/blog/post/${localizedAttributes.slug}`}
+        url={`${config.baseurl}/blog/post/${post.slug}`}
         title={localizedAttributes.title}
         description={
           localizedAttributes.body && localizedAttributes.body.slice(160)
         }
-        createdAt={dayjs(localizedAttributes.date).toISOString()}
-        image={
-          localizedAttributes.thumbnail &&
-          config.baseurl + localizedAttributes.thumbnail
-        }
+        createdAt={dayjs(post.date).toISOString()}
+        image={post.thumbnail && config.baseurl + post.thumbnail}
       />
 
       <Layout>
-        {localizedAttributes.thumbnail && (
+        {post.thumbnail && (
           <div style={{ position: "relative", width: "100%", height: "20rem" }}>
             <Image
-              src={localizedAttributes.thumbnail}
+              src={post.thumbnail}
               alt="thumbnail"
               layout="fill"
               objectFit="cover"
@@ -70,17 +102,15 @@ const Post: FC<IProps> = ({ post, navigationData }) => {
 
         <small>
           {t("blog:published-by", {
-            name: localizedAttributes.author?.name ?? "anon",
-            date: dayjs(localizedAttributes.date)
-              .toDate()
-              .toLocaleString(router.locale ?? i18n.defaultLocale),
+            name: post.author?.name ?? "anon",
+            date: dayjs(post.date).toDate().toLocaleString(getLocale(locale)),
           })}
         </small>
         <br />
 
-        {localizedAttributes.tags.length && (
+        {post.tags.length && (
           <div className={styles.tags}>
-            {localizedAttributes.tags.map((tag) => (
+            {post.tags.map((tag) => (
               <TagCard tag={tag} key={tag.slug} />
             ))}
           </div>
@@ -92,10 +122,10 @@ const Post: FC<IProps> = ({ post, navigationData }) => {
 
         <BlogNavigation data={navigationData} />
 
-        {localizedAttributes.author && (
+        {post.author && (
           <>
             <h2>{t("blog:heading.about-the-author")}</h2>
-            <AuthorHighlight author={localizedAttributes.author} />
+            <AuthorHighlight author={post.author} />
           </>
         )}
       </Layout>
@@ -115,10 +145,10 @@ export const getStaticProps: GetStaticProps<IProps, IParams> = async ({
   params,
   locale,
 }) => {
-  const post = await getBlogPostBySlug(params?.slug ?? "", locale)
+  const post = await getBlogPostBySlug(params?.slug ?? "")
   const navigationData = await getNavigationDataForBlog(
     params?.slug ?? "",
-    locale
+    getLocale(locale)
   )
 
   return {

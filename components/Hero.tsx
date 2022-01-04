@@ -22,7 +22,7 @@ export default function Hero() {
 
       <header className="container">
         <hgroup>
-          <h1>{t("config.name")}</h1>
+          <h1>{config.title}</h1>
           <h2>{t("hero.tagline")}</h2>
         </hgroup>
         {config.campaign && (

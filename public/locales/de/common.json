@@ -36,11 +36,11 @@
       "imprint": "Impressum"
     }
   },
-  "config": {
-    "name": "Aide Urgence Bénin"
-  },
   "hero": {
     "tagline": "Tagline deutsch",
     "cta": "Jetzt spenden!"
+  },
+  "config": {
+    "name": "Aide Urgence Bénin"
   }
 }

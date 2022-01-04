@@ -1,10 +1,10 @@
 import Link from "next/link"
-import { ILocalizedAuthor } from "types/Blog"
+import { IAuthor } from "types/Blog"
 
 import styles from "./AuthorHighlight.module.css"
 
 interface IProps {
-  author: ILocalizedAuthor
+  author: IAuthor
 }
 
 const AuthorHighlight: React.FC<IProps> = ({ author }) => {

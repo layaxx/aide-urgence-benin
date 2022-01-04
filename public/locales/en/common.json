@@ -36,11 +36,11 @@
       "imprint": "Imprint"
     }
   },
-  "config": {
-    "name": "Aide Urgence Bénin"
-  },
   "hero": {
     "tagline": "Tagline english",
     "cta": "Donate now!"
+  },
+  "config": {
+    "name": "Aide Urgence Bénin"
   }
 }
