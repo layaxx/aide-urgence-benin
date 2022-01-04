@@ -3,12 +3,12 @@ import { getLocale } from "lib/locale"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { INewBlogPost } from "types/Blog"
+import { BlogPost } from "types/Blog"
 
 import styles from "./BlogPostCard.module.css"
 
 interface IProps {
-  post: INewBlogPost
+  post: BlogPost
 }
 
 const BlogPostCard: React.FC<IProps> = ({ post }) => {

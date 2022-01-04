@@ -3,14 +3,14 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps, NextPage } from "next"
 import { i18n } from "next-i18next.config"
 import { useTranslation } from "next-i18next"
-import { INewBlogPost } from "types/Blog"
+import { BlogPost } from "types/Blog"
 import { fetchAllBlogPosts } from "lib/blog/posts"
 import BlogPostCardContainer from "components/blog/BlogPostCardContainer"
 import config from "lib/config"
 import SEO from "components/SEO"
 
 interface IProps {
-  postsList: INewBlogPost[]
+  postsList: BlogPost[]
 }
 
 const Blog: NextPage<IProps> = ({ postsList }) => {

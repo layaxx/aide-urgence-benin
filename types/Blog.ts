@@ -7,13 +7,13 @@ export interface ILocalizedBlogPost {
   body: string
 }
 
-export type INewBlogPost = {
+export type BlogPost = {
   slug: string
   date: string
   tags: ITag[]
   thumbnail?: string
   availableLocales: Set<Locale> | Locale[]
-  author: IAuthor | null
+  author: Author | null
   localized: {
     [key in Locale]: ILocalizedBlogPost | null
   }
@@ -28,7 +28,7 @@ export interface ILocalizedAuthor {
   description: string
 }
 
-export type IAuthor = {
+export type Author = {
   portrait: string
   socials: SocialLink[]
   slug: string
@@ -39,8 +39,8 @@ export type IAuthor = {
 }
 
 export interface INavigationData {
-  prev: INewBlogPost | null
-  next: INewBlogPost | null
+  prev: BlogPost | null
+  next: BlogPost | null
 }
 
 export type ITag = {

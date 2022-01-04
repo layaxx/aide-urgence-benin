@@ -1,11 +1,11 @@
 import { useTranslation } from "next-i18next"
-import { INewBlogPost } from "types/Blog"
+import { BlogPost } from "types/Blog"
 import BlogPostCard from "./BlogPostCard"
 
 import styles from "./BlogPostCardContainer.module.css"
 
 interface IProps {
-  posts: INewBlogPost[]
+  posts: BlogPost[]
 }
 
 const BlogPostCardContainer: React.FC<IProps> = ({ posts }) => {

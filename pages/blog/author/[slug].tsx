@@ -3,7 +3,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { NextParsedUrlQuery } from "next/dist/server/request-meta"
 import { useRouter } from "next/router"
 import Layout from "components/layouts/BlogLayout"
-import { IAuthor, INewBlogPost } from "types/Blog"
+import { Author, BlogPost } from "types/Blog"
 import { getAllAuthorPaths, getAuthorBySlug } from "lib/blog/authors"
 import { useTranslation } from "next-i18next"
 import { getBlogPostsByAuthor } from "lib/blog/posts"
@@ -19,8 +19,8 @@ interface IParams extends NextParsedUrlQuery {
 }
 
 interface IProps {
-  author: IAuthor | undefined
-  posts: INewBlogPost[]
+  author: Author | undefined
+  posts: BlogPost[]
 }
 
 const AuthorPage = ({ author, posts }: IProps) => {

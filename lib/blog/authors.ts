@@ -1,4 +1,4 @@
-import { IAuthor } from "types/Blog"
+import { Author } from "types/Blog"
 import fs from "fs"
 import path from "path"
 import { locales } from "lib/config"
@@ -6,7 +6,7 @@ import { i18n } from "next-i18next.config"
 
 const directory = "content/blog/authors" as const
 
-let cache: IAuthor[]
+let cache: Author[]
 
 export async function fetchAllAuthorSlugs() {
   return (await fetchAllAuthors()).map((author) => author.slug)
@@ -48,7 +48,7 @@ export async function fetchAllAuthors() {
                 { description: attributes[locale].description ?? null },
               ])
             ),
-          } as IAuthor
+          } as Author
         })
       )
   )

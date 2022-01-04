@@ -4,7 +4,7 @@ import { NextParsedUrlQuery } from "next/dist/server/request-meta"
 import { useRouter } from "next/router"
 import Layout from "components/layouts/BlogLayout"
 import { i18n } from "next-i18next.config"
-import { INavigationData, INewBlogPost } from "types/Blog"
+import { INavigationData, BlogPost } from "types/Blog"
 import {
   getAllBlogPostPaths,
   getBlogPostBySlug,
@@ -30,7 +30,7 @@ interface IParams extends NextParsedUrlQuery {
 }
 
 interface IProps {
-  post: INewBlogPost | undefined
+  post: BlogPost | undefined
   navigationData: INavigationData
 }
 

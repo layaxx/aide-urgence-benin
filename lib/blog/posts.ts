@@ -1,4 +1,4 @@
-import { INavigationData, INewBlogPost, ITag, Locale } from "types/Blog"
+import { INavigationData, BlogPost, ITag, Locale } from "types/Blog"
 import fs from "fs"
 import path from "path"
 import { i18n } from "next-i18next.config"
@@ -9,7 +9,7 @@ import { getLocale } from "lib/locale"
 
 const directory = "content/blog/posts" as const
 
-let postCache: INewBlogPost[]
+let postCache: BlogPost[]
 
 export async function fetchAllBlogPostSlugs() {
   return (await fetchAllBlogPosts()).map((post) => post.slug)
@@ -62,7 +62,7 @@ export async function getBlogPostBySlug(slug: string) {
 export async function fetchAllBlogPosts() {
   if (postCache && postCache.length) return postCache
 
-  const allData: INewBlogPost[] = await Promise.all(
+  const allData: BlogPost[] = await Promise.all(
     await fs.promises
       .readdir(path.join(process.cwd(), directory))
       .then((result) =>

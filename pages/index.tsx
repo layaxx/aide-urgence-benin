@@ -4,7 +4,7 @@ import Layout from "components/layouts/DefaultLayout"
 import { attributes } from "content/home.md"
 import { i18n } from "next-i18next.config"
 import FeaturedBlogPosts from "components/home/FeaturedBlogPosts"
-import { INewBlogPost } from "types/Blog"
+import { BlogPost } from "types/Blog"
 import { getBlogPostBySlug } from "lib/blog/posts"
 import { useRouter } from "next/router"
 import AboutComponent from "components/home/AboutComponent"
@@ -13,7 +13,7 @@ import config from "lib/config.json"
 import { getLocale } from "lib/locale"
 
 interface IProps {
-  featuredPosts: INewBlogPost[]
+  featuredPosts: BlogPost[]
 }
 
 const Home: NextPage<IProps> = ({ featuredPosts }) => {
