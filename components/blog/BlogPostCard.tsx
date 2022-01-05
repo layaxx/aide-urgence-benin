@@ -3,7 +3,10 @@ import { getLocale } from "lib/locale"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { BlogPost } from "types/Blog"
+import { BlogPost, Locale } from "types/Blog"
+import { useTranslation } from "next-i18next"
+import { i18n } from "next-i18next.config"
+import * as Unicons from "@iconscout/react-unicons"
 
 import styles from "./BlogPostCard.module.css"
 
@@ -12,21 +15,27 @@ interface IProps {
 }
 
 const BlogPostCard: React.FC<IProps> = ({ post }) => {
+  const { t } = useTranslation()
+
   const { locale } = useRouter()
 
-  const title = post.localized[getLocale(locale)]?.title
+  const availableForLocale = new Set(post.availableLocales).has(
+    locale as Locale
+  )
+
+  const title =
+    post.localized[getLocale(locale)]?.title ??
+    post.localized[i18n.defaultLocale as Locale]?.title
 
   return (
     <article key={post.slug} className={styles.container}>
       <Link href="/blog/post/[slug]" as={`/blog/post/${post.slug}`}>
-        <a>
+        <a title={title}>
           <div className={styles.imagePlaceholder} data-theme="dark">
             {post.thumbnail && (
               <Image
                 src={post.thumbnail}
                 alt={"thumbnail " + title}
-                /* width={640}
-                height={960} */
                 layout="fill"
                 objectFit="cover"
               />
@@ -42,17 +51,30 @@ const BlogPostCard: React.FC<IProps> = ({ post }) => {
           {post.author && (
             <Link
               href="/blog/author/[slug]"
-              as={`/blog/author/${post.author?.name}`}
+              as={`/blog/author/${post.author.name}`}
             >
-              <a>{post.author?.name}</a>
+              <a title={post.author.name}>{post.author.name}</a>
             </Link>
           )}
         </div>
-        <Link href="/blog/post/[slug]" as={`/blog/post/${post.slug}`}>
-          <a>
-            <h2>{title}</h2>
-          </a>
-        </Link>
+        <div>
+          <Link href="/blog/post/[slug]" as={`/blog/post/${post.slug}`}>
+            <a title={title}>
+              <em
+                data-tooltip={
+                  !availableForLocale
+                    ? t("blog:locale-not-available", { locale })
+                    : undefined
+                }
+              >
+                <span>{title}</span>
+                {!availableForLocale && (
+                  <Unicons.UilExclamationTriangle size="30" color="#ffc107" />
+                )}
+              </em>
+            </a>
+          </Link>
+        </div>
       </div>
     </article>
   )

@@ -18,6 +18,7 @@ interface IProps {
 
 const Home: NextPage<IProps> = ({ featuredPosts }) => {
   const { locale } = useRouter()
+
   return (
     <>
       <SEO url={`${config.baseurl}`} />

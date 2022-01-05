@@ -4,6 +4,7 @@
     "all": "Alle Posts",
     "prev": "Letzte Posts"
   },
+  "locale-not-available": "Diesen Artikel gibt es nicht in dieser Sprache",
   "no-posts": "keine Posts gefunden.",
   "heading": {
     "socials": "Social Media Links",
@@ -12,7 +13,6 @@
     "posts-for-tag": "Post mit diesem Tag"
   },
   "headline": "Der Blog",
-  "locale-not-available": "Diesen Artikel gibt es nicht in dieser Sprache",
   "other-locales": "Veefügbare Sprachen:",
   "published-by": "am {{date}} von {{name}}"
 }

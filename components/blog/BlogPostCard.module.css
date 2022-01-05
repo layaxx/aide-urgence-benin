@@ -14,9 +14,18 @@
     padding: 1rem;
 }
 
-.container>div>a>h2 {
-    margin: 0;
+.container>div a>em {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.container>div a>em>span {
     font-weight: 400;
+    font-size: 2rem;
+    font-style: normal;
 }
 
 .container .details {
