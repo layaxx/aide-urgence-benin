@@ -61,25 +61,7 @@ aside p {
     line-height: 1.25;
 }
 
-/* Footer */
-footer {
-    padding-bottom: 1rem;
-}
 
-footer>* {
-    min-width: 33%;
-    text-align: center;
-}
-
-footer .social-container {
-    height: 1.5rem !important;
-}
-
-footer.flex-between {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap-reverse;
-}
 
 article p {
     font-family: "Spectral", "Times New Roman", Times, serif;
