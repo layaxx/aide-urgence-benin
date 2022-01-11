@@ -48,7 +48,6 @@ const AuthorPage = ({ tag, posts }: IProps) => {
 
 export async function getStaticPaths() {
   const paths = await getAllTagPaths()
-  console.log(paths)
   return {
     paths,
     fallback: false,
