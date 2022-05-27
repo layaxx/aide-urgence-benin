@@ -1,0 +1,834 @@
+backend:
+  repo: layaxx/aide-urgence-benin
+  name: github
+  branch: main
+  base_url: https://aub.yl1.eu
+  auth_endpoint: api/auth
+publish_mode: editorial_workflow
+site_url: https://aub.yl1.eu
+media_folder: public/static/img
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: _
+collections:
+  - name: Translations
+    label: translations
+    format: json
+    i18n: false
+    files:
+      - label: de - blog.json
+        name: de - blog.json
+        file: ./public/locales/de/blog.json
+        fields:
+          - label: nav
+            name: nav
+            widget: object
+            fields:
+              - label: next
+                name: next
+                widget: string
+              - label: all
+                name: all
+                widget: string
+              - label: prev
+                name: prev
+                widget: string
+          - label: locale-not-available
+            name: locale-not-available
+            widget: string
+          - label: no-posts
+            name: no-posts
+            widget: string
+          - label: heading
+            name: heading
+            widget: object
+            fields:
+              - label: socials
+                name: socials
+                widget: string
+              - label: posts-by-author
+                name: posts-by-author
+                widget: string
+              - label: about-the-author
+                name: about-the-author
+                widget: string
+              - label: posts-for-tag
+                name: posts-for-tag
+                widget: string
+          - label: headline
+            name: headline
+            widget: string
+          - label: other-locales
+            name: other-locales
+            widget: string
+          - label: published-by
+            name: published-by
+            widget: string
+      - label: en - blog.json
+        name: en - blog.json
+        file: ./public/locales/en/blog.json
+        fields:
+          - label: nav
+            name: nav
+            widget: object
+            fields:
+              - label: next
+                name: next
+                widget: string
+              - label: all
+                name: all
+                widget: string
+              - label: prev
+                name: prev
+                widget: string
+          - label: locale-not-available
+            name: locale-not-available
+            widget: string
+          - label: no-posts
+            name: no-posts
+            widget: string
+          - label: heading
+            name: heading
+            widget: object
+            fields:
+              - label: socials
+                name: socials
+                widget: string
+              - label: posts-by-author
+                name: posts-by-author
+                widget: string
+              - label: about-the-author
+                name: about-the-author
+                widget: string
+              - label: posts-for-tag
+                name: posts-for-tag
+                widget: string
+          - label: headline
+            name: headline
+            widget: string
+          - label: other-locales
+            name: other-locales
+            widget: string
+          - label: published-by
+            name: published-by
+            widget: string
+      - label: fr - blog.json
+        name: fr - blog.json
+        file: ./public/locales/fr/blog.json
+        fields:
+          - label: nav
+            name: nav
+            widget: object
+            fields:
+              - label: next
+                name: next
+                widget: string
+              - label: all
+                name: all
+                widget: string
+              - label: prev
+                name: prev
+                widget: string
+          - label: locale-not-available
+            name: locale-not-available
+            widget: string
+          - label: no-posts
+            name: no-posts
+            widget: string
+          - label: heading
+            name: heading
+            widget: object
+            fields:
+              - label: socials
+                name: socials
+                widget: string
+              - label: posts-by-author
+                name: posts-by-author
+                widget: string
+              - label: about-the-author
+                name: about-the-author
+                widget: string
+              - label: posts-for-tag
+                name: posts-for-tag
+                widget: string
+          - label: headline
+            name: headline
+            widget: string
+          - label: other-locales
+            name: other-locales
+            widget: string
+          - label: published-by
+            name: published-by
+            widget: string
+      - label: de - common.json
+        name: de - common.json
+        file: ./public/locales/de/common.json
+        fields:
+          - label: share-on
+            name: share-on
+            widget: string
+          - label: contact
+            name: contact
+            widget: object
+            fields:
+              - label: errors
+                name: errors
+                widget: object
+                fields:
+                  - label: default
+                    name: default
+                    widget: string
+                  - label: message
+                    name: message
+                    widget: string
+              - label: success
+                name: success
+                widget: string
+              - label: label
+                name: label
+                widget: string
+              - label: headings
+                name: headings
+                widget: object
+                fields:
+                  - label: first
+                    name: first
+                    widget: string
+                  - label: second
+                    name: second
+                    widget: string
+              - label: placeholders
+                name: placeholders
+                widget: object
+                fields:
+                  - label: name
+                    name: name
+                    widget: string
+                  - label: email
+                    name: email
+                    widget: string
+                  - label: message
+                    name: message
+                    widget: string
+              - label: btn
+                name: btn
+                widget: string
+              - label: legal
+                name: legal
+                widget: string
+          - label: menu
+            name: menu
+            widget: object
+            fields:
+              - label: theme
+                name: theme
+                widget: object
+                fields:
+                  - label: dark
+                    name: dark
+                    widget: string
+                  - label: auto
+                    name: auto
+                    widget: string
+                  - label: light
+                    name: light
+                    widget: string
+                  - label: label
+                    name: label
+                    widget: string
+              - label: links
+                name: links
+                widget: object
+                fields:
+                  - label: blog
+                    name: blog
+                    widget: string
+          - label: footer
+            name: footer
+            widget: object
+            fields:
+              - label: tagline
+                name: tagline
+                widget: string
+              - label: links
+                name: links
+                widget: object
+                fields:
+                  - label: imprint
+                    name: imprint
+                    widget: string
+          - label: hero
+            name: hero
+            widget: object
+            fields:
+              - label: tagline
+                name: tagline
+                widget: string
+              - label: cta
+                name: cta
+                widget: string
+          - label: config
+            name: config
+            widget: object
+            fields:
+              - label: name
+                name: name
+                widget: string
+      - label: en - common.json
+        name: en - common.json
+        file: ./public/locales/en/common.json
+        fields:
+          - label: share-on
+            name: share-on
+            widget: string
+          - label: contact
+            name: contact
+            widget: object
+            fields:
+              - label: errors
+                name: errors
+                widget: object
+                fields:
+                  - label: default
+                    name: default
+                    widget: string
+                  - label: message
+                    name: message
+                    widget: string
+              - label: success
+                name: success
+                widget: string
+              - label: label
+                name: label
+                widget: string
+              - label: headings
+                name: headings
+                widget: object
+                fields:
+                  - label: first
+                    name: first
+                    widget: string
+                  - label: second
+                    name: second
+                    widget: string
+              - label: placeholders
+                name: placeholders
+                widget: object
+                fields:
+                  - label: name
+                    name: name
+                    widget: string
+                  - label: email
+                    name: email
+                    widget: string
+                  - label: message
+                    name: message
+                    widget: string
+              - label: btn
+                name: btn
+                widget: string
+              - label: legal
+                name: legal
+                widget: string
+          - label: menu
+            name: menu
+            widget: object
+            fields:
+              - label: theme
+                name: theme
+                widget: object
+                fields:
+                  - label: dark
+                    name: dark
+                    widget: string
+                  - label: auto
+                    name: auto
+                    widget: string
+                  - label: light
+                    name: light
+                    widget: string
+                  - label: label
+                    name: label
+                    widget: string
+              - label: links
+                name: links
+                widget: object
+                fields:
+                  - label: blog
+                    name: blog
+                    widget: string
+          - label: footer
+            name: footer
+            widget: object
+            fields:
+              - label: tagline
+                name: tagline
+                widget: string
+              - label: links
+                name: links
+                widget: object
+                fields:
+                  - label: imprint
+                    name: imprint
+                    widget: string
+          - label: hero
+            name: hero
+            widget: object
+            fields:
+              - label: tagline
+                name: tagline
+                widget: string
+              - label: cta
+                name: cta
+                widget: string
+          - label: config
+            name: config
+            widget: object
+            fields:
+              - label: name
+                name: name
+                widget: string
+      - label: fr - common.json
+        name: fr - common.json
+        file: ./public/locales/fr/common.json
+        fields:
+          - label: share-on
+            name: share-on
+            widget: string
+          - label: contact
+            name: contact
+            widget: object
+            fields:
+              - label: errors
+                name: errors
+                widget: object
+                fields:
+                  - label: default
+                    name: default
+                    widget: string
+                  - label: message
+                    name: message
+                    widget: string
+              - label: success
+                name: success
+                widget: string
+              - label: label
+                name: label
+                widget: string
+              - label: headings
+                name: headings
+                widget: object
+                fields:
+                  - label: first
+                    name: first
+                    widget: string
+                  - label: second
+                    name: second
+                    widget: string
+              - label: placeholders
+                name: placeholders
+                widget: object
+                fields:
+                  - label: name
+                    name: name
+                    widget: string
+                  - label: email
+                    name: email
+                    widget: string
+                  - label: message
+                    name: message
+                    widget: string
+              - label: btn
+                name: btn
+                widget: string
+              - label: legal
+                name: legal
+                widget: string
+          - label: menu
+            name: menu
+            widget: object
+            fields:
+              - label: theme
+                name: theme
+                widget: object
+                fields:
+                  - label: dark
+                    name: dark
+                    widget: string
+                  - label: auto
+                    name: auto
+                    widget: string
+                  - label: light
+                    name: light
+                    widget: string
+                  - label: label
+                    name: label
+                    widget: string
+              - label: links
+                name: links
+                widget: object
+                fields:
+                  - label: blog
+                    name: blog
+                    widget: string
+          - label: footer
+            name: footer
+            widget: object
+            fields:
+              - label: tagline
+                name: tagline
+                widget: string
+              - label: links
+                name: links
+                widget: object
+                fields:
+                  - label: imprint
+                    name: imprint
+                    widget: string
+          - label: hero
+            name: hero
+            widget: object
+            fields:
+              - label: tagline
+                name: tagline
+                widget: string
+              - label: cta
+                name: cta
+                widget: string
+          - label: config
+            name: config
+            widget: object
+            fields:
+              - label: name
+                name: name
+                widget: string
+      - label: de - home.json
+        name: de - home.json
+        file: ./public/locales/de/home.json
+        fields:
+          - label: headings
+            name: headings
+            widget: object
+            fields:
+              - label: about
+                name: about
+                widget: string
+              - label: featured-blog-posts
+                name: featured-blog-posts
+                widget: string
+          - label: about
+            name: about
+            widget: object
+            fields:
+              - label: who
+                name: who
+                widget: object
+                fields:
+                  - label: heading
+                    name: heading
+                    widget: string
+                  - label: text
+                    name: text
+                    widget: string
+              - label: what
+                name: what
+                widget: object
+                fields:
+                  - label: heading
+                    name: heading
+                    widget: string
+                  - label: text
+                    name: text
+                    widget: string
+              - label: where
+                name: where
+                widget: object
+                fields:
+                  - label: heading
+                    name: heading
+                    widget: string
+                  - label: text
+                    name: text
+                    widget: string
+      - label: en - home.json
+        name: en - home.json
+        file: ./public/locales/en/home.json
+        fields:
+          - label: headings
+            name: headings
+            widget: object
+            fields:
+              - label: about
+                name: about
+                widget: string
+              - label: featured-blog-posts
+                name: featured-blog-posts
+                widget: string
+          - label: about
+            name: about
+            widget: object
+            fields:
+              - label: who
+                name: who
+                widget: object
+                fields:
+                  - label: heading
+                    name: heading
+                    widget: string
+                  - label: text
+                    name: text
+                    widget: string
+              - label: what
+                name: what
+                widget: object
+                fields:
+                  - label: heading
+                    name: heading
+                    widget: string
+                  - label: text
+                    name: text
+                    widget: string
+              - label: where
+                name: where
+                widget: object
+                fields:
+                  - label: heading
+                    name: heading
+                    widget: string
+                  - label: text
+                    name: text
+                    widget: string
+      - label: fr - home.json
+        name: fr - home.json
+        file: ./public/locales/fr/home.json
+        fields:
+          - label: headings
+            name: headings
+            widget: object
+            fields:
+              - label: about
+                name: about
+                widget: string
+              - label: featured-blog-posts
+                name: featured-blog-posts
+                widget: string
+          - label: about
+            name: about
+            widget: object
+            fields:
+              - label: who
+                name: who
+                widget: object
+                fields:
+                  - label: heading
+                    name: heading
+                    widget: string
+                  - label: text
+                    name: text
+                    widget: string
+              - label: what
+                name: what
+                widget: object
+                fields:
+                  - label: heading
+                    name: heading
+                    widget: string
+                  - label: text
+                    name: text
+                    widget: string
+              - label: where
+                name: where
+                widget: object
+                fields:
+                  - label: heading
+                    name: heading
+                    widget: string
+                  - label: text
+                    name: text
+                    widget: string
+  - name: general Config
+    label: config
+    format: json
+    i18: false
+    files:
+      - label: Config
+        name: config
+        file: lib/config.json
+        fields:
+          - label: Title
+            name: title
+            widget: string
+            i18n: false
+          - label: Base URL
+            name: baseurl
+            widget: string
+            i18n: false
+          - label: Campaign URL
+            name: campaign
+            widget: string
+            required: false
+            i18n: false
+          - label: Hero Image
+            name: hero
+            widget: image
+            required: false
+            choose_url: false
+            i18n: false
+          - label: Meta
+            name: meta
+            widget: object
+            fields:
+              - label: Description
+                name: description
+                widget: string
+                i18n: false
+              - label: Graphic
+                name: graphic
+                widget: image
+                choose_url: false
+                i18n: false
+  - name: tags
+    label: Tags
+    i18n: true
+    folder: content/blog/tags
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        required: true
+        i18n: true
+  - name: pages
+    label: Pages
+    i18n: true
+    files:
+      - label: Home
+        name: home
+        i18n: true
+        file: content/home.md
+        fields:
+          - label: Title
+            name: title
+            widget: string
+            i18n: true
+          - label: Body
+            name: body
+            widget: markdown
+            i18n: true
+          - label: Featured Blogposts
+            name: featured
+            widget: relation
+            collection: blog
+            value_field: "{{slug}}"
+            search_fields:
+              - "{{slug}}"
+              - title
+            multiple: true
+            min: 0
+            max: 3
+            i18n: duplicate
+      - label: Imprint
+        name: imprint
+        i18n: true
+        file: content/imprint.md
+        fields:
+          - label: Title
+            name: title
+            widget: string
+            i18n: true
+          - label: Body
+            name: body
+            widget: markdown
+            i18n: true
+  - label: Blog
+    i18n: true
+    name: blog
+    folder: content/blog/posts
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        required: true
+        i18n: true
+      - label: Publish Date
+        name: date
+        widget: datetime
+        required: true
+        i18n: duplicate
+      - label: Featured Image
+        name: thumbnail
+        widget: image
+        choose_url: false
+        required: false
+        i18n: duplicate
+      - label: Body
+        name: body
+        widget: markdown
+        required: true
+        i18n: true
+      - label: Author
+        name: author
+        widget: relation
+        required: false
+        i18n: duplicate
+        collection: authors
+        search_fields:
+          - name
+        value_field: name
+      - label: Tags
+        name: tags
+        widget: relation
+        required: false
+        multiple: true
+        i18n: duplicate
+        collection: tags
+        value_field: "{{slug}}"
+        search_fields:
+          - title
+  - label: Authors
+    i18n: true
+    name: authors
+    folder: content/blog/authors
+    create: true
+    slug: "{{name}}"
+    fields:
+      - label: Name
+        name: name
+        widget: string
+        required: true
+        i18n: duplicate
+      - label: Portrait
+        name: portrait
+        widget: image
+        choose_url: false
+        required: true
+        i18n: duplicate
+      - label: Description
+        name: description
+        widget: markdown
+        required: true
+        i18n: true
+      - label: Socials
+        name: socials
+        widget: list
+        required: false
+        i18n: false
+        fields:
+          - label: URL
+            name: url
+            widget: string
+          - label: Name
+            name: name
+            widget: string
+i18n:
+  structure: single_file
+  locales:
+    - de
+    - en
+    - fr
+  default_locale: en
+local_backend: true

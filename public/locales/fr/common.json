@@ -1,0 +1,46 @@
+{
+  "share-on": "",
+  "contact": {
+    "errors": {
+      "default": "",
+      "message": ""
+    },
+    "success": "",
+    "label": "",
+    "headings": {
+      "first": "",
+      "second": ""
+    },
+    "placeholders": {
+      "name": "",
+      "email": "",
+      "message": ""
+    },
+    "btn": "",
+    "legal": ""
+  },
+  "menu": {
+    "theme": {
+      "dark": "",
+      "auto": "",
+      "light": "",
+      "label": ""
+    },
+    "links": {
+      "blog": ""
+    }
+  },
+  "footer": {
+    "tagline": "",
+    "links": {
+      "imprint": ""
+    }
+  },
+  "hero": {
+    "tagline": "",
+    "cta": ""
+  },
+  "config": {
+    "name": ""
+  }
+}

@@ -5,6 +5,8 @@ module.exports = function (config) {
     files: ["dist/**/*"],
   })
 
+  config.addPassthroughCopy({ public: "." })
+
   return {
     templateFormats: ["md", "njk", "jpg", "png", "gif"],
     dir: {

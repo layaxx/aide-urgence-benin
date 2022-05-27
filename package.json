@@ -14,7 +14,7 @@
   "scripts": {
     "clean": "rimraf dist src/_js",
     "build": "npm-run-all clean build:ts build:11ty",
-    "dev": "NODE_ENV=dev npm-run-all clean build:ts -p watch:* -- --watch",
+    "dev": "npm-run-all clean build:ts -p watch:* -- --watch",
     "build:11ty": "eleventy --quiet",
     "watch:11ty": "eleventy --serve --quiet",
     "build:ts": "tsc --outDir src/_js",

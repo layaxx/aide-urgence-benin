@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "next": "Next Post",
+    "all": "All Posts",
+    "prev": "Previous Post"
+  },
+  "locale-not-available": "post not available for {{locale}} locale",
+  "no-posts": "no posts found.",
+  "heading": {
+    "socials": "Social Media Links",
+    "posts-by-author": "Posts by Author",
+    "about-the-author": "About the Author",
+    "posts-for-tag": "Posts with this tag"
+  },
+  "headline": "The Blog",
+  "other-locales": "Available locales",
+  "published-by": "published on {{date}} by {{name}}"
+}
