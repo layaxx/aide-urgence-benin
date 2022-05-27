@@ -35,3 +35,8 @@ yarn-error.log*
 
 # i18n
 *_old.json
+
+# Eleventy output
+_site
+dist
+src/_js
