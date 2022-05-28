@@ -244,6 +244,12 @@ collections:
                   - label: blog
                     name: blog
                     widget: string
+                  - label: gallery
+                    name: gallery
+                    widget: string
+                  - label: projects
+                    name: projects
+                    widget: string
           - label: footer
             name: footer
             widget: object
@@ -358,6 +364,12 @@ collections:
                   - label: blog
                     name: blog
                     widget: string
+                  - label: gallery
+                    name: gallery
+                    widget: string
+                  - label: projects
+                    name: projects
+                    widget: string
           - label: footer
             name: footer
             widget: object
@@ -471,6 +483,12 @@ collections:
                 fields:
                   - label: blog
                     name: blog
+                    widget: string
+                  - label: gallery
+                    name: gallery
+                    widget: string
+                  - label: projects
+                    name: projects
                     widget: string
           - label: footer
             name: footer

@@ -37,6 +37,22 @@ export default function Navbar() {
               </a>
             </Link>
           </li>
+
+          <li>
+            <Link href="/gallery">
+              <a>
+                <strong>{t("menu.links.gallery")}</strong>
+              </a>
+            </Link>
+          </li>
+
+          <li>
+            <Link href="/blog/tag/project">
+              <a>
+                <strong>{t("menu.links.projects")}</strong>
+              </a>
+            </Link>
+          </li>
         </ul>
       </nav>
     </>

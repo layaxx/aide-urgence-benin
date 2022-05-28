@@ -8,7 +8,7 @@
     "success": "Nachricht erfolgreich versendet",
     "label": "Kontaktformular",
     "headings": {
-      "first": "Kontakformular",
+      "first": "Kontaktformular",
       "second": "Fragen, Anmerkungen oder Feedback? Gerne hier loswerden."
     },
     "placeholders": {
@@ -27,7 +27,9 @@
       "label": "Darkmode Einstellung"
     },
     "links": {
-      "blog": "Blog"
+      "blog": "Blog",
+      "gallery": "Gallerie",
+      "projects": "Projekte"
     }
   },
   "footer": {

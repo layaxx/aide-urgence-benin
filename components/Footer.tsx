@@ -22,14 +22,19 @@ export default function Footer() {
 
         <small>
           <Link href={"/imprint"}>
-            <a>{t("footer.links.imprint")}</a>
+            <a target="_blank" rel="noreferrer">
+              {t("footer.links.imprint")}
+            </a>
           </Link>
         </small>
       </div>
 
       <div className={styles.credits}>
         <small>
-          <UilArrow /> by <a href="https://y-lang.eu">Yannick Lang</a>
+          <UilArrow /> by{" "}
+          <a href="https://y-lang.eu" target="_blank" rel="noreferrer">
+            Yannick Lang
+          </a>
         </small>
       </div>
     </footer>
