@@ -47,7 +47,7 @@ export default function Navbar() {
           </li>
 
           <li>
-            <Link href="/blog/tag/project">
+            <Link href="/projects">
               <a>
                 <strong>{t("menu.links.projects")}</strong>
               </a>
