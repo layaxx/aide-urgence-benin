@@ -41,7 +41,7 @@ export async function fetchAllAuthors() {
             slug,
             name,
             portrait,
-            socials,
+            socials: socials ?? [],
             localized: Object.fromEntries(
               locales.map((locale) => [
                 locale,

@@ -59,7 +59,7 @@ translations.files = filePaths
     }
   })
 
-const URL = "https://" + (process.env["ORIGIN"] || "aub.yl1.eu")
+const URL = "https://" + (process.env["ORIGIN"] || "a-u-b.org")
 
 preset.site_url = URL
 preset.backend.base_url = URL

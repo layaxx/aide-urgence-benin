@@ -5,7 +5,6 @@ import { i18n } from "next-i18next.config"
 import { getAuthorBySlug } from "./authors"
 import { getTagsbySlugs } from "./tags"
 import { locales } from "lib/config"
-import { getLocale } from "lib/locale"
 
 const directory = "content/blog/posts" as const
 

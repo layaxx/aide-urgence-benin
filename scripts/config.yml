@@ -223,10 +223,10 @@ i18n:
   structure: single_file
 
   # Required - a list of locales to show in the editor UI
-  locales: [en, de, fr] # may be overwritten by `yarn generateCMSConfig`
+  locales: [de, fr] # may be overwritten by `yarn generateCMSConfig`
 
   # Optional, defaults to the first item in locales.
   # The locale to be used for fields validation and as a baseline for the entry.
-  default_locale: en # may be overwritten by `yarn generateCMSConfig`
+  default_locale: fr # may be overwritten by `yarn generateCMSConfig`
 
 local_backend: true # OVERWRITTEN

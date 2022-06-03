@@ -2,10 +2,10 @@ backend:
   repo: layaxx/aide-urgence-benin
   name: github
   branch: main
-  base_url: https://aub.yl1.eu
+  base_url: https://a-u-b.org
   auth_endpoint: api/auth
 publish_mode: editorial_workflow
-site_url: https://aub.yl1.eu
+site_url: https://a-u-b.org
 media_folder: public/static/img
 slug:
   encoding: ascii
@@ -20,54 +20,6 @@ collections:
       - label: de - blog.json
         name: de - blog.json
         file: ./public/locales/de/blog.json
-        fields:
-          - label: nav
-            name: nav
-            widget: object
-            fields:
-              - label: next
-                name: next
-                widget: string
-              - label: all
-                name: all
-                widget: string
-              - label: prev
-                name: prev
-                widget: string
-          - label: locale-not-available
-            name: locale-not-available
-            widget: string
-          - label: no-posts
-            name: no-posts
-            widget: string
-          - label: heading
-            name: heading
-            widget: object
-            fields:
-              - label: socials
-                name: socials
-                widget: string
-              - label: posts-by-author
-                name: posts-by-author
-                widget: string
-              - label: about-the-author
-                name: about-the-author
-                widget: string
-              - label: posts-for-tag
-                name: posts-for-tag
-                widget: string
-          - label: headline
-            name: headline
-            widget: string
-          - label: other-locales
-            name: other-locales
-            widget: string
-          - label: published-by
-            name: published-by
-            widget: string
-      - label: en - blog.json
-        name: en - blog.json
-        file: ./public/locales/en/blog.json
         fields:
           - label: nav
             name: nav
@@ -164,126 +116,6 @@ collections:
       - label: de - common.json
         name: de - common.json
         file: ./public/locales/de/common.json
-        fields:
-          - label: share-on
-            name: share-on
-            widget: string
-          - label: contact
-            name: contact
-            widget: object
-            fields:
-              - label: errors
-                name: errors
-                widget: object
-                fields:
-                  - label: default
-                    name: default
-                    widget: string
-                  - label: message
-                    name: message
-                    widget: string
-              - label: success
-                name: success
-                widget: string
-              - label: label
-                name: label
-                widget: string
-              - label: headings
-                name: headings
-                widget: object
-                fields:
-                  - label: first
-                    name: first
-                    widget: string
-                  - label: second
-                    name: second
-                    widget: string
-              - label: placeholders
-                name: placeholders
-                widget: object
-                fields:
-                  - label: name
-                    name: name
-                    widget: string
-                  - label: email
-                    name: email
-                    widget: string
-                  - label: message
-                    name: message
-                    widget: string
-              - label: btn
-                name: btn
-                widget: string
-              - label: legal
-                name: legal
-                widget: string
-          - label: menu
-            name: menu
-            widget: object
-            fields:
-              - label: theme
-                name: theme
-                widget: object
-                fields:
-                  - label: dark
-                    name: dark
-                    widget: string
-                  - label: auto
-                    name: auto
-                    widget: string
-                  - label: light
-                    name: light
-                    widget: string
-                  - label: label
-                    name: label
-                    widget: string
-              - label: links
-                name: links
-                widget: object
-                fields:
-                  - label: blog
-                    name: blog
-                    widget: string
-                  - label: gallery
-                    name: gallery
-                    widget: string
-                  - label: projects
-                    name: projects
-                    widget: string
-          - label: footer
-            name: footer
-            widget: object
-            fields:
-              - label: tagline
-                name: tagline
-                widget: string
-              - label: links
-                name: links
-                widget: object
-                fields:
-                  - label: imprint
-                    name: imprint
-                    widget: string
-          - label: hero
-            name: hero
-            widget: object
-            fields:
-              - label: tagline
-                name: tagline
-                widget: string
-              - label: cta
-                name: cta
-                widget: string
-          - label: config
-            name: config
-            widget: object
-            fields:
-              - label: name
-                name: name
-                widget: string
-      - label: en - common.json
-        name: en - common.json
-        file: ./public/locales/en/common.json
         fields:
           - label: share-on
             name: share-on
@@ -569,54 +401,6 @@ collections:
                   - label: text
                     name: text
                     widget: string
-      - label: en - home.json
-        name: en - home.json
-        file: ./public/locales/en/home.json
-        fields:
-          - label: headings
-            name: headings
-            widget: object
-            fields:
-              - label: about
-                name: about
-                widget: string
-              - label: featured-blog-posts
-                name: featured-blog-posts
-                widget: string
-          - label: about
-            name: about
-            widget: object
-            fields:
-              - label: who
-                name: who
-                widget: object
-                fields:
-                  - label: heading
-                    name: heading
-                    widget: string
-                  - label: text
-                    name: text
-                    widget: string
-              - label: what
-                name: what
-                widget: object
-                fields:
-                  - label: heading
-                    name: heading
-                    widget: string
-                  - label: text
-                    name: text
-                    widget: string
-              - label: where
-                name: where
-                widget: object
-                fields:
-                  - label: heading
-                    name: heading
-                    widget: string
-                  - label: text
-                    name: text
-                    widget: string
       - label: fr - home.json
         name: fr - home.json
         file: ./public/locales/fr/home.json
@@ -846,7 +630,6 @@ i18n:
   structure: single_file
   locales:
     - de
-    - en
     - fr
-  default_locale: en
+  default_locale: fr
 local_backend: true
