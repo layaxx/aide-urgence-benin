@@ -544,6 +544,28 @@ collections:
             name: body
             widget: markdown
             i18n: true
+      - label: Gallerie
+        name: gallery
+        i18n: true
+        file: content/gallery.md
+        fields:
+          - label: Title
+            name: title
+            widget: string
+            required: true
+            i18n: true
+          - label: Images
+            name: images
+            widget: list
+            required: true
+            summary: "{{fields.image}}"
+            i18n: true
+            field:
+              label: Image
+              name: image
+              widget: image
+              choose_url: false
+              i18n: duplicate
   - label: Blog
     i18n: true
     name: blog

@@ -91,7 +91,7 @@ const Post: FC<IProps> = ({ post, navigationData }) => {
         {post.thumbnail && (
           <div style={{ position: "relative", width: "100%", height: "20rem" }}>
             <Image
-              src={post.thumbnail}
+              src={post.thumbnail.replace("/public/", "/")}
               alt="thumbnail"
               layout="fill"
               objectFit="cover"

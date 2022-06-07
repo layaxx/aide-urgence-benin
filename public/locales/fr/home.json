@@ -1,20 +1,20 @@
 {
   "headings": {
-    "about": "",
-    "featured-blog-posts": ""
+    "about": "qui sommes-nous",
+    "featured-blog-posts": "articles de blog en vedette"
   },
   "about": {
     "who": {
-      "heading": "",
-      "text": ""
+      "heading": "Qui sommes-nous?",
+      "text": "Crée en 2021 l´Association Aide Urgence Bénin (AUB) qui est une organisation non gouvernementale et de solidarité internationale est le fruit de réflexion de Maurice A. IKPE de nationalité Béninoise et de Hannah S. EUL de nationalité allemande qui ont pour vision d´apporter un changement aux familles à travers l´impact des conditions de vie et d´éducation des enfants, des jeunes et des femmes au Bénin.  "
     },
     "what": {
-      "heading": "",
-      "text": ""
+      "heading": "Quels sont nos objectifs ? / Que faisons-nous?",
+      "text": "L’objectif général d´AUB est l’amélioration des conditions de vie et d´éducation des enfants, de la formation professionnelle des jeunes, la protection de l’environnement et l’appui au développement humain, économique et social des femmes."
     },
     "where": {
-      "heading": "",
-      "text": ""
+      "heading": "Où agissons-nous ?",
+      "text": "AUB opère dans les 12 départements du Bénin parce que nous avons pour vision d’accorder les mêmes chances à toutes les familles béninoises sans discrimination aucune. Nos projets sont plus axés sur les localités. Les soutiens financiers et des coopérations existent aussi bien du côté allemand que béninois."
     }
   }
 }

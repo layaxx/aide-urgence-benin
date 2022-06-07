@@ -47,7 +47,7 @@ const AuthorPage = ({ author, posts }: IProps) => {
         <h1>{author.name}</h1>
         <div style={{ position: "relative", width: "10rem", height: "10rem" }}>
           <Image
-            src={author.portrait}
+            src={author.portrait.replace("/public/", "/")}
             alt={"portrait " + author.name}
             layout="fill"
             objectFit="cover"

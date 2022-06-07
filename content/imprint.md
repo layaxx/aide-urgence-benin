@@ -1,120 +1,28 @@
 ---
 de:
   title: Impressum
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-    feugiat imperdiet ullamcorper. Nam a ornare turpis. Donec pellentesque
-    tincidunt dui rhoncus congue. Curabitur tempus gravida enim quis cursus.
-    Praesent at dolor nec nunc varius efficitur. Curabitur sed magna sit amet
-    eros lobortis euismod. In et nibh mollis, hendrerit elit nec, tempor lacus.
-    Ut sit amet mi arcu. Nulla tempor ac est id ultricies. Nunc nec scelerisque
-    mi. Morbi vitae odio orci. Nunc sit amet elementum libero, ac faucibus
-    magna. Fusce mollis sollicitudin egestas. Pellentesque egestas ac dolor
-    vitae dapibus. Sed a felis at libero dignissim bibendum.\r
-
-    \r
-
-    In hac habitasse platea dictumst. Morbi nec quam et nunc consectetur
-    cursus. Cras gravida tristique mauris a elementum. In tristique suscipit
-    nisi, a fermentum ipsum gravida ut. Praesent eget mattis erat. Morbi nec
-    lacus at nisi hendrerit viverra vitae venenatis elit. Phasellus gravida,
-    massa quis ultricies vehicula, metus magna ornare magna, eget tincidunt quam
-    ipsum a lectus. In pharetra suscipit augue, ut gravida lorem efficitur
-    suscipit. Aliquam tortor enim, accumsan nec ornare et, ultrices nec massa.
-    Donec sem lorem, malesuada in volutpat pretium, laoreet a lacus. Cras et
-    suscipit risus. Praesent hendrerit porttitor turpis a euismod. Aenean
-    venenatis vel ligula id congue. Nulla sagittis elementum lorem, quis blandit
-    turpis maximus eu.\r
-
-    \r
-
-    Aenean ultrices nisi id rhoncus pretium. Donec euismod nisl et dictum
-    interdum. Vestibulum condimentum felis eu mi congue fringilla. Vestibulum
-    sem est, porta vitae tellus et, convallis efficitur nisl. Mauris ex neque,
-    congue quis commodo ut, sollicitudin ac lorem. Vestibulum lobortis mattis
-    nibh eu euismod. Vestibulum cursus molestie porttitor. Donec sit amet
-    viverra sem.\r
-
-    \r
-
-    Nulla tristique mi nec fermentum feugiat. Vestibulum malesuada odio nec
-    mattis eleifend. Ut enim leo, euismod vitae porta non, efficitur in libero.
-    Proin eget eleifend odio. Suspendisse molestie lorem in laoreet luctus. Duis
-    vitae ipsum ac ipsum dapibus suscipit. Praesent nibh dolor, tincidunt
-    facilisis sollicitudin vitae, porta quis leo. Fusce euismod quam aliquet
-    risus vulputate dictum. Etiam nec magna at justo ornare maximus eget sed
-    turpis.\r
-
-    \r
-
-    Vivamus imperdiet libero leo, sed volutpat sem venenatis nec. Aliquam
-    gravida vitae est id venenatis. Sed auctor at leo eget consectetur.
-    Curabitur rutrum condimentum erat, in laoreet diam maximus accumsan. Integer
-    aliquet, turpis quis tempor imperdiet, tellus nunc facilisis massa, id
-    consectetur augue enim vitae augue. Donec eleifend tortor nec ultrices
-    blandit. Phasellus vel felis in dui pellentesque mattis vitae sit amet enim.
-    Mauris rutrum mollis elit, eu semper nibh viverra pharetra. In id hendrerit
-    quam, in congue nisi. Proin ac efficitur nisi. Suspendisse potenti. Sed quis
-    scelerisque velit. Nunc imperdiet congue erat sit amet suscipit. Praesent
-    feugiat nisl metus, nec dapibus quam vestibulum eu. Nunc convallis mi vitae
-    metus rhoncus, eu volutpat orci vestibulum."
-en:
-  title: Imprint
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-    feugiat imperdiet ullamcorper. Nam a ornare turpis. Donec pellentesque
-    tincidunt dui rhoncus congue. Curabitur tempus gravida enim quis cursus.
-    Praesent at dolor nec nunc varius efficitur. Curabitur sed magna sit amet
-    eros lobortis euismod. In et nibh mollis, hendrerit elit nec, tempor lacus.
-    Ut sit amet mi arcu. Nulla tempor ac est id ultricies. Nunc nec scelerisque
-    mi. Morbi vitae odio orci. Nunc sit amet elementum libero, ac faucibus
-    magna. Fusce mollis sollicitudin egestas. Pellentesque egestas ac dolor
-    vitae dapibus. Sed a felis at libero dignissim bibendum.\r
-
-    \r
-
-    In hac habitasse platea dictumst. Morbi nec quam et nunc consectetur
-    cursus. Cras gravida tristique mauris a elementum. In tristique suscipit
-    nisi, a fermentum ipsum gravida ut. Praesent eget mattis erat. Morbi nec
-    lacus at nisi hendrerit viverra vitae venenatis elit. Phasellus gravida,
-    massa quis ultricies vehicula, metus magna ornare magna, eget tincidunt quam
-    ipsum a lectus. In pharetra suscipit augue, ut gravida lorem efficitur
-    suscipit. Aliquam tortor enim, accumsan nec ornare et, ultrices nec massa.
-    Donec sem lorem, malesuada in volutpat pretium, laoreet a lacus. Cras et
-    suscipit risus. Praesent hendrerit porttitor turpis a euismod. Aenean
-    venenatis vel ligula id congue. Nulla sagittis elementum lorem, quis blandit
-    turpis maximus eu.\r
-
-    \r
-
-    Aenean ultrices nisi id rhoncus pretium. Donec euismod nisl et dictum
-    interdum. Vestibulum condimentum felis eu mi congue fringilla. Vestibulum
-    sem est, porta vitae tellus et, convallis efficitur nisl. Mauris ex neque,
-    congue quis commodo ut, sollicitudin ac lorem. Vestibulum lobortis mattis
-    nibh eu euismod. Vestibulum cursus molestie porttitor. Donec sit amet
-    viverra sem.\r
-
-    \r
-
-    Nulla tristique mi nec fermentum feugiat. Vestibulum malesuada odio nec
-    mattis eleifend. Ut enim leo, euismod vitae porta non, efficitur in libero.
-    Proin eget eleifend odio. Suspendisse molestie lorem in laoreet luctus. Duis
-    vitae ipsum ac ipsum dapibus suscipit. Praesent nibh dolor, tincidunt
-    facilisis sollicitudin vitae, porta quis leo. Fusce euismod quam aliquet
-    risus vulputate dictum. Etiam nec magna at justo ornare maximus eget sed
-    turpis.\r
-
-    \r
-
-    Vivamus imperdiet libero leo, sed volutpat sem venenatis nec. Aliquam
-    gravida vitae est id venenatis. Sed auctor at leo eget consectetur.
-    Curabitur rutrum condimentum erat, in laoreet diam maximus accumsan. Integer
-    aliquet, turpis quis tempor imperdiet, tellus nunc facilisis massa, id
-    consectetur augue enim vitae augue. Donec eleifend tortor nec ultrices
-    blandit. Phasellus vel felis in dui pellentesque mattis vitae sit amet enim.
-    Mauris rutrum mollis elit, eu semper nibh viverra pharetra. In id hendrerit
-    quam, in congue nisi. Proin ac efficitur nisi. Suspendisse potenti. Sed quis
-    scelerisque velit. Nunc imperdiet congue erat sit amet suscipit. Praesent
-    feugiat nisl metus, nec dapibus quam vestibulum eu. Nunc convallis mi vitae
-    metus rhoncus, eu volutpat orci vestibulum."
+  body: "<div class='impressum'><p>Angaben gemäß § 5 TMG</p>
+  <p>Aide Urgence Benin<br>
+  Maison Codjia Boniface <br>
+  12 BP 159 Fidjrossè<br>
+  Cotonou - Bénin<br>
+  </p><p> <strong>Vertreten durch: </strong><br>
+  Max Muster<br>
+  </p><p><strong>Kontakt:</strong> <br>
+  Telefon: 01234-789456<br>
+  Fax: 1234-56789<br>
+  E-Mail: <a href='mailto:max@muster.de'>max@muster.de</a></br></ p><p><strong>Verantwortlich für den Inhalt  nach § 55 Abs. 2 RStV:</strong><br>
+  Max Muster <br> 
+  Musterweg<br> 
+  12345 Musterstadt <br></p> <p><strong>Haftungsausschluss: </  strong><br><br><strong>Haftung für Inhalte</strong><br><br>
+  Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die  Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch  keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG  für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen   verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch  nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu   überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige  Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der  Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon  unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt  der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden   von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend   entfernen.<br><br><strong>Haftung für Links</strong><br><br>
+  Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren  Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden  Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten   Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten   verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung   auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum  Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche  Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte   einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von  Rechtsverletzungen werden wir derartige Links umgehend entfernen.  <br><br><strong>Urheberrecht</strong><br><br>
+  Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen   Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung,  Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen   des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen   Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den  privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf   dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte  Dritter beachtet. Insbesondere werden Inhalte Dritter als solche   gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung   aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei  Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend   entfernen.<br><br><strong>Datenschutz</strong><br><br>
+  Die Nutzung unserer Webseite ist in der Regel ohne Angabe   personenbezogener Daten möglich. Soweit auf unseren Seiten  personenbezogene Daten (beispielsweise Name, Anschrift oder  eMail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf  freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung  nicht an Dritte weitergegeben. <br>
+  Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der  Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein  lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht  möglich. <br>
+  Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten  Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich   angeforderter Werbung und Informationsmaterialien wird hiermit  ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich   ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von  Werbeinformationen, etwa durch Spam-Mails, vor.<br>
+  </p><br> 
+  Impressum vom <a href='https://www.impressum-generator.de'>Impressum  Generator</a> der <a href='https://www.kanzlei-hasselbach.de/standorte/  frankfurt/' rel='nofollow'>Kanzlei Hasselbach, Frankfurt</a> </div>"
 fr:
   title: Imprint in french
   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
@@ -125,52 +33,5 @@ fr:
     Ut sit amet mi arcu. Nulla tempor ac est id ultricies. Nunc nec scelerisque
     mi. Morbi vitae odio orci. Nunc sit amet elementum libero, ac faucibus
     magna. Fusce mollis sollicitudin egestas. Pellentesque egestas ac dolor
-    vitae dapibus. Sed a felis at libero dignissim bibendum.\r
-
-    \r
-
-    In hac habitasse platea dictumst. Morbi nec quam et nunc consectetur
-    cursus. Cras gravida tristique mauris a elementum. In tristique suscipit
-    nisi, a fermentum ipsum gravida ut. Praesent eget mattis erat. Morbi nec
-    lacus at nisi hendrerit viverra vitae venenatis elit. Phasellus gravida,
-    massa quis ultricies vehicula, metus magna ornare magna, eget tincidunt quam
-    ipsum a lectus. In pharetra suscipit augue, ut gravida lorem efficitur
-    suscipit. Aliquam tortor enim, accumsan nec ornare et, ultrices nec massa.
-    Donec sem lorem, malesuada in volutpat pretium, laoreet a lacus. Cras et
-    suscipit risus. Praesent hendrerit porttitor turpis a euismod. Aenean
-    venenatis vel ligula id congue. Nulla sagittis elementum lorem, quis blandit
-    turpis maximus eu.\r
-
-    \r
-
-    Aenean ultrices nisi id rhoncus pretium. Donec euismod nisl et dictum
-    interdum. Vestibulum condimentum felis eu mi congue fringilla. Vestibulum
-    sem est, porta vitae tellus et, convallis efficitur nisl. Mauris ex neque,
-    congue quis commodo ut, sollicitudin ac lorem. Vestibulum lobortis mattis
-    nibh eu euismod. Vestibulum cursus molestie porttitor. Donec sit amet
-    viverra sem.\r
-
-    \r
-
-    Nulla tristique mi nec fermentum feugiat. Vestibulum malesuada odio nec
-    mattis eleifend. Ut enim leo, euismod vitae porta non, efficitur in libero.
-    Proin eget eleifend odio. Suspendisse molestie lorem in laoreet luctus. Duis
-    vitae ipsum ac ipsum dapibus suscipit. Praesent nibh dolor, tincidunt
-    facilisis sollicitudin vitae, porta quis leo. Fusce euismod quam aliquet
-    risus vulputate dictum. Etiam nec magna at justo ornare maximus eget sed
-    turpis.\r
-
-    \r
-
-    Vivamus imperdiet libero leo, sed volutpat sem venenatis nec. Aliquam
-    gravida vitae est id venenatis. Sed auctor at leo eget consectetur.
-    Curabitur rutrum condimentum erat, in laoreet diam maximus accumsan. Integer
-    aliquet, turpis quis tempor imperdiet, tellus nunc facilisis massa, id
-    consectetur augue enim vitae augue. Donec eleifend tortor nec ultrices
-    blandit. Phasellus vel felis in dui pellentesque mattis vitae sit amet enim.
-    Mauris rutrum mollis elit, eu semper nibh viverra pharetra. In id hendrerit
-    quam, in congue nisi. Proin ac efficitur nisi. Suspendisse potenti. Sed quis
-    scelerisque velit. Nunc imperdiet congue erat sit amet suscipit. Praesent
-    feugiat nisl metus, nec dapibus quam vestibulum eu. Nunc convallis mi vitae
-    metus rhoncus, eu volutpat orci vestibulum."
+    vitae dapibus. Sed a felis at libero dignissim bibendum.\r"
 ---

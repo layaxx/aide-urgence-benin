@@ -8,14 +8,23 @@
 .container h3 {
     margin-bottom: 0.5rem;
     text-align: center;
+    font-weight: bold;
 }
 
 .container>div {
-    min-width: 33%;
+    width: calc(33% - 2rem);
     padding: 1rem;
+    margin-inline: 1rem;
     background: var(--card-background-color);
     -webkit-box-shadow: var(--card-box-shadow);
     box-shadow: var(--card-box-shadow);
+}
+
+@media screen and (max-width: 1000px) {
+    .container>div {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
 }
 
 .container>div>p {

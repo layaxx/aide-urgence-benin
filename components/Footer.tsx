@@ -8,23 +8,39 @@ import styles from "./Footer.module.css"
 export default function Footer() {
   const { t } = useTranslation()
 
-  const url = "https://www.instagram.com/aide_urgence_benin/"
+  const socialUrls = [
+    "mailto:aideurgencebenin@gmail.com",
+    "https://www.instagram.com/aide_urgence_benin/",
+    "https://www.facebook.com/Aide-Urgence-Benin-107726741750178/",
+  ]
+
+  const commonStyles = {
+    height: "1.5rem",
+    width: "1.5rem",
+    justifySelf: "center",
+    marginInline: "0.5rem",
+  }
 
   return (
     <footer className={`container ${styles.footer}`}>
       <div className={styles.info}>
         <small>{t("footer.tagline")}</small>
 
-        <SocialIcon
-          url={url}
-          style={{ height: "1.5rem", width: "1.5rem", justifySelf: "center" }}
-        />
+        <div>
+          {socialUrls.map((url) => (
+            <SocialIcon
+              url={url}
+              style={commonStyles}
+              key={url}
+              target="_blank"
+              rel="noreferrer"
+            />
+          ))}
+        </div>
 
         <small>
           <Link href={"/imprint"}>
-            <a target="_blank" rel="noreferrer">
-              {t("footer.links.imprint")}
-            </a>
+            <a>{t("footer.links.imprint")}</a>
           </Link>
         </small>
       </div>

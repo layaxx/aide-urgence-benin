@@ -1,6 +1,6 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { GetStaticProps, NextPage } from "next/types"
-import Layout from "components/layouts/DefaultLayout"
+import Layout from "components/layouts/BlogLayout"
 import { attributes } from "content/projects.md"
 import { i18n } from "next-i18next.config"
 import { useRouter } from "next/router"
@@ -16,7 +16,7 @@ interface IProps {
   projects: ILocalizedProject[]
 }
 
-const Home: NextPage<IProps> = ({ projects }) => {
+const ProjectsPage: NextPage<IProps> = ({ projects }) => {
   const { locale } = useRouter()
 
   return (
@@ -51,4 +51,4 @@ export const getStaticProps: GetStaticProps<IProps> = async ({ locale }) => {
   }
 }
 
-export default Home
+export default ProjectsPage
