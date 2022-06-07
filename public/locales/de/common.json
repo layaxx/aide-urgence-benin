@@ -39,10 +39,7 @@
     }
   },
   "hero": {
-    "tagline": "Tagline deutsch",
+    "tagline": "... weil der Dienst an der Menschheit die edelste Arbeit des Lebens ist",
     "cta": "Jetzt spenden!"
-  },
-  "config": {
-    "name": "Aide Urgence Bénin"
   }
 }

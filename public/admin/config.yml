@@ -226,13 +226,6 @@ collections:
               - label: cta
                 name: cta
                 widget: string
-          - label: config
-            name: config
-            widget: object
-            fields:
-              - label: name
-                name: name
-                widget: string
       - label: fr - common.json
         name: fr - common.json
         file: ./public/locales/fr/common.json
@@ -345,13 +338,6 @@ collections:
                 widget: string
               - label: cta
                 name: cta
-                widget: string
-          - label: config
-            name: config
-            widget: object
-            fields:
-              - label: name
-                name: name
                 widget: string
       - label: de - home.json
         name: de - home.json

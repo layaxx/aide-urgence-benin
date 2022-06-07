@@ -23,7 +23,13 @@ export default function Navbar() {
           <li>
             <Link href="/">
               <a className={`contrast ${styles.brand}`}>
-                <strong>{t("config.name")}</strong>
+                <strong>
+                  <span style={{ color: "var(--primary-green)" }}>Aide</span>{" "}
+                  <span style={{ color: "var(--primary-yellow)" }}>
+                    Urgence
+                  </span>{" "}
+                  <span style={{ color: "var(--primary-red)" }}>Bénin</span>
+                </strong>
               </a>
             </Link>
           </li>

@@ -4,6 +4,9 @@
     --font-weight: 400;
     --border-radius: 0;
     --text-shadow: 5px 5px 10px black;
+    --primary-yellow: #fbd01a;
+    --primary-green: #0b814d;
+    --primary-red: #e1142b;
 }
 
 /* Typography */
