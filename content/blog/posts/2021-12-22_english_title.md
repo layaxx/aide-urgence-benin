@@ -28,7 +28,7 @@ fr:
   body: |-
     fdsgssdfgsdf
     fdsgdfs
-  title: updated french title
+  title: french title
   tags:
     - project_update
 ---
