@@ -1,45 +1,45 @@
 {
-  "share-on": "",
+  "share-on": "partagez via {{name}}",
   "contact": {
     "errors": {
-      "default": "",
-      "message": ""
+      "default": "Le message a échoué",
+      "message": "Veuillez indiquer un message"
     },
-    "success": "",
-    "label": "",
+    "success": "Le message était délivré.",
+    "label": "Formulaire de contact",
     "headings": {
-      "first": "",
-      "second": ""
+      "first": "Formulaire de contact",
+      "second": "Des questions, des remarques ou des commentaires ? N'hésitez pas à le faire savoir ici"
     },
     "placeholders": {
-      "name": "",
-      "email": "",
-      "message": ""
+      "name": "Nom",
+      "email": "E-Mail",
+      "message": "Message"
     },
-    "btn": "",
-    "legal": ""
+    "btn": "Envoyer",
+    "legal": "Toutes les informations de contact sont facultatives."
   },
   "menu": {
     "theme": {
-      "dark": "",
-      "auto": "",
-      "light": "",
-      "label": ""
+      "dark": "Sombre",
+      "auto": "Auto",
+      "light": "Clair",
+      "label": "Paramètres du mode sombre"
     },
     "links": {
-      "blog": "",
-      "gallery": "",
-      "projects": ""
+      "blog": "Blog",
+      "gallery": "Galerie",
+      "projects": "Projets"
     }
   },
   "footer": {
-    "tagline": "",
+    "tagline": "No Cookies - No Tracking - No Ads",
     "links": {
-      "imprint": ""
+      "imprint": "Impressum"
     }
   },
   "hero": {
-    "tagline": "",
-    "cta": ""
+    "tagline": "... parce que le service à l'humanité est le travail le plus noble de la vie",
+    "cta": "Faites des dons"
   }
 }
