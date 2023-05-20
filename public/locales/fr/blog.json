@@ -1,18 +1,18 @@
 {
   "nav": {
-    "next": "",
-    "all": "",
-    "prev": ""
+    "next": "Article suivant",
+    "all": "Tous les articles",
+    "prev": "Dernier article"
   },
-  "locale-not-available": "",
-  "no-posts": "",
+  "locale-not-available": "Cet article n'existe pas dans cette langue",
+  "no-posts": "article non-trouvé",
   "heading": {
-    "socials": "",
-    "posts-by-author": "",
-    "about-the-author": "",
-    "posts-for-tag": ""
+    "socials": "Liens des resseaux sociaux",
+    "posts-by-author": "Articles publiés par cet auteur",
+    "about-the-author": "Auteur",
+    "posts-for-tag": "Articles marqués avec ce tag"
   },
-  "headline": "",
-  "other-locales": "",
-  "published-by": ""
+  "headline": "Le blog",
+  "other-locales": "Langues disponibles",
+  "published-by": "du {{date}} de {{name}}"
 }
