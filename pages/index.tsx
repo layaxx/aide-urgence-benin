@@ -36,7 +36,7 @@ const Home: NextPage<IProps> = ({ featuredPosts }) => {
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const featuredPosts = await Promise.all(
-    attributes[getLocale(locale)].featured.map((slug: string) =>
+    (attributes[getLocale(locale)].featured ?? []).map((slug: string) =>
       getBlogPostBySlug(slug)
     )
   )
