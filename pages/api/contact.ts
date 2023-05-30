@@ -9,9 +9,9 @@ const sendEmail: NextApiHandler = async (req, res) => {
       throw new Error("Invalid Request")
     }
     await sendgrid.send({
-      to: "dev@arbeitskreis.video",
+      to: "aideurgencebenin@gmail.com",
       from: "dev@y-lang.eu",
-      subject: `[Contact Submission]`,
+      subject: `[Contact Submission] | a-u-b.org`,
       html: `
   <div class="container" style="margin-left: 20px;margin-right: 20px;">
     <h3>You've got a new mail from ${
