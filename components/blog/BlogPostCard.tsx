@@ -27,8 +27,6 @@ const BlogPostCard: React.FC<IProps> = ({ post }) => {
     post.localized[getLocale(locale)]?.title ??
     post.localized[i18n.defaultLocale as Locale]?.title
 
-  console.log(post.thumbnail)
-
   return (
     <article key={post.slug} className={styles.container}>
       <Link href="/blog/post/[slug]" as={`/blog/post/${post.slug}`}>
