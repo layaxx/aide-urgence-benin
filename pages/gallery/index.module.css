@@ -1,3 +1,12 @@
+.preview {
+  margin: 2rem;
+  height: 10rem;
+  width: 20rem;
+  background: var(--background-color);
+  position: relative;
+  cursor: pointer;
+}
+
 .navigation {
   position: absolute;
   top: 20%;

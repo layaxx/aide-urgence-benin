@@ -104,18 +104,11 @@ const GalleriesPage: NextPage<IProps> = ({ gallery }) => {
       <Layout>
         <h1>{gallery.title}</h1>
 
-        <section style={{ display: "flex" }}>
+        <section style={{ display: "flex", flexWrap: "wrap" }}>
           {gallery.images.map((img) => (
             <div
               key={img.path}
-              style={{
-                margin: "2rem",
-                height: "10rem",
-                width: "20rem",
-                background: "var(--background-color)",
-                position: "relative",
-                cursor: "pointer",
-              }}
+              className={styles.preview}
               data-theme="dark"
               onClick={() => setActiveImage(img)}
             >
