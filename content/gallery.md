@@ -10,6 +10,9 @@ de:
     - /public/static/img/allgemeine_szene.jpeg
     - /public/static/img/geschenke_1.1.jpg
     - /public/static/img/tanz.jpeg
+    - /public/static/img/gruppenbild_2.jpg
+    - /public/static/img/enfants_dansant_2022.jpg
+    - /public/static/img/partage_2022.jpg
 fr:
   title: Gallerie
   images:
@@ -21,4 +24,7 @@ fr:
     - /public/static/img/allgemeine_szene.jpeg
     - /public/static/img/geschenke_1.1.jpg
     - /public/static/img/tanz.jpeg
+    - /public/static/img/gruppenbild_2.jpg
+    - /public/static/img/enfants_dansant_2022.jpg
+    - /public/static/img/partage_2022.jpg
 ---
