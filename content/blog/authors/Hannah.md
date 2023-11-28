@@ -1,18 +1,11 @@
 ---
 de:
-  name: Hannah
+  name: Hannah Eul
   title: german title
   portrait: /static/img/hannah3.jfif
-en:
-  name: Hannah
-  title: english title
-  body: English content
-  portrait: /static/img/hannah3.jfif
-  socials:
-    - url: link
-      name: Youtube
-  description: Beschreibung Hannah englisch
+  description: Gründerin und 2. Vorsitzende der NGO AideUrgenceBenin.
 fr:
-  name: Hannah
+  name: Hannah Eul
   portrait: /static/img/hannah3.jfif
+  description: Fondatrice et secrétaire générale de l'ONG AideUrgenceBenin.
 ---
