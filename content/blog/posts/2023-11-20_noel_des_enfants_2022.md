@@ -32,6 +32,15 @@ fr:
 
 
     ![](/public/static/img/partage_2022.jpg "Maurice Ikpe distribue des bouteilles d'eau.")
+
+
+    La fête de Noël a été introduite par un petit déjeuner commun, à la suite duquel le programme a débuté. Le président de l'ONG AUB, Maurice Ikpe, et le président de l'ONG ESI, Jules Tohountode, ont accueilli chaleureusement les enfants et les jeunes.
+
+
+    L'assistante sociale de l'ONG ESI a expliqué pourquoi il est important de préserver l'environnement des déchets et quelles sont les meilleures méthodes pour y parvenir.
+
+
+    Les artistes locaux Belric et Ghix ont enrichi la journée de leurs contributions musicales.
   author: Hannah Eul
   tags: []
 ---
