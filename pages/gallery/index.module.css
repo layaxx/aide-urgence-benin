@@ -1,6 +1,7 @@
 .preview {
-  margin: 2rem;
-  height: 10rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  height: 14rem;
   width: 20rem;
   background: var(--pico-background-color);
   position: relative;

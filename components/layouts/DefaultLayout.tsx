@@ -2,13 +2,18 @@ import { NextPage } from "next"
 import Footer from "components/Footer"
 import Hero from "components/Hero"
 import Contact from "components/Contact"
+import { PropsWithChildren } from "react"
 
 interface IProps {
   grid?: JSX.Element
   contact?: boolean
 }
 
-const Layout: NextPage<IProps> = ({ children, grid, contact }) => (
+const Layout: NextPage<PropsWithChildren<IProps>> = ({
+  children,
+  grid,
+  contact,
+}) => (
   <>
     <Hero />
 

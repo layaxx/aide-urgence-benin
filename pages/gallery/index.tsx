@@ -104,7 +104,13 @@ const GalleriesPage: NextPage<IProps> = ({ gallery }) => {
       <Layout>
         <h1>{gallery.title}</h1>
 
-        <section style={{ display: "flex", flexWrap: "wrap" }}>
+        <section
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-around",
+          }}
+        >
           {gallery.images.map((img) => (
             <div
               key={img.path}

@@ -42,7 +42,7 @@ export default function Contact() {
           setIsSending(false)
           return
         }
-      } catch (error) {
+      } catch {
         setFeedback({ type: "error", text: t("contact.errors.default") })
         setIsSending(false)
         return

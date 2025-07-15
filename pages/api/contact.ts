@@ -24,8 +24,12 @@ const sendEmail: NextApiHandler = async (req, res) => {
   </div>
   `,
     })
-  } catch (error: any) {
-    return res.status(error.statusCode || 500).json({ error: error.message })
+  } catch (error) {
+    if (error instanceof Error) {
+      return res.status(500).json({ error: error.message })
+    }
+
+    return res.status(500).json({ error: "An unknown error occurred" })
   }
 
   return res.status(200).json({ error: "" })

@@ -1,6 +1,6 @@
 import { locales } from "lib/config"
 
-export type Locale = typeof locales[number]
+export type Locale = (typeof locales)[number]
 
 export interface ILocalizedBlogPost {
   title: string

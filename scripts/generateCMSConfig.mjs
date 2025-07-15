@@ -17,7 +17,7 @@ function generateObject(content, key) {
       name: key,
       widget: "object",
       fields: Object.keys(content[key]).map((key_) =>
-        generateObject(content[key], key_)
+        generateObject(content[key], key_),
       ),
     }
   }
@@ -42,7 +42,7 @@ let filePaths = config.i18n.locales
       locale,
       path: "./public/locales/" + locale + "/" + filename,
       filename,
-    }))
+    })),
   )
 
 filePaths = filePaths.filter((obj) => !obj.path.endsWith("_old.json"))
@@ -66,4 +66,4 @@ preset.backend.base_url = URL
 
 fs.writeFileSync("./public/admin/config.yml", YAML.stringify(preset), "utf8")
 
-console.log("Successfully wrote CMS config")
+globalThis.console.log("Successfully wrote CMS config")

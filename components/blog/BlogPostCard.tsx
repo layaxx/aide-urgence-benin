@@ -20,7 +20,7 @@ const BlogPostCard: React.FC<IProps> = ({ post }) => {
   const { locale } = useRouter()
 
   const availableForLocale = new Set(post.availableLocales).has(
-    locale as Locale
+    locale as Locale,
   )
 
   const title =

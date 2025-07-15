@@ -17,7 +17,7 @@ export async function getAllAuthorPaths() {
     locales.map((locale) => ({
       params: { slug: author.slug },
       locale,
-    }))
+    })),
   )
 }
 
@@ -46,11 +46,11 @@ export async function fetchAllAuthors() {
               locales.map((locale) => [
                 locale,
                 { description: attributes[locale].description ?? null },
-              ])
+              ]),
             ),
           } as Author
-        })
-      )
+        }),
+      ),
   )
 
   return cache

@@ -1,7 +1,6 @@
 import { useTranslation } from "next-i18next"
 import { useEffect, useState } from "react"
 
-// eslint-disable-next-line no-unused-vars
 enum Contrast {
   AUTO = "auto",
   DARK = "dark",
@@ -19,7 +18,7 @@ function getInitialContrastValue(): Contrast {
       default:
         return Contrast.AUTO
     }
-  } catch (_error) {
+  } catch {
     return Contrast.AUTO
   }
 }
@@ -34,9 +33,7 @@ export default function ContrastSelector() {
 
     document?.querySelector("html")?.setAttribute("data-theme", contrast)
 
-    try {
-      localStorage.setItem("contrast", contrast)
-    } catch (_error) {}
+    localStorage.setItem("contrast", contrast)
   }, [contrast])
 
   // t('menu.theme.dark')

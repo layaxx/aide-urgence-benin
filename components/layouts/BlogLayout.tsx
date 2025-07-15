@@ -1,10 +1,10 @@
 import Footer from "components/Footer"
 import Navbar from "components/Navbar"
-import { FC } from "react"
+import { FC, PropsWithChildren } from "react"
 
 import styles from "./BlogLayout.module.css"
 
-const Layout: FC = ({ children }) => (
+const Layout: FC<PropsWithChildren> = ({ children }) => (
   <>
     <div data-theme="dark" className={styles.navbarContainer}>
       <Navbar />

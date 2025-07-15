@@ -176,10 +176,7 @@ export const getStaticProps: GetStaticProps<IProps, IParams> = async ({
   locale,
 }) => {
   const post = await getBlogPostBySlug(params?.slug ?? "")
-  const navigationData = await getNavigationDataForBlog(
-    params?.slug ?? "",
-    getLocale(locale)
-  )
+  const navigationData = await getNavigationDataForBlog(params?.slug ?? "")
 
   return {
     props: {

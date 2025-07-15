@@ -35,3 +35,4 @@ yarn-error.log*
 
 # i18n
 *_old.json
+tsconfig.tsbuildinfo

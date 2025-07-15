@@ -16,7 +16,7 @@ export async function getAllTagPaths() {
     locales.map((locale) => ({
       params: { slug: tag.slug },
       locale,
-    }))
+    })),
   )
 }
 
@@ -45,11 +45,11 @@ export async function fetchAllTags() {
               locales.map((locale) => [
                 locale,
                 { title: attributes[locale].title ?? "" },
-              ])
+              ]),
             ),
           } as ITag
-        })
-      )
+        }),
+      ),
   )
 
   return cache

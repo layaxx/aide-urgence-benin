@@ -8,10 +8,10 @@ de:
       description: Durch die Bereitstellung von Schulmaterialien sollen bedürftige Familien mit geringem Einkommen entlastet werden und bedürftigen Kindern der Schulgang ermöglicht werden.
     - name: Unser Einsatz für die Umwelt
       description: Durch verschiedene Projekte, wie das Pflanzen von Bäumen und Müllsammelaktionen, soll der Umwelt ein Stück zurückgegeben werden und ein Beitrag zu Verbesserung der Lebensbedingungen geleistet werden.
-    - name: Stärkung von Frauen 
-      description: Frauen stärken Frauen – gemäß diesem Motto möchten wir Frauen und Mädchen Weiterbildungen und Podiumsdiskussionen anbieten, um sie in ihrem Alltag und in der Berufswelt zu unterstützen.     
+    - name: Stärkung von Frauen
+      description: Frauen stärken Frauen – gemäß diesem Motto möchten wir Frauen und Mädchen Weiterbildungen und Podiumsdiskussionen anbieten, um sie in ihrem Alltag und in der Berufswelt zu unterstützen.
 fr:
-  title: Projets 
+  title: Projets
   projects:
     - name: Noel des Enfants
       description: Permettre aux enfants orphelins, vulnérables et ou issus des familles de 05 à 12 ans à revenus faibles d’avoir des belles fêtes de fin d’année.

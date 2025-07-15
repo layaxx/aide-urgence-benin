@@ -1,5 +1,6 @@
 import imageSize from "image-size"
 import http from "https"
+import { IncomingMessage } from "http"
 
 export function normalizeImages(images: string[]) {
   return images.map((path) => {
@@ -36,20 +37,20 @@ function isRemoteURL(input: string) {
 
   try {
     url = new URL(input)
-  } catch (_) {
+  } catch {
     return false
   }
 
   return url.protocol === "http:" || url.protocol === "https:"
 }
 
-async function getStreamImageSize(stream: any) {
+async function getStreamImageSize(stream: IncomingMessage) {
   const chunks = []
   for await (const chunk of stream) {
     chunks.push(chunk)
     try {
       return imageSize(Buffer.concat(chunks))
-    } catch (error) {
+    } catch {
       /* Not ready yet */
     }
   }

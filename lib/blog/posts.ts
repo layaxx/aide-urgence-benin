@@ -1,4 +1,10 @@
-import { INavigationData, BlogPost, ITag, Locale } from "types/Blog"
+import {
+  INavigationData,
+  BlogPost,
+  ITag,
+  Locale,
+  ILocalizedBlogPost,
+} from "types/Blog"
 import fs from "fs"
 import path from "path"
 import { i18n } from "next-i18next.config"
@@ -19,25 +25,24 @@ export async function getAllBlogPostPaths() {
     locales.map((locale) => ({
       params: { slug: post.slug },
       locale,
-    }))
+    })),
   )
 }
 
 export async function getBlogPostsByTag(slug: string) {
   return (await fetchAllBlogPosts()).filter(
-    (post) => post.tags.filter((tag) => tag.slug === slug).length
+    (post) => post.tags.filter((tag) => tag.slug === slug).length,
   )
 }
 
 export async function getBlogPostsByAuthor(slug: string) {
   return (await fetchAllBlogPosts()).filter(
-    (post) => post.author?.slug === slug
+    (post) => post.author?.slug === slug,
   )
 }
 
 export async function getNavigationDataForBlog(
   slug: string,
-  locale: Locale
 ): Promise<INavigationData> {
   const allPosts = await fetchAllBlogPosts()
   const postIndex = allPosts.findIndex((post) => post.slug === slug)
@@ -77,16 +82,19 @@ export async function fetchAllBlogPosts() {
 
           const tagsSlugs = defLocaleAttributes.tags ?? []
           const tags = ((await getTagsbySlugs(tagsSlugs)) ?? []).filter(
-            (tag) => tag !== undefined
+            (tag) => tag !== undefined,
           ) as ITag[]
 
           const availableLocales = new Set(
             locales.filter(
-              (locale) => attributes[locale].title && attributes[locale].body
-            )
+              (locale) => attributes[locale].title && attributes[locale].body,
+            ),
           )
 
-          const localized: any = {}
+          const localized: Record<Locale, ILocalizedBlogPost | null> = {
+            de: null,
+            fr: null,
+          }
           locales.forEach(
             (locale) =>
               (localized[locale] = availableLocales.has(locale)
@@ -94,7 +102,7 @@ export async function fetchAllBlogPosts() {
                     title: attributes[locale].title,
                     body: attributes[locale].body,
                   }
-                : null)
+                : null),
           )
 
           return {
@@ -106,8 +114,8 @@ export async function fetchAllBlogPosts() {
             thumbnail: defLocaleAttributes.thumbnail ?? null,
             localized,
           }
-        })
-      )
+        }),
+      ),
   )
 
   allData.sort((a, b) => {
