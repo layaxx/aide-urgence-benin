@@ -103,12 +103,16 @@ const Post: FC<IProps> = ({ post, navigationData }) => {
         <small>
           {t("blog:published-by", {
             name: post.author?.name ?? "anon",
-            date: dayjs(post.date).toDate().toLocaleString(getLocale(locale)),
+            date: dayjs(post.date).toDate().toLocaleString(getLocale(locale), {
+              year: "numeric",
+              month: "numeric",
+              day: "numeric",
+            }),
           })}
         </small>
         <br />
 
-        {post.tags.length && (
+        {post.tags.length > 0 && (
           <div className={styles.tags}>
             {post.tags.map((tag) => (
               <TagCard tag={tag} key={tag.slug} />
@@ -116,7 +120,33 @@ const Post: FC<IProps> = ({ post, navigationData }) => {
           </div>
         )}
 
-        <Markdown>{localizedAttributes.body ?? ""}</Markdown>
+        <Markdown
+          options={{
+            overrides: {
+              img: {
+                component: ({ alt, src }) => (
+                  <div
+                    style={{
+                      position: "relative",
+                      width: "100%",
+                      height: "auto",
+                      minHeight: "15rem",
+                    }}
+                  >
+                    <Image
+                      src={src?.replace("/public/", "/")}
+                      alt={alt}
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                ),
+              },
+            },
+          }}
+        >
+          {localizedAttributes.body ?? ""}
+        </Markdown>
 
         <ShareButtons />
 
