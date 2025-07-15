@@ -39,9 +39,7 @@ export default function Footer() {
         </div>
 
         <small>
-          <Link href={"/imprint"}>
-            <a>{t("footer.links.imprint")}</a>
-          </Link>
+          <Link href={"/imprint"}>{t("footer.links.imprint")}</Link>
         </small>
       </div>
 

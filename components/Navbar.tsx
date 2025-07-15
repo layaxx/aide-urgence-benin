@@ -21,16 +21,12 @@ export default function Navbar() {
       <nav className={"container " + styles.navbarLinks}>
         <ul>
           <li>
-            <Link href="/">
-              <a className={`contrast ${styles.brand}`}>
-                <strong>
-                  <span style={{ color: "var(--primary-green)" }}>Aide</span>{" "}
-                  <span style={{ color: "var(--primary-yellow)" }}>
-                    Urgence
-                  </span>{" "}
-                  <span style={{ color: "var(--primary-red)" }}>Bénin</span>
-                </strong>
-              </a>
+            <Link href="/" className={`contrast ${styles.brand}`}>
+              <strong>
+                <span style={{ color: "var(--primary-green)" }}>Aide</span>{" "}
+                <span style={{ color: "var(--primary-yellow)" }}>Urgence</span>{" "}
+                <span style={{ color: "var(--primary-red)" }}>Bénin</span>
+              </strong>
             </Link>
           </li>
         </ul>
@@ -38,25 +34,19 @@ export default function Navbar() {
         <ul>
           <li>
             <Link href="/blog">
-              <a>
-                <strong>{t("menu.links.blog")}</strong>
-              </a>
+              <strong>{t("menu.links.blog")}</strong>
             </Link>
           </li>
 
           <li>
             <Link href="/gallery">
-              <a>
-                <strong>{t("menu.links.gallery")}</strong>
-              </a>
+              <strong>{t("menu.links.gallery")}</strong>
             </Link>
           </li>
 
           <li>
             <Link href="/projects">
-              <a>
-                <strong>{t("menu.links.projects")}</strong>
-              </a>
+              <strong>{t("menu.links.projects")}</strong>
             </Link>
           </li>
         </ul>

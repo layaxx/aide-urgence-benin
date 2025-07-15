@@ -2,7 +2,7 @@ import { NextPage } from "next"
 import Footer from "components/Footer"
 import Hero from "components/Hero"
 import Contact from "components/Contact"
-import { PropsWithChildren } from "react"
+import { JSX, PropsWithChildren } from "react"
 
 interface IProps {
   grid?: JSX.Element

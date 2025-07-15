@@ -11,7 +11,7 @@ const AuthorHighlight: React.FC<IProps> = ({ author }) => {
   return (
     <section className={styles.root}>
       <Link href="/blog/author/[slug]" as={`/blog/author/${author.name}`}>
-        <a>{author.name}</a>
+        {author.name}
       </Link>
     </section>
   )

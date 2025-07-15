@@ -14,13 +14,13 @@ const TagCard: React.FC<IProps> = ({ tag }) => {
   const title = tag.localized[locale].title
 
   return (
-    <Link href="/blog/tag/[slug]" as={"/blog/tag/" + tag.slug}>
-      <a
-        title={title}
-        style={{ background: "var(--pico-card-background-color)" }}
-      >
-        {title}
-      </a>
+    <Link
+      href="/blog/tag/[slug]"
+      as={"/blog/tag/" + tag.slug}
+      title={title}
+      style={{ background: "var(--pico-card-background-color)" }}
+    >
+      {title}
     </Link>
   )
 }

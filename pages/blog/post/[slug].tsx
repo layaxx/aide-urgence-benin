@@ -55,7 +55,7 @@ const Post: FC<IProps> = ({ post, navigationData }) => {
                 as={"/blog/post/" + post.slug}
                 locale={locale}
               >
-                <a>{locale}</a>
+                {locale}
               </Link>
             </li>
           ))}

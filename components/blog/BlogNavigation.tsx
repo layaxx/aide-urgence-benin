@@ -21,24 +21,26 @@ const BlogNavigation: FC<IProps> = ({ data }) => {
   return (
     <nav className={styles.navigation}>
       {data.next ? (
-        <Link href="/blog/post/[slug]" as={"/blog/post/" + data.next?.slug}>
-          <a title={data.next.localized[locale]?.title}>
-            {t("blog:nav.next")}: {data.next.localized[locale]?.title}
-          </a>
+        <Link
+          href="/blog/post/[slug]"
+          as={"/blog/post/" + data.next?.slug}
+          title={data.next.localized[locale]?.title}
+        >
+          {t("blog:nav.next")}: {data.next.localized[locale]?.title}
         </Link>
       ) : (
         <span></span>
       )}
 
-      <Link href="/blog">
-        <a>{t("blog:nav.all")}</a>
-      </Link>
+      <Link href="/blog">{t("blog:nav.all")}</Link>
 
       {data.prev ? (
-        <Link href="/blog/post/[slug]" as={"/blog/post/" + data.prev?.slug}>
-          <a title={data.prev.localized[locale]?.title}>
-            {t("blog:nav.prev")}: {data.prev.localized[locale]?.title}
-          </a>
+        <Link
+          href="/blog/post/[slug]"
+          as={"/blog/post/" + data.prev?.slug}
+          title={data.prev.localized[locale]?.title}
+        >
+          {t("blog:nav.prev")}: {data.prev.localized[locale]?.title}
         </Link>
       ) : (
         <span></span>
