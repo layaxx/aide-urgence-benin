@@ -1,14 +1,13 @@
 const { i18n } = require("./next-i18next.config")
-const withPreact = require("next-plugin-preact")
 
-module.exports = withPreact({
+module.exports = {
   i18n,
-  webpack: (configuration) => {
-    configuration.module.rules.push({
+  webpack: (config) => {
+    config.module.rules.push({
       test: /\.md$/,
       use: "frontmatter-markdown-loader",
     })
-    return configuration
+    return config
   },
   async redirects() {
     return [
@@ -19,4 +18,4 @@ module.exports = withPreact({
       },
     ]
   },
-})
+}

@@ -9,7 +9,7 @@ export default function Hero() {
     <>
       <div
         data-theme="dark"
-        style={{ backgroundColor: "var(--background-color)" }}
+        style={{ backgroundColor: "var(--pico-background-color)" }}
       >
         <Navbar />
       </div>

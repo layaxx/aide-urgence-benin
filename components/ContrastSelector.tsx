@@ -49,7 +49,12 @@ export default function ContrastSelector() {
           name="locale"
           id="theme-switcher"
           onChange={(event) => {
-            if (event.target.value !== contrast) {
+            if (
+              event.target &&
+              "value" in event.target &&
+              typeof event.target.value === "string" &&
+              event.target.value !== contrast
+            ) {
               setContrast(event.target.value as Contrast)
             }
           }}

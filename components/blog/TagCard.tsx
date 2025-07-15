@@ -15,7 +15,10 @@ const TagCard: React.FC<IProps> = ({ tag }) => {
 
   return (
     <Link href="/blog/tag/[slug]" as={"/blog/tag/" + tag.slug}>
-      <a title={title} style={{ background: "var(--card-background-color)" }}>
+      <a
+        title={title}
+        style={{ background: "var(--pico-card-background-color)" }}
+      >
         {title}
       </a>
     </Link>

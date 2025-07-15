@@ -2,7 +2,7 @@
   margin: 2rem;
   height: 10rem;
   width: 20rem;
-  background: var(--background-color);
+  background: var(--pico-background-color);
   position: relative;
   cursor: pointer;
   transition: transform 0.2s;
@@ -10,7 +10,7 @@
 
 .preview:hover {
   transform: scale(1.05);
-  box-shadow: var(--card-box-shadow);
+  box-shadow: var(--pico-card-box-shadow);
 }
 
 .navigation {

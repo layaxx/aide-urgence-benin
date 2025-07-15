@@ -24,8 +24,6 @@ const Home: NextPage<IProps> = ({ featuredPosts }) => {
       <SEO url={`${config.baseurl}`} />
 
       <Layout contact>
-        <h1>{attributes[locale ?? i18n.defaultLocale].title}</h1>
-
         <AboutComponent />
 
         <FeaturedBlogPosts featuredPosts={featuredPosts} />

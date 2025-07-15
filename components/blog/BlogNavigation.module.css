@@ -1,24 +1,23 @@
-.navigation>a {
-    box-shadow: var(--card-box-shadow);
-    border-radius: 0.5rem;
-    padding: 0.5rem 2rem;
-    max-width: 33%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    background: var(--card-background-color);
+.navigation > a {
+  box-shadow: var(--pico-card-box-shadow);
+  border-radius: 0.5rem;
+  padding: 0.5rem 2rem;
+  max-width: 33%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: var(--pico-card-background-color);
 }
 
-
-.navigation>a:hover {
-    text-decoration: underline;
+.navigation > a:hover {
+  text-decoration: underline;
 }
 
-.navigation>span {
-    width: 33%;
+.navigation > span {
+  width: 33%;
 }
 
 .navigation {
-    margin-top: 1rem;
-    margin-bottom: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
 }

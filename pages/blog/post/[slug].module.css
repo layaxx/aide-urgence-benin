@@ -1,12 +1,12 @@
 .tags {
-    padding: 1rem 0rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+  padding: 1rem 0rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .tags a {
-    box-shadow: var(--card-box-shadow);
-    border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
+  box-shadow: var(--pico-card-box-shadow);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
 }

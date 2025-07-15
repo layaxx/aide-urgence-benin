@@ -13,7 +13,7 @@ interface IProps {
 }
 
 const socialTags = ({
-  openGraphType,
+  openGraphType = "website",
   url,
   title,
   description,
@@ -48,6 +48,15 @@ const socialTags = ({
 }
 
 const SEO: FC<IProps> = (props) => {
+  props = {
+    title: settings?.title || props.title,
+    description: settings?.meta?.description || props.description,
+    image: settings?.meta?.graphic
+      ? settings.baseurl + settings.meta.graphic
+      : props.image,
+    url: settings.baseurl || props.url,
+  }
+
   const { title, description, image, url } = props
   return (
     <Head>
@@ -75,14 +84,6 @@ const SEO: FC<IProps> = (props) => {
       />
     </Head>
   )
-}
-
-SEO.defaultProps = {
-  title: settings && settings.title,
-  description: settings && settings.meta && settings.meta.description,
-  image: settings && settings.meta && settings.baseurl + settings.meta.graphic,
-  url: settings.baseurl,
-  openGraphType: "website",
 }
 
 export default SEO

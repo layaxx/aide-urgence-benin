@@ -1,22 +1,21 @@
 /* Footer */
 .footer .info {
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
 }
 
-.footer .info>* {
-    text-align: center;
+.footer .info > * {
+  text-align: center;
 }
 
-
-.footer .info>*:first-child {
-    text-align: left;
+.footer .info > *:first-child {
+  text-align: left;
 }
 
-.footer .info>*:last-child {
-    text-align: right;
+.footer .info > *:last-child {
+  text-align: right;
 }
 
 .footer .credits {
-    text-align: center;
+  text-align: center;
 }

@@ -1,33 +1,35 @@
 nav.navbarSettings select {
-    border: none;
-    outline: none;
-    padding: 0;
-    margin: 0;
-    appearance: none;
-    font-size: 0.75rem;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  appearance: none;
+  background-color: unset;
+  font-size: 0.75rem;
+  min-width: 5rem;
 }
 
 nav.navbarSettings {
-    justify-content: end;
-    font-size: 0.75rem;
+  justify-content: end;
+  font-size: 0.75rem;
 }
 
 nav.navbarSettings li {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 nav.navbarLinks a {
-    padding: 0.5rem 0.5rem 1rem 0.5rem;
-    color: var(--contrast);
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+  color: var(--pico-contrast);
 }
 
 nav.navbarLinks li:hover {
-    background-color: var(--contrast-focus);
-    text-decoration: underline;
+  background-color: var(--pico-contrast-focus);
+  text-decoration: underline;
 }
 
 nav.navbarLinks a.brand {
-    text-decoration: none;
-    color: var(--primary);
+  text-decoration: none;
+  color: var(--primary);
 }

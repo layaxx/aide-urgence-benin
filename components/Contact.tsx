@@ -17,7 +17,7 @@ export default function Contact() {
 
   const [feedback, setFeedback] = useState<IFeedback | undefined>(undefined)
 
-  const handleSubmit: FormEventHandler = async (e) => {
+  const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault()
 
     if (message) {
@@ -74,7 +74,10 @@ export default function Contact() {
               placeholder={t("contact.placeholders.name")}
               aria-label={t("contact.placeholders.name")}
               value={name}
-              onChange={(event) => setName(event.target.value)}
+              onChange={(event) => {
+                if (event.target && "value" in event.target)
+                  setName(String(event.target.value))
+              }}
             />
             <input
               type="email"
@@ -83,7 +86,11 @@ export default function Contact() {
               placeholder={t("contact.placeholders.email")}
               aria-label={t("contact.placeholders.email")}
               value={email}
-              onChange={(event) => setEmail(event.target.value)}
+              onChange={(event) => {
+                if (event.target && "value" in event.target) {
+                  setEmail(String(event.target.value))
+                }
+              }}
             />
             <textarea
               id="message"
@@ -91,7 +98,11 @@ export default function Contact() {
               placeholder={t("contact.placeholders.message")}
               aria-label={t("contact.placeholders.message")}
               value={message}
-              onChange={(event) => setMessage(event.target.value)}
+              onChange={(event) => {
+                if (event.target && "value" in event.target) {
+                  setMessage(String(event.target.value))
+                }
+              }}
               required
             />
             <button type="submit" disabled={isSending}>
@@ -105,8 +116,8 @@ export default function Contact() {
                 paddingLeft: "1rem",
                 borderLeft: `5px solid ${
                   feedback.type === "error"
-                    ? "var(--del-color)"
-                    : "var(--ins-color)"
+                    ? "var(--pico-del-color)"
+                    : "var(--pico-ins-color)"
                 }`,
               }}
             >
