@@ -86,15 +86,17 @@ const Post: FC<IProps> = ({ post, navigationData }) => {
         createdAt={dayjs(post.date).toISOString()}
         image={post.thumbnail && config.baseurl + post.thumbnail}
       />
-
       <Layout>
         {post.thumbnail && (
           <div style={{ position: "relative", width: "100%", height: "20rem" }}>
             <Image
               src={post.thumbnail.replace("/public/", "/")}
               alt="thumbnail"
-              layout="fill"
-              objectFit="cover"
+              fill
+              sizes="100vw"
+              style={{
+                objectFit: "cover",
+              }}
             />
           </div>
         )}
@@ -125,7 +127,7 @@ const Post: FC<IProps> = ({ post, navigationData }) => {
             overrides: {
               img: {
                 component: ({ alt, src }) => (
-                  <div
+                  <figure
                     style={{
                       position: "relative",
                       width: "100%",
@@ -136,11 +138,23 @@ const Post: FC<IProps> = ({ post, navigationData }) => {
                     <Image
                       src={src?.replace("/public/", "/")}
                       alt={alt}
-                      layout="fill"
-                      objectFit="contain"
+                      fill
+                      sizes="100vw"
+                      style={{ objectFit: "contain" }}
                     />
-                  </div>
+                  </figure>
                 ),
+              },
+              p: {
+                component: ({ children }) => {
+                  if (
+                    children.length === 1 &&
+                    typeof children[0] === "object"
+                  ) {
+                    return children
+                  }
+                  return <p>{children}</p>
+                },
               },
             },
           }}

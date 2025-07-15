@@ -39,8 +39,11 @@ const BlogPostCard: React.FC<IProps> = ({ post }) => {
             <Image
               src={post.thumbnail.replace("/public/", "/")}
               alt={"thumbnail " + title}
-              layout="fill"
-              objectFit="cover"
+              fill
+              sizes="100vw"
+              style={{
+                objectFit: "cover",
+              }}
             />
           )}
         </div>

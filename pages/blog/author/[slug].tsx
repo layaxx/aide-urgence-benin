@@ -42,15 +42,17 @@ const AuthorPage = ({ author, posts }: IProps) => {
         }
         image={author.portrait && config.baseurl + author.portrait}
       />
-
       <Layout>
         <h1>{author.name}</h1>
         <div style={{ position: "relative", width: "10rem", height: "10rem" }}>
           <Image
             src={author.portrait.replace("/public/", "/")}
             alt={"portrait " + author.name}
-            layout="fill"
-            objectFit="cover"
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "cover",
+            }}
           />
         </div>
         <Markdown>{localizedAttributes.description ?? ""}</Markdown>

@@ -51,7 +51,6 @@ const GalleriesPage: NextPage<IProps> = ({ gallery }) => {
   return (
     <>
       <SEO url={`${config.baseurl}`} />
-
       <dialog
         open={Boolean(activeImage)}
         onClick={(evt) => {
@@ -72,9 +71,13 @@ const GalleriesPage: NextPage<IProps> = ({ gallery }) => {
             <Image
               src={String(activeImage?.path)}
               alt=""
-              layout="responsive"
               width={activeImage?.width}
               height={activeImage?.height}
+              sizes="100vw"
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
             />
           )}
 
@@ -100,7 +103,6 @@ const GalleriesPage: NextPage<IProps> = ({ gallery }) => {
           )}
         </article>
       </dialog>
-
       <Layout>
         <h1>{gallery.title}</h1>
 
@@ -118,7 +120,15 @@ const GalleriesPage: NextPage<IProps> = ({ gallery }) => {
               data-theme="dark"
               onClick={() => setActiveImage(img)}
             >
-              <Image src={img.path} alt="" layout="fill" objectFit="cover" />
+              <Image
+                src={img.path}
+                alt=""
+                fill
+                sizes="100vw"
+                style={{
+                  objectFit: "cover",
+                }}
+              />
             </div>
           ))}
         </section>
