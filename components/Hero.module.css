@@ -1,0 +1,39 @@
+.header {
+  hgroup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  h1,
+  h2 {
+    margin-bottom: 0.5rem;
+  }
+  h1 {
+    width: min-content;
+    font-size: 2.5rem;
+  }
+  h2 {
+    color: white;
+    font-weight: 400;
+    backdrop-filter: blur(5px);
+    padding: 1rem 0rem;
+  }
+  @media screen and (min-width: 768px) {
+    min-height: 20rem;
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: 1.25rem !important;
+      max-width: 40%;
+      backdrop-filter: unset;
+    }
+  }
+}
+
+.overlay {
+  backdrop-filter: brightness(0.8);
+}

@@ -1,6 +1,7 @@
 import config from "lib/config"
 import { useTranslation } from "next-i18next"
 import Navbar from "./Navbar"
+import styles from "./Hero.module.css"
 
 export default function Hero() {
   const { t } = useTranslation()
@@ -25,17 +26,19 @@ export default function Hero() {
           })`,
         }}
       >
-        <header className="container">
-          <hgroup>
-            <h1>{config.title}</h1>
-            <h2>{t("hero.tagline")}</h2>
-          </hgroup>
-          {config.campaign && (
-            <p>
-              <a href={config.campaign}>{t("hero.cta")}</a>
-            </p>
-          )}
-        </header>
+        <div className={styles.overlay}>
+          <header className={"container " + styles.header}>
+            <hgroup>
+              <h1>{config.title}</h1>
+              <h2>{t("hero.tagline")}</h2>
+            </hgroup>
+            {config.campaign && (
+              <p>
+                <a href={config.campaign}>{t("hero.cta")}</a>
+              </p>
+            )}
+          </header>
+        </div>
       </div>
     </>
   )
