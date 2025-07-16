@@ -50,6 +50,10 @@ export default function Contact() {
 
       setFeedback({ type: "success", text: t("contact.success") })
       setIsSending(false)
+
+      setName("")
+      setEmail("")
+      setMessage("")
     } else {
       setFeedback({
         type: "error",

@@ -18,4 +18,7 @@ module.exports = {
       },
     ]
   },
+  eslint: {
+    dirs: ["components", "pages", "scripts", "lib", "next-i18next.config.js"],
+  },
 }
