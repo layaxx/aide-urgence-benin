@@ -9,7 +9,7 @@ const sendEmail: NextApiHandler = async (req, res) => {
     const formData = new URLSearchParams()
     formData.append(
       "from",
-      "Mailgun Sandbox <postmaster@${process.env.MAILGUN_SENDER_ID}>",
+      `Mailgun Sandbox <postmaster@${process.env.MAILGUN_SENDER_ID}>`,
     )
     formData.append("to", "A-U-B Notifications <aide-urgence-benin@y-lang.eu>")
     formData.append("subject", "[Contact Submission] | a-u-b.org")
@@ -25,7 +25,7 @@ const sendEmail: NextApiHandler = async (req, res) => {
       `<div class="container" style="margin-left: 20px;margin-right: 20px;">
     <h3>You've got a contact form submission from ${
       req.body.name || "anonymous"
-    }, their email is: ${req.body.email || "anonymous"} </h3>
+    }, their email is: ${req.body.email || "[none-provided]"} </h3>
     <div style="font-size: 16px;">
       <p>Message:</p>
       <p>${req.body.message}</p>
